@@ -17,17 +17,14 @@ a:active {
 .mat-toolbar {
   border-radius: 3px;
   background: #888b8d;
+  text-align: center;
+  font-size: 16px;
 }
 
 .mat-toolbar a {
   flex: 1 1 100%;
-}
-
-.mat-toolbar button {
-  width: 100%;
   border: 0.5px solid #d4d2d2;
-  padding: 1px;
-  border-radius: unset;
+  padding: 10px;
 }
 
 .active-link {
@@ -38,4 +35,9 @@ a:active {
 .mat-toolbar-single-row {
   height: unset;
   padding: unset;
+}
+
+.mat-icon {
+  display: block;
+  width: unset;
 }
