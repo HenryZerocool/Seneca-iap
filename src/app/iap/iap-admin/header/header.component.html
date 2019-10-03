@@ -4,37 +4,45 @@
   <button mat-menu-item>Item 1</button>
   <button mat-menu-item>Item 2</button>
 </mat-menu>
-<mat-tab-group>
-  <mat-tab label="Home">
-    <h1>Some tab content</h1>
-    <p>...</p>
-  </mat-tab>
-  <mat-tab label="Content">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </mat-tab>
-  <mat-tab label="Log out">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </mat-tab>
-</mat-tab-group>
+
 <mat-toolbar color="primary">
-  <div fxHide.gt-xs>
-    <button mat-icon-button (click)="onToggleSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </div>
-  <div>
-    <a routerLink="/home">Owner-Account</a>
-  </div>
-  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-      <li>
-        <a routerLink="/owner">Owner Actions</a>
-      </li>
-      <li>
-        <a routerLink="/account">Account Actions</a>
-      </li>
-    </ul>
-  </div>
+  <a routerLink="/home" routerLinkActive="active-link">
+    <mat-icon>home</mat-icon><br />
+    Home
+  </a>
+
+  <a routerLink="/new" routerLinkActive="active-link"
+    ><button mat-button>
+      <mat-icon>person</mat-icon><br />
+      Agents
+    </button></a
+  >
+
+  <a routerLink="/new" routerLinkActive="active-link"
+    ><button mat-button><mat-icon>folder_shared</mat-icon><br />IWA</button></a
+  >
+
+  <a routerLink="/new" routerLinkActive="active-link"
+    ><button mat-button>
+      <mat-icon>monetization_on</mat-icon><br />Commissions
+    </button></a
+  >
+
+  <a routerLink="/content" routerLinkActive="active-link"
+    ><button mat-button><mat-icon>rss_feed</mat-icon><br />Content</button></a
+  >
+
+  <a routerLink="/new" routerLinkActive="active-link"
+    ><button mat-button><mat-icon>pan_tool</mat-icon><br />Request</button></a
+  >
+
+  <a routerLink="/new" routerLinkActive="active-link"
+    ><button mat-button>
+      <mat-icon>settings_applications</mat-icon><br />System
+    </button></a
+  >
+
+  <a routerLink="/new" routerLinkActive="active-link"
+    ><button mat-button><mat-icon>input</mat-icon><br />Log out</button></a
+  >
 </mat-toolbar>

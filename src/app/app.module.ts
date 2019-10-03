@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 // ngrx
 import { StoreModule } from '@ngrx/store';
@@ -9,14 +10,14 @@ import { EffectsModule } from '@ngrx/effects';
 import { CurrentConditionsEffects } from './effects/current-conditions.effects';
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import {} from '@angular/material/menu';
 import {
   MatToolbarModule,
   MatTabsModule,
-  MatMenuModule
+  MatMenuModule,
+  MatStepperModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatButtonModule
 } from '@angular/material';
 // import {  } from '@angular/material/tabs';
 
@@ -31,6 +32,8 @@ import { WeatherComponent } from './weather/weather.component';
 import { IapComponent } from './iap/iap.component';
 import { IapAdminComponent } from './iap/iap-admin/iap-admin.component';
 import { HeaderComponent } from './iap/iap-admin/header/header.component';
+import { IapContentComponent } from './iap/iap-admin/iap-content/iap-content.component';
+import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +43,14 @@ import { HeaderComponent } from './iap/iap-admin/header/header.component';
     WeatherComponent,
     IapComponent,
     IapAdminComponent,
-    HeaderComponent
+    HeaderComponent,
+    IapContentComponent,
+    IapHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     // Material
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -53,6 +59,7 @@ import { HeaderComponent } from './iap/iap-admin/header/header.component';
     MatMenuModule,
     MatToolbarModule,
     MatTabsModule,
+    MatStepperModule,
     // Ngrx
     StoreModule.forRoot(reducers, {
       metaReducers,

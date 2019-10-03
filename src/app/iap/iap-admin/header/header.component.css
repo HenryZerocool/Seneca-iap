@@ -1,0 +1,41 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: lightgray;
+}
+
+.navigation-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mat-toolbar {
+  border-radius: 3px;
+  background: #888b8d;
+}
+
+.mat-toolbar a {
+  flex: 1 1 100%;
+}
+
+.mat-toolbar button {
+  width: 100%;
+  border: 0.5px solid #d4d2d2;
+  padding: 1px;
+  border-radius: unset;
+}
+
+.active-link {
+  background: #da291c;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: unset;
+  padding: unset;
+}

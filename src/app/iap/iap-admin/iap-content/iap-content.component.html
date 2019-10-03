@@ -1,0 +1,37 @@
+<p>iap-content works!</p>
+<app-header></app-header>
+<mat-tab-group>
+  <mat-tab label="Home">
+    <h1>Some tab content</h1>
+    <p>...</p>
+  </mat-tab>
+  <mat-tab label="Content">
+    <h1>Some more tab content</h1>
+    <p>...</p>
+  </mat-tab>
+  <mat-tab label="Log out">
+    <h1>Some more tab content</h1>
+    <p>...</p>
+  </mat-tab>
+</mat-tab-group>
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{ !isLinear ? 'Enable linear mode' : 'Disable linear mode' }}
+</button>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    Some step content
+    <p>...</p>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup"
+    >Some step content
+    <p>...</p>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
