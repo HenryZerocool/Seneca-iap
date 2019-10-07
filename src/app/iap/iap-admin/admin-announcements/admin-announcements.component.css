@@ -1,0 +1,13 @@
+.mat-card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar {
+  width: 382px;
+}
+
+card-title {
+  border-top: 4px solid #da291c;
+  padding-top: 6px;
+}

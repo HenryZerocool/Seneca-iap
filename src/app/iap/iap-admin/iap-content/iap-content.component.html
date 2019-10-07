@@ -1,33 +1,21 @@
 <p>iap-content works!</p>
 <app-header></app-header>
-<mat-tab-group>
-  <mat-tab label="Home">
-    <h1>Some tab content</h1>
-    <p>...</p>
-  </mat-tab>
-  <mat-tab label="Content">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </mat-tab>
-  <mat-tab label="Log out">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </mat-tab>
-</mat-tab-group>
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
   {{ !isLinear ? 'Enable linear mode' : 'Disable linear mode' }}
-</button>
+</button> -->
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     Some step content
-    <p>...</p>
+    <app-admin-announcements></app-admin-announcements>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup"
     >Some step content
-    <p>...</p>
+    <app-admin-newsfeed></app-admin-newsfeed>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
+
+    <app-admin-resources></app-admin-resources>
     You are now done.
     <div>
       <button mat-button matStepperPrevious>Back</button>
@@ -35,3 +23,17 @@
     </div>
   </mat-step>
 </mat-horizontal-stepper>
+<mat-tab-group>
+  <mat-tab label="Announcements">
+    <h1>Some tab content</h1>
+    <app-admin-announcements></app-admin-announcements>
+  </mat-tab>
+  <mat-tab label="Newsfeed">
+    <h1>Some more tab content</h1>
+    <app-admin-newsfeed></app-admin-newsfeed>
+  </mat-tab>
+  <mat-tab label="Resources">
+    <h1>Some more tab content</h1>
+    <app-admin-resources></app-admin-resources>
+  </mat-tab>
+</mat-tab-group>
