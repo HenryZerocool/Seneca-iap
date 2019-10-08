@@ -17,7 +17,10 @@ import {
   MatStepperModule,
   MatSidenavModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+  MatAutocompleteModule
 } from '@angular/material';
 // import {  } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
@@ -35,6 +38,9 @@ import { IapAdminComponent } from './iap/iap-admin/iap-admin.component';
 import { HeaderComponent } from './iap/iap-admin/header/header.component';
 import { IapContentComponent } from './iap/iap-admin/iap-content/iap-content.component';
 import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
+import { AdminNewsfeedComponent } from './iap/iap-admin/admin-newsfeed/admin-newsfeed.component';
+import { AdminResourcesComponent } from './iap/iap-admin/admin-resources/admin-resources.component';
+import { AdminAnnouncementsComponent } from './iap/iap-admin/admin-announcements/admin-announcements.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +52,10 @@ import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
     IapAdminComponent,
     HeaderComponent,
     IapContentComponent,
-    IapHomeComponent
+    IapHomeComponent,
+    AdminNewsfeedComponent,
+    AdminResourcesComponent,
+    AdminAnnouncementsComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +71,9 @@ import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
     MatToolbarModule,
     MatTabsModule,
     MatStepperModule,
+    MatCardModule,
+    MatInputModule,
+    MatAutocompleteModule,
     // Ngrx
     StoreModule.forRoot(reducers, {
       metaReducers,
