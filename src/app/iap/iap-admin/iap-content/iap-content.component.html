@@ -2,7 +2,7 @@
 <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
   {{ !isLinear ? 'Enable linear mode' : 'Disable linear mode' }}
 </button> -->
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
+<!-- <mat-horizontal-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     Some step content
     <app-admin-announcements></app-admin-announcements>
@@ -21,7 +21,7 @@
       <button mat-button (click)="stepper.reset()">Reset</button>
     </div>
   </mat-step>
-</mat-horizontal-stepper>
+</mat-horizontal-stepper> -->
 <!-- <app-header></app-header> -->
 
 <div class="admin-page-container">
@@ -30,7 +30,7 @@
       <mat-step label="Announcements" completed="true">
         <app-admin-announcements></app-admin-announcements>
       </mat-step>
-      <mat-step label="Newsfeed" completed="true">
+      <mat-step label="Newsfeed" completed="false">
         <app-admin-newsfeed></app-admin-newsfeed>
       </mat-step>
       <mat-step label="Resources" completed="false">

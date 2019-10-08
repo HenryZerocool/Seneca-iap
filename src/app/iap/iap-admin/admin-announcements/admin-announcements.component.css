@@ -20,3 +20,8 @@
 table {
   width: 100%;
 }
+
+.mat-header-cell,
+.mat-cell {
+  flex: auto;
+}
