@@ -1,4 +1,3 @@
-<p>iap-content works!</p>
 <app-header></app-header>
 <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
   {{ !isLinear ? 'Enable linear mode' : 'Disable linear mode' }}
@@ -22,6 +21,26 @@
       <button mat-button (click)="stepper.reset()">Reset</button>
     </div>
   </mat-step>
+<<<<<<< HEAD
+</mat-horizontal-stepper> -->
+<!-- <app-header></app-header> -->
+
+<div class="admin-page-container">
+  <div class="stepper align-items-center">
+    <mat-horizontal-stepper labelPosition="bottom" linear>
+      <mat-step label="Announcements" completed="true">
+        <p>Announcements</p>
+      </mat-step>
+      <mat-step label="Newsfeed" completed="true">
+        <p>Newsfeed</p>
+      </mat-step>
+      <mat-step label="Resources" completed="false">
+        <p>Resources</p>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>
+=======
 </mat-horizontal-stepper>
 <mat-tab-group>
   <mat-tab label="Announcements">
@@ -37,3 +56,4 @@
     <app-admin-resources></app-admin-resources>
   </mat-tab>
 </mat-tab-group>
+>>>>>>> 54aa51aacac5e05416e508e0d575ba79065b1646
