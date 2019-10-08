@@ -20,6 +20,7 @@ import {
   MatButtonModule
 } from '@angular/material';
 // import {  } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,6 +56,7 @@ import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatButtonModule,
+    MatCardModule,
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,

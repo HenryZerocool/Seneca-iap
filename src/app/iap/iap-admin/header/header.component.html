@@ -1,9 +1,18 @@
-<p>header works!</p>
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item>Item 1</button>
   <button mat-menu-item>Item 2</button>
-</mat-menu>
+</mat-menu> -->
+<mat-toolbar class="redheader" color="primary">
+  <mat-toolbar-row>
+    <img
+      src="../../../../assets\imgs\Seneca-International-Horizontal-Logo.svg"
+      alt="seneca-logo-white"
+    />
+    <p>ADMIN PORTAL | Welcome Angela Dunn!</p>
+    <span class="div-spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
 
 <mat-toolbar color="primary">
   <a routerLink="/home" routerLinkActive="active-link">

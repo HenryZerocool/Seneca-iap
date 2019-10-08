@@ -1,23 +1,6 @@
-<p>iap-content works!</p>
 <app-header></app-header>
-<mat-tab-group>
-  <mat-tab label="Home">
-    <h1>Some tab content</h1>
-    <p>...</p>
-  </mat-tab>
-  <mat-tab label="Content">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </mat-tab>
-  <mat-tab label="Log out">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </mat-tab>
-</mat-tab-group>
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-  {{ !isLinear ? 'Enable linear mode' : 'Disable linear mode' }}
-</button>
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+<!-- <mat-horizontal-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     Some step content
     <p>...</p>
@@ -34,4 +17,21 @@
       <button mat-button (click)="stepper.reset()">Reset</button>
     </div>
   </mat-step>
-</mat-horizontal-stepper>
+</mat-horizontal-stepper> -->
+<!-- <app-header></app-header> -->
+
+<div class="admin-page-container">
+  <div class="stepper align-items-center">
+    <mat-horizontal-stepper labelPosition="bottom" linear>
+      <mat-step label="Announcements" completed="true">
+        <p>Announcements</p>
+      </mat-step>
+      <mat-step label="Newsfeed" completed="true">
+        <p>Newsfeed</p>
+      </mat-step>
+      <mat-step label="Resources" completed="false">
+        <p>Resources</p>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>
