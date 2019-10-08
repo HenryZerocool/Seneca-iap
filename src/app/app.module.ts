@@ -12,6 +12,7 @@ import { CurrentConditionsEffects } from './effects/current-conditions.effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatToolbarModule,
+  MatTableModule,
   MatTabsModule,
   MatMenuModule,
   MatStepperModule,
@@ -20,6 +21,8 @@ import {
   MatButtonModule,
   MatCardModule,
   MatInputModule,
+  MatSortModule,
+  MatPaginatorModule,
   MatAutocompleteModule
 } from '@angular/material';
 // import {  } from '@angular/material/tabs';
@@ -67,11 +70,14 @@ import { AdminAnnouncementsComponent } from './iap/iap-admin/admin-announcements
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,
+    MatPaginatorModule,
     MatTabsModule,
     MatStepperModule,
     MatCardModule,
+    MatSortModule,
     MatInputModule,
     MatAutocompleteModule,
+    MatTableModule,
     // Ngrx
     StoreModule.forRoot(reducers, {
       metaReducers,

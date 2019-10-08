@@ -7,7 +7,16 @@
   width: 382px;
 }
 
-card-title {
+.card-title {
   border-top: 4px solid #da291c;
   padding-top: 6px;
+}
+
+/* .mat-card-content > :last-child:not(.mat-card-footer),
+.mat-card > :last-child:not(.mat-card-footer) {
+  width: 100%;
+} */
+
+table {
+  width: 100%;
 }
