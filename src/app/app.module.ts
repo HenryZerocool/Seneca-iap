@@ -26,7 +26,6 @@ import {
   MatAutocompleteModule
 } from '@angular/material';
 // import {  } from '@angular/material/tabs';
-import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

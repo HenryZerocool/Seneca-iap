@@ -21,39 +21,21 @@
       <button mat-button (click)="stepper.reset()">Reset</button>
     </div>
   </mat-step>
-<<<<<<< HEAD
-</mat-horizontal-stepper> -->
+</mat-horizontal-stepper>
 <!-- <app-header></app-header> -->
 
 <div class="admin-page-container">
   <div class="stepper align-items-center">
     <mat-horizontal-stepper labelPosition="bottom" linear>
       <mat-step label="Announcements" completed="true">
-        <p>Announcements</p>
+        <app-admin-announcements></app-admin-announcements>
       </mat-step>
       <mat-step label="Newsfeed" completed="true">
-        <p>Newsfeed</p>
+        <app-admin-newsfeed></app-admin-newsfeed>
       </mat-step>
       <mat-step label="Resources" completed="false">
-        <p>Resources</p>
+        <app-admin-resources></app-admin-resources>
       </mat-step>
     </mat-horizontal-stepper>
   </div>
 </div>
-=======
-</mat-horizontal-stepper>
-<mat-tab-group>
-  <mat-tab label="Announcements">
-    <h1>Some tab content</h1>
-    <app-admin-announcements></app-admin-announcements>
-  </mat-tab>
-  <mat-tab label="Newsfeed">
-    <h1>Some more tab content</h1>
-    <app-admin-newsfeed></app-admin-newsfeed>
-  </mat-tab>
-  <mat-tab label="Resources">
-    <h1>Some more tab content</h1>
-    <app-admin-resources></app-admin-resources>
-  </mat-tab>
-</mat-tab-group>
->>>>>>> 54aa51aacac5e05416e508e0d575ba79065b1646

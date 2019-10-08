@@ -15,3 +15,16 @@
   justify-content: center;
   align-items: center;
 }
+.mat-horizontal-stepper-header-container {
+  width: 960px;
+  margin: auto;
+}
+
+::ng-deep .mat-horizontal-content-container {
+  width: 1820px;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+  width: 960px;
+  margin: auto;
+}
