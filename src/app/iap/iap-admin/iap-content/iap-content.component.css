@@ -21,19 +21,11 @@
 }
 
 ::ng-deep .mat-horizontal-content-container {
-<<<<<<< HEAD
   width: 100%;
 }
 
 ::ng-deep .mat-horizontal-stepper-header-container {
   width: 75%;
-=======
-  width: 90vw;
-}
-
-::ng-deep .mat-horizontal-stepper-header-container {
-  width: 60vw;
->>>>>>> refs/remotes/origin/material_design
   margin: auto;
 }
 
