@@ -29,6 +29,7 @@
 <!-- <app-header></app-header> -->
 
 <div class="admin-page-container">
+<<<<<<< HEAD
   <mat-horizontal-stepper
     class="stepper align-items-center"
     labelPosition="bottom"
@@ -45,4 +46,19 @@
       <app-admin-resources></app-admin-resources>
     </mat-step>
   </mat-horizontal-stepper>
+=======
+  <div class="stepper align-items-center">
+    <mat-horizontal-stepper labelPosition="bottom" linear>
+      <mat-step label="Announcements" completed="true">
+        <app-admin-announcements></app-admin-announcements>
+      </mat-step>
+      <mat-step label="Newsfeed" completed="false">
+        <app-admin-newsfeed></app-admin-newsfeed>
+      </mat-step>
+      <mat-step label="Resources" completed="false">
+        <app-admin-resources></app-admin-resources>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+>>>>>>> refs/remotes/origin/material_design
 </div>
