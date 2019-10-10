@@ -21,6 +21,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatInputModule,
+  MatDialogModule,
   MatSortModule,
   MatPaginatorModule,
   MatAutocompleteModule
@@ -70,6 +71,7 @@ import { AdminAnnouncementsComponent } from './iap/iap-admin/admin-announcements
     MatCardModule,
     MatIconModule,
     MatMenuModule,
+    MatDialogModule,
     MatToolbarModule,
     MatPaginatorModule,
     MatTabsModule,

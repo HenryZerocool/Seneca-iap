@@ -1,9 +1,20 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  Inject,
+  TemplateRef
+} from '@angular/core';
 
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from '@angular/material/dialog';
 
 export interface PeriodicElement {
-  id?: number;
+  id: number;
   title: string;
   priority: number;
   status: string;
@@ -12,7 +23,7 @@ export interface PeriodicElement {
   publishTo?: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+let ELEMENT_DATA: PeriodicElement[] = [
   {
     priority: 1,
     title: 'Hydrogen',
@@ -113,6 +124,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class AdminAnnouncementsComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+
+  @ViewChild('PostEditBox', { static: true }) PostEditBox: TemplateRef<any>;
   displayedColumns: string[] = [
     'priority',
     'title',
@@ -123,16 +136,38 @@ export class AdminAnnouncementsComponent implements OnInit {
     'id',
     'Delete'
   ];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-  constructor() {}
+  dataSource: MatTableDataSource<any>;
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit() {
+    this.refreshData();
     this.paginator.pageSize = 10;
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
+  refreshData() {
+    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+  }
+
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  deletePost(id: number) {
+    ELEMENT_DATA = ELEMENT_DATA.filter(data => data.id !== id);
+    this.refreshData();
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(this.PostEditBox, {
+      width: '90vw'
+      // data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
   }
 }
