@@ -1,13 +1,3 @@
-/* .mat-horizontal-stepper {
-  text-align: center;
-  overflow: hidden;
-  padding: 0;
-}
-
-.mat-stepper-horizontal .mat-form-field {
-  width:100%;
-} */
-
 .admin-page-container {
   display: flex;
   justify-self: center;
@@ -16,16 +6,16 @@
   align-items: center;
 }
 .mat-horizontal-stepper-header-container {
-  width: 90%;
+  /* width: 60vw; */
   margin: auto;
 }
 
 ::ng-deep .mat-horizontal-content-container {
-  width: 100%;
+  width: 90vw;
 }
 
 ::ng-deep .mat-horizontal-stepper-header-container {
-  width: 75%;
+  width: 60vw;
   margin: auto;
 }
 

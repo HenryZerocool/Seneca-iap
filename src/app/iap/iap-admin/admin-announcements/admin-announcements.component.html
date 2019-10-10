@@ -14,10 +14,17 @@
         <mat-hint align="start">Example: Title, Last Modified By </mat-hint>
       </mat-form-field>
       <mat-card-actions>
-        <button mat-button (click)="openDialog()">
+        <button
+          mat-flat-button
+          (click)="openDialog()"
+          class="is-rounded"
+          color="primary"
+        >
           <mat-icon>add</mat-icon> Add New
         </button>
-        <button mat-button><mat-icon>remove_red_eye</mat-icon> Preview</button>
+        <button mat-button class="preview">
+          <mat-icon>remove_red_eye</mat-icon> Preview
+        </button>
       </mat-card-actions>
     </div>
   </mat-card-title>
