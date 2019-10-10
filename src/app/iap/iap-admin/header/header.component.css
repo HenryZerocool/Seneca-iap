@@ -49,6 +49,8 @@ a:active {
   color: #fff;
 }
 
-.space-between {
+.seneca-header {
   justify-content: space-between;
+  height: 50px;
+  background-color: #707070;
 }

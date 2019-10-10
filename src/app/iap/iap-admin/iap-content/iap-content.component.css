@@ -16,15 +16,19 @@
   align-items: center;
 }
 .mat-horizontal-stepper-header-container {
-  width: 960px;
+  width: 90%;
   margin: auto;
 }
 
 ::ng-deep .mat-horizontal-content-container {
-  width: 90vw;
+  width: 100%;
 }
 
 ::ng-deep .mat-horizontal-stepper-header-container {
-  width: 60vw;
+  width: 75%;
   margin: auto;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: #da291c;
 }
