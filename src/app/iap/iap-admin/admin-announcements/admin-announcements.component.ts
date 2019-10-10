@@ -17,7 +17,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     priority: 1,
     title: 'Hydrogen',
     status: 'active',
-    lastModifier: 'H',
+    lastModifier: 'Shirley Mangallon',
     publishFrom: '09/12/2018',
     publishTo: '10/30/2019',
     id: 1

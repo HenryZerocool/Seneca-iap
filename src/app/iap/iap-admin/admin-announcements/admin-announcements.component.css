@@ -1,37 +1,40 @@
 .mat-card-title {
   display: flex;
   justify-content: space-between;
-  text-align: left;
-  font: Regular 30px/42px Minion Pro;
-  letter-spacing: 0;
-  color: #55585a;
-  opacity: 1;
-  width: 90%;
 }
 
 .admin-announcement-container {
-  width: 1200px;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
-  border-radius: 10px;
+  padding: 32.5px;
+  background: #fafafa 0% 0% no-repeat padding-box;
   opacity: 1;
-  justify-content: start;
 }
 
 .search-bar {
-  justify-content: end;
   width: 382px;
+  font-size: 20px;
+  margin-left: 30px;
+  margin: 30px;
 }
 
 .card-title {
   border-top: 4px solid #da291c;
   padding-top: 6px;
+  justify-content: space-around;
+  margin-left: 35px;
 }
 
-/* .mat-card-content > :last-child:not(.mat-card-footer),
+.mat-card-content {
+  margin: 30px;
+  margin-bottom: 30px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+
+.mat-card-content > :last-child:not(.mat-card-footer),
 .mat-card > :last-child:not(.mat-card-footer) {
-  width: 100%;
-} */
+  margin-bottom: 30px;
+}
 
 table {
   width: 100%;
@@ -46,13 +49,33 @@ table {
   border-radius: 25px;
   padding: 2px 30px;
   background: #da291c;
+  cursor: pointer;
+  margin-right: 40px;
+  margin-left: 40px;
+  width: 165px;
+  height: 45px;
 }
 
 .preview {
   border-radius: 25px;
-
   padding: 2px 30px;
-  margin-left: 30px;
+  margin: 30px;
   color: #0099ff;
-  background: #ffffff;
+  cursor: pointer;
+  justify-content: end;
+  width: 165px;
+  height: 45px;
+}
+
+.mat-stroked-button {
+  margin: 50px;
+}
+
+.mat-card-actions .mat-icons {
+  margin: 10px;
+}
+
+.mat-row:hover {
+  background: #da291c;
+  opacity: 1;
 }

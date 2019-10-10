@@ -25,20 +25,22 @@
 <!-- <app-header></app-header> -->
 
 <div class="admin-page-container">
-  <mat-horizontal-stepper
-    class="stepper align-items-center"
-    labelPosition="bottom"
-    linear="false"
-  >
-    <ng-template matStepperIcon="edit"></ng-template>
-    <mat-step label="Announcements" completed="true">
-      <app-admin-announcements></app-admin-announcements>
-    </mat-step>
-    <mat-step label="Newsfeed" completed="true">
-      <app-admin-newsfeed></app-admin-newsfeed>
-    </mat-step>
-    <mat-step label="Resources" completed="true">
-      <app-admin-resources></app-admin-resources>
-    </mat-step>
-  </mat-horizontal-stepper>
+  <mat-tab-group mat-stretch-tabs color="warn">
+    <mat-tab label="Announcements">
+      <ng-template matTabContent>
+        <app-admin-announcements></app-admin-announcements>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Newsfeed">
+      <ng-template matTabContent>
+        <app-admin-newsfeed></app-admin-newsfeed>
+      </ng-template>
+    </mat-tab>
+
+    <mat-tab label="Resources">
+      <ng-template matTabContent>
+        <app-admin-resources></app-admin-resources>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
 </div>
