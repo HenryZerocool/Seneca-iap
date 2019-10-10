@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="admin-announcement-container">
   <mat-card>
     <mat-card-title>
@@ -29,6 +30,41 @@
     <mat-card-content class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
         <!--- Note that these columns can be defined in any order.
+=======
+<p>admin-announcements works!</p>
+<mat-card>
+  <mat-card-title>
+    <h3 class="card-title">Annoucements</h3>
+    <div class="actions-box">
+      <mat-form-field class="search-bar">
+        <input
+          matInput
+          #search
+          (keyup)="applyFilter($event.target.value)"
+          maxlength="256"
+          placeholder="Search"
+        />
+        <mat-hint align="start">Example: Title, Last Modified By </mat-hint>
+      </mat-form-field>
+      <mat-card-actions>
+        <button
+          mat-flat-button
+          (click)="openDialog()"
+          class="is-rounded"
+          color="primary"
+        >
+          <mat-icon>add</mat-icon> Add New
+        </button>
+        <button mat-button class="preview">
+          <mat-icon>remove_red_eye</mat-icon> Preview
+        </button>
+      </mat-card-actions>
+    </div>
+  </mat-card-title>
+  <mat-card-content class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!--- Note that these columns can be defined in any order.
+>>>>>>> 46c11f373a43d201ea75f57c0bbcd884ff75ee88
                       The actual rendered columns are set as a property on the row definition" -->
 
         <!-- Position Column -->

@@ -1,6 +1,14 @@
 .mat-card-title {
   display: flex;
   justify-content: space-between;
+<<<<<<< HEAD
+=======
+  text-align: left;
+  font: Regular 30px/42px Minion Pro;
+  letter-spacing: 0;
+  color: #55585a;
+  opacity: 1;
+>>>>>>> 46c11f373a43d201ea75f57c0bbcd884ff75ee88
 }
 
 .admin-announcement-container {
