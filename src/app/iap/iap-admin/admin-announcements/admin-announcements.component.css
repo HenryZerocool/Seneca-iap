@@ -1,14 +1,6 @@
 .mat-card-title {
   display: flex;
   justify-content: space-between;
-<<<<<<< HEAD
-=======
-  text-align: left;
-  font: Regular 30px/42px Minion Pro;
-  letter-spacing: 0;
-  color: #55585a;
-  opacity: 1;
->>>>>>> 46c11f373a43d201ea75f57c0bbcd884ff75ee88
 }
 
 .admin-announcement-container {
@@ -83,7 +75,31 @@ table {
   margin: 10px;
 }
 
-.mat-row:hover {
+/* .mat-row:hover {
   background: #da291c;
+  opacity: 1;
+} */
+
+/* .highlight {
+  background-color: #42a948; /* green */
+
+.mat-table tr:hover {
+  background: #da291c;
+  color: white;
+  opacity: 1;
+}
+
+.mat-table tr {
+  color: inherit;
+}
+
+.active {
+  color: #0099ff;
+}
+
+.closed {
+  font: Semibold 16px/22px Open Sans;
+  letter-spacing: 0;
+  color: red;
   opacity: 1;
 }

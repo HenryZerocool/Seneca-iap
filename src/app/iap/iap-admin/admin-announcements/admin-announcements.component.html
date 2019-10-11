@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="admin-announcement-container">
   <mat-card>
     <mat-card-title>
@@ -30,41 +29,6 @@
     <mat-card-content class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
         <!--- Note that these columns can be defined in any order.
-=======
-<p>admin-announcements works!</p>
-<mat-card>
-  <mat-card-title>
-    <h3 class="card-title">Annoucements</h3>
-    <div class="actions-box">
-      <mat-form-field class="search-bar">
-        <input
-          matInput
-          #search
-          (keyup)="applyFilter($event.target.value)"
-          maxlength="256"
-          placeholder="Search"
-        />
-        <mat-hint align="start">Example: Title, Last Modified By </mat-hint>
-      </mat-form-field>
-      <mat-card-actions>
-        <button
-          mat-flat-button
-          (click)="openDialog()"
-          class="is-rounded"
-          color="primary"
-        >
-          <mat-icon>add</mat-icon> Add New
-        </button>
-        <button mat-button class="preview">
-          <mat-icon>remove_red_eye</mat-icon> Preview
-        </button>
-      </mat-card-actions>
-    </div>
-  </mat-card-title>
-  <mat-card-content class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
-      <!--- Note that these columns can be defined in any order.
->>>>>>> 46c11f373a43d201ea75f57c0bbcd884ff75ee88
                       The actual rendered columns are set as a property on the row definition" -->
 
         <!-- Position Column -->
@@ -75,14 +39,23 @@
 
         <!-- Name Column -->
         <ng-container matColumnDef="title">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
           <td mat-cell *matCellDef="let element">{{ element.title }}</td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="status">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
-          <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [ngClass]="{
+              active: element.status == 'active',
+              closed: element.status == 'closed'
+            }"
+          >
+            {{ element.status }}
+          </td>
         </ng-container>
 
         <!-- TODO udpate -->
@@ -95,7 +68,7 @@
           </td>
         </ng-container>
         <ng-container matColumnDef="publish TO">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>publish TO</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Publish TO</th>
           <td mat-cell *matCellDef="let element">
             {{ element.publishTo | date }}
           </td>
@@ -111,7 +84,7 @@
 
         <!-- TODO update -->
         <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>ID #</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
           <td mat-cell *matCellDef="let element">{{ element.id }}</td>
         </ng-container>
         <ng-container matColumnDef="Delete">
@@ -136,7 +109,7 @@
   </mat-card>
 
   <!-- Modal pop up edit box -->
-  <ng-template #PostEditBox>
+  <!-- <ng-template #PostEditBox>
     <h1 mat-dialog-title>Hi</h1>
     <div mat-dialog-content>
       <p>What's your favorite animal?</p>
@@ -149,4 +122,5 @@
       <button mat-button [mat-dialog-close]="yes" cdkFocusInitial>Ok</button>
     </div></ng-template
   >
+</div> -->
 </div>

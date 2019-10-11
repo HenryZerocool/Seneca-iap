@@ -139,6 +139,12 @@ export class AdminAnnouncementsComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   constructor(private dialog: MatDialog) {}
 
+  selectedRowIndex: number = -1;
+
+  highlight(row) {
+    this.selectedRowIndex = row.id;
+  }
+
   ngOnInit() {
     this.refreshData();
     this.paginator.pageSize = 10;
