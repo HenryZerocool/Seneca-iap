@@ -14,13 +14,8 @@
   width: 90vw;
 }
 
-<<<<<<< HEAD
 ::ng-deep .mat-tab-group {
   width: 75%;
-=======
-::ng-deep .mat-horizontal-stepper-header-container {
-  width: 60vw;
->>>>>>> 531e713dd0e941df548dab714d6561aec24387ee
   margin: auto;
 }
 

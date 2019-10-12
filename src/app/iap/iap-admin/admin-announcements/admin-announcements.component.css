@@ -65,13 +65,6 @@ table {
   height: 45px;
 }
 
-/* .preview {
-  border-radius: 25px;
-  color: #0099ff;
-  width: 165px;
-  height: 45px;
-} */
-
 button.mat-stroked-button.mat-button-base:hover {
   background: #da291c;
   color: white;
@@ -81,35 +74,22 @@ button.mat-stroked-button.mat-button-base:hover {
   margin-right: 10px;
 }
 
-/* .mat-row:hover {
-  background: #da291c;
-  opacity: 1;
-} */
-
-/* .highlight {
-  background-color: #42a948; /* green */
-
-.mat-table tr:hover {
+tr.mat-row.ng-star-inserted:hover {
   background: #da291c;
   color: white;
   opacity: 1;
-}
-
-.mat-table tr {
-  color: inherit;
+  cursor: pointer;
 }
 
 .active {
-  color: #0099ff;
+  font-weight: bold;
+  color: #0099ff !important;
 }
 
 .closed {
-  font: Semibold 16px/22px Open Sans;
+  font-weight: bold;
   letter-spacing: 0;
-  color: red;
   opacity: 1;
-  color: white;
-  cursor: pointer;
 }
 
 .mat-row:active {
