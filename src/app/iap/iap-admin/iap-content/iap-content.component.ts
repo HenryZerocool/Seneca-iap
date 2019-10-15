@@ -31,9 +31,12 @@ export class IapContentComponent implements OnInit {
     ];
   }
   ngOnInit(): void {
+    console.log(this.navLinks.indexOf('./announcements'));
+    console.log(this.router.url);
     this.router.events.subscribe(res => {
       this.activeLinkIndex = this.navLinks.indexOf(
         this.navLinks.find(tab => tab.link === '.' + this.router.url)
+        // this.navLinks.find(tab => console.log(tab))
       );
     });
   }

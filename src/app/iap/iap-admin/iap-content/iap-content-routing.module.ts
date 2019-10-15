@@ -4,22 +4,27 @@ import { AdminAnnouncementsComponent } from '../admin-announcements/admin-announ
 import { AdminNewsfeedComponent } from '../admin-newsfeed/admin-newsfeed.component';
 import { AdminResourcesComponent } from '../admin-resources/admin-resources.component';
 
-const contentRoutes: Routes = [
+export const contentRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'announcements',
-    pathMatch: 'full'
+    // redirectTo: 'announcements',
+    // outlet: 'content',
+    component: AdminAnnouncementsComponent
+    // pathMatch: 'full'
   },
   {
     path: 'announcements',
+    // outlet: 'content',
     component: AdminAnnouncementsComponent
   },
   {
     path: 'newsfeed',
+    // outlet: 'content',
     component: AdminNewsfeedComponent
   },
   {
     path: 'resources',
+    // outlet: 'content',
     component: AdminResourcesComponent
   }
 ];

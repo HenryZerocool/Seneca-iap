@@ -28,13 +28,13 @@ import { IapContentRoutingModule } from './iap-content-routing.module';
 
 // import { IapComponent } from './iap/iap.component';
 // import { IapAdminComponent } from './iap/iap-admin/iap-admin.component';
-// import { HeaderComponent } from '../header/header.component';
+import { HeaderComponent } from '../header/header.component';
 
 import { AdminNewsfeedComponent } from '../admin-newsfeed/admin-newsfeed.component';
 import { AdminResourcesComponent } from '../admin-resources/admin-resources.component';
 import { AdminAnnouncementsComponent } from '../admin-announcements/admin-announcements.component';
 import { CommonModule } from '@angular/common';
-import { ContentAnComponent } from './content-an/content-an.component';
+// import { ContentAnComponent } from './content-an/content-an.component';
 
 @NgModule({
   declarations: [
@@ -42,36 +42,42 @@ import { ContentAnComponent } from './content-an/content-an.component';
     // IapContentComponent,
     // IapComponent,
     // IapAdminComponent,
-    // HeaderComponent,
+    HeaderComponent,
     // IapContentComponent,
-    // AdminNewsfeedComponent,
-    // AdminResourcesComponent,
-    // AdminAnnouncementsComponent,
-    ContentAnComponent
+    AdminNewsfeedComponent,
+    AdminResourcesComponent,
+    AdminAnnouncementsComponent
+    // ContentAnComponent
   ],
   imports: [
     CommonModule,
-    // BrowserModule,
-    // FormsModule,
-    IapContentRoutingModule
+    BrowserModule,
+    FormsModule,
+    IapContentRoutingModule,
     // // Material
-    // BrowserAnimationsModule,
-    // MatSidenavModule,
-    // MatButtonModule,
-    // MatCardModule,
-    // MatIconModule,
-    // MatMenuModule,
-    // MatDialogModule,
-    // MatToolbarModule,
-    // MatPaginatorModule,
-    // MatTabsModule,
-    // MatStepperModule,
-    // MatCardModule,
-    // MatSortModule,
-    // MatInputModule,
-    // MatAutocompleteModule,
-    // MatTableModule
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatToolbarModule,
+    MatPaginatorModule,
+    MatTabsModule,
+    MatStepperModule,
+    MatCardModule,
+    MatSortModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatTableModule
     // Ngrx
+  ],
+  exports: [
+    AdminNewsfeedComponent,
+    AdminResourcesComponent,
+    AdminAnnouncementsComponent,
+    HeaderComponent
   ]
   //   providers: []
   //   bootstrap: [IapContentComponent]

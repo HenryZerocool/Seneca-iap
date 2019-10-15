@@ -52,7 +52,7 @@
   <a
     mat-tab-link
     *ngFor="let link of navLinks"
-    [routerLink]="link.path"
+    [routerLink]="link.link"
     routerLinkActive
     #rla="routerLinkActive"
     [active]="rla.isActive"

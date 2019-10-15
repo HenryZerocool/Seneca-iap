@@ -54,12 +54,12 @@ import { AdminAnnouncementsComponent } from './iap/iap-admin/admin-announcements
     WeatherComponent,
     IapComponent,
     IapAdminComponent,
-    HeaderComponent,
+    // HeaderComponent,
     IapContentComponent,
-    IapHomeComponent,
-    AdminNewsfeedComponent,
-    AdminResourcesComponent,
-    AdminAnnouncementsComponent
+    IapHomeComponent
+    // AdminNewsfeedComponent,
+    // AdminResourcesComponent,
+    // AdminAnnouncementsComponent
   ],
   imports: [
     BrowserModule,
