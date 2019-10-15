@@ -29,6 +29,7 @@ import {
 // import {  } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
+import { IapContentModule } from './iap/iap-admin/iap-content/iap-content.module';
 import { AppComponent } from './app.component';
 import { ZipcodeEntryComponent } from './zipcode-entry/zipcode-entry.component';
 import { CurrentConditionsComponent } from './current-conditions/current-conditions.component';
@@ -63,6 +64,7 @@ import { AdminAnnouncementsComponent } from './iap/iap-admin/admin-announcements
   imports: [
     BrowserModule,
     AppRoutingModule,
+    IapContentModule,
     FormsModule,
     // Material
     BrowserAnimationsModule,

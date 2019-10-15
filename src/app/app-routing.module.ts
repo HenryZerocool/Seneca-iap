@@ -7,7 +7,8 @@ import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
 const routes: Routes = [
   {
     path: '',
-    component: IapHomeComponent
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
     path: 'home',

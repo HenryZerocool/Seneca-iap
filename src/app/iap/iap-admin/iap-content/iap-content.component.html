@@ -1,3 +1,4 @@
+<p>iap-content works</p>
 <app-header></app-header>
 <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
   {{ !isLinear ? 'Enable linear mode' : 'Disable linear mode' }}
@@ -24,8 +25,9 @@
 </mat-horizontal-stepper> -->
 <!-- <app-header></app-header> -->
 
-<div class="admin-page-container">
-  <mat-tab-group mat-stretch-tabs color="warn">
+<!-- Tabs without routes -->
+<!-- <div class="admin-page-container">
+  <mat-tab-group mat-stretch-tabs color="primary">
     <mat-tab label="Announcements">
       <ng-template matTabContent>
         <app-admin-announcements></app-admin-announcements>
@@ -43,4 +45,23 @@
       </ng-template>
     </mat-tab>
   </mat-tab-group>
-</div>
+</div> -->
+
+<!-- Tabs with nav routes -->
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.path"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+  >
+    {{ link.label }}
+  </a>
+</nav>
+
+<router-outlet></router-outlet>
+<!-- <app-admin-announcements></app-admin-announcements> -->
+<!-- <app-admin-newsfeed></app-admin-newsfeed> -->
+<!-- <app-content-an></app-content-an> -->
