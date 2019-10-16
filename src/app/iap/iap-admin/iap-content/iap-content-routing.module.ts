@@ -1,3 +1,4 @@
+import { AdminAnnouncementComponent } from './admin-announcements/admin-announcement/admin-announcement.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminAnnouncementsComponent } from './admin-announcements/admin-announcements.component';
@@ -17,8 +18,17 @@ export const contentRoutes: Routes = [
       },
       {
         path: 'announcements',
-        component: AdminAnnouncementsComponent
+        // component: AdminAnnouncementsComponent,
+        children: [
+          { path: '', component: AdminAnnouncementsComponent },
+          { path: 'new', component: AdminAnnouncementComponent }
+        ]
       },
+      {
+        path: 'new',
+        component: AdminAnnouncementComponent
+      },
+
       {
         path: 'newsfeed',
         component: AdminNewsfeedComponent
