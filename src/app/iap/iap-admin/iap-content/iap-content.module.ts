@@ -28,9 +28,9 @@ import { IapContentRoutingModule } from './iap-content-routing.module';
 
 import { HeaderComponent } from '../header/header.component';
 
-import { AdminNewsfeedComponent } from '../admin-newsfeed/admin-newsfeed.component';
-import { AdminResourcesComponent } from '../admin-resources/admin-resources.component';
-import { AdminAnnouncementsComponent } from '../admin-announcements/admin-announcements.component';
+import { AdminNewsfeedComponent } from './admin-newsfeed/admin-newsfeed.component';
+import { AdminResourcesComponent } from './admin-resources/admin-resources.component';
+import { AdminAnnouncementsComponent } from './admin-announcements/admin-announcements.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({

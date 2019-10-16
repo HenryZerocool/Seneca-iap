@@ -42,10 +42,6 @@ import { IapAdminComponent } from './iap/iap-admin/iap-admin.component';
 import { HeaderComponent } from './iap/iap-admin/header/header.component';
 import { IapContentComponent } from './iap/iap-admin/iap-content/iap-content.component';
 import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
-import { AdminNewsfeedComponent } from './iap/iap-admin/admin-newsfeed/admin-newsfeed.component';
-import { AdminResourcesComponent } from './iap/iap-admin/admin-resources/admin-resources.component';
-import { AdminAnnouncementsComponent } from './iap/iap-admin/admin-announcements/admin-announcements.component';
-import { AdminAnnouncementComponent } from './iap/iap-admin/admin-announcements/admin-announcement/admin-announcement.component';
 
 @NgModule({
   declarations: [
@@ -57,11 +53,7 @@ import { AdminAnnouncementComponent } from './iap/iap-admin/admin-announcements/
     IapAdminComponent,
     // HeaderComponent,
     IapContentComponent,
-    IapHomeComponent,
-    AdminAnnouncementComponent
-    // AdminNewsfeedComponent,
-    // AdminResourcesComponent,
-    // AdminAnnouncementsComponent
+    IapHomeComponent
   ],
   imports: [
     BrowserModule,
