@@ -31,6 +31,7 @@ import { HeaderComponent } from '../header/header.component';
 import { AdminNewsfeedComponent } from './admin-newsfeed/admin-newsfeed.component';
 import { AdminResourcesComponent } from './admin-resources/admin-resources.component';
 import { AdminAnnouncementsComponent } from './admin-announcements/admin-announcements.component';
+import { AdminAnnouncementComponent } from './admin-announcements/admin-announcement/admin-announcement.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     AdminNewsfeedComponent,
     AdminResourcesComponent,
-    AdminAnnouncementsComponent
+    AdminAnnouncementsComponent,
+    AdminAnnouncementComponent
   ],
   imports: [
     CommonModule,
@@ -68,6 +70,7 @@ import { CommonModule } from '@angular/common';
     AdminNewsfeedComponent,
     AdminResourcesComponent,
     AdminAnnouncementsComponent,
+    AdminAnnouncementComponent,
     HeaderComponent
   ],
   //   providers: []
