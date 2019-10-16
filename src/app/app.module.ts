@@ -51,7 +51,7 @@ import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
     WeatherComponent,
     IapComponent,
     IapAdminComponent,
-    // HeaderComponent,
+    HeaderComponent,
     IapContentComponent,
     IapHomeComponent
   ],

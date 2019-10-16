@@ -117,11 +117,12 @@ let ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-admin-announcements',
-  templateUrl: './admin-announcements.component.html',
-  styleUrls: ['./admin-announcements.component.css']
+  selector: 'app-admin-newsfeeds',
+  templateUrl: './admin-newsfeeds.component.html',
+  styleUrls: ['../admin-announcements/admin-announcements.component.css']
+  // styleUrls: ['./admin-newsfeeds.component.css']
 })
-export class AdminAnnouncementsComponent implements OnInit {
+export class AdminNewsfeedsComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
@@ -138,13 +139,6 @@ export class AdminAnnouncementsComponent implements OnInit {
   ];
   dataSource: MatTableDataSource<any>;
   constructor(private dialog: MatDialog) {}
-
-  // selectedRowIndex: number = -1;
-
-  // highlight(row) {
-  //   this.selectedRowIndex = row.id;
-  // }
-
   ngOnInit() {
     this.refreshData();
     this.paginator.pageSize = 10;
@@ -163,17 +157,5 @@ export class AdminAnnouncementsComponent implements OnInit {
   deletePost(id: number) {
     ELEMENT_DATA = ELEMENT_DATA.filter(data => data.id !== id);
     this.refreshData();
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(this.PostEditBox, {
-      width: '90vw'
-      // data: {name: this.name, animal: this.animal}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // this.animal = result;
-    });
   }
 }
