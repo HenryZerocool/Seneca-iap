@@ -1,0 +1,108 @@
+.admin-announcement-container {
+  padding: 2.5vw;
+  background: #fafafa 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.main-container {
+  padding: unset;
+}
+
+.mat-card-title {
+  display: block;
+  background-color: #da291c;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+  color: #ffffff;
+  padding-top: 6px;
+  margin: unset;
+  margin-left: 50px;
+  padding: 8px;
+}
+
+.search-bar {
+  width: 382px;
+  font-size: 20px;
+}
+
+::ng-deep .mat-form-field-infix {
+  border-top: 0.1em solid transparent;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-suffix {
+  top: 0.5em !important;
+}
+
+.actions-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-actions {
+  display: flex;
+  margin: 5vh 0 2vh;
+  padding: unset;
+  justify-content: space-between;
+}
+
+.mat-card-content {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-header-cell,
+.mat-cell {
+  flex: auto;
+}
+
+.is-rounded {
+  border-radius: 25px;
+  width: 165px;
+  height: 45px;
+}
+
+button.mat-stroked-button.mat-button-base:hover {
+  background: #da291c;
+  color: white;
+}
+
+::ng-deep .mat-card-actions mat-icon {
+  margin-right: 10px;
+}
+
+tr.mat-row.ng-star-inserted:hover {
+  background: #da291c;
+  color: white;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.active {
+  font-weight: bold;
+  color: #0099ff !important;
+}
+
+.closed {
+  font-weight: bold;
+  letter-spacing: 0;
+  opacity: 1;
+}
+
+.mat-row:active {
+  text-decoration: underline;
+}
+
+td.mat-cell {
+  color: inherit;
+}
+
+.small-fields-container {
+  justify-content: space-between;
+}

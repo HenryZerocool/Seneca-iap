@@ -1,1 +1,35 @@
-<p>admin-announcement works!</p>
+<div class="admin-announcement-container">
+  <mat-card class="main-container">
+    <mat-card-title>
+      <p class="card-title">ANNOUNCEMENT</p>
+    </mat-card-title>
+
+    <div class="small-fields-container">
+      <mat-form-field>
+        <input matInput placeholder="Priority" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Title" />
+      </mat-form-field>
+    </div>
+
+    <div class="actions-box">
+      <mat-card-actions>
+        <button class="is-rounded" color="accent" mat-stroked-button>
+          <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
+        </button>
+
+        <button mat-stroked-button class="is-rounded" color="accent">
+          <span>Save</span>
+        </button>
+
+        <button mat-stroked-button class="is-rounded" color="accent">
+          <span>Save</span>
+        </button>
+      </mat-card-actions>
+    </div>
+
+    <mat-card-content class="mat-elevation-z8"> </mat-card-content>
+  </mat-card>
+</div>
