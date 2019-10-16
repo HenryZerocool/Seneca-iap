@@ -3,29 +3,31 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminAnnouncementsComponent } from '../admin-announcements/admin-announcements.component';
 import { AdminNewsfeedComponent } from '../admin-newsfeed/admin-newsfeed.component';
 import { AdminResourcesComponent } from '../admin-resources/admin-resources.component';
+import { IapContentComponent } from './iap-content.component';
 
 export const contentRoutes: Routes = [
   {
     path: '',
-    // redirectTo: 'announcements',
-    // outlet: 'content',
-    component: AdminAnnouncementsComponent
-    // pathMatch: 'full'
-  },
-  {
-    path: 'announcements',
-    // outlet: 'content',
-    component: AdminAnnouncementsComponent
-  },
-  {
-    path: 'newsfeed',
-    // outlet: 'content',
-    component: AdminNewsfeedComponent
-  },
-  {
-    path: 'resources',
-    // outlet: 'content',
-    component: AdminResourcesComponent
+    component: IapContentComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'announcements',
+        pathMatch: 'full'
+      },
+      {
+        path: 'announcements',
+        component: AdminAnnouncementsComponent
+      },
+      {
+        path: 'newsfeed',
+        component: AdminNewsfeedComponent
+      },
+      {
+        path: 'resources',
+        component: AdminResourcesComponent
+      }
+    ]
   }
 ];
 

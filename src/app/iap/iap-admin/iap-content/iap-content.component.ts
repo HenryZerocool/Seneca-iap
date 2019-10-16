@@ -14,29 +14,26 @@ export class IapContentComponent implements OnInit {
   constructor(private router: Router) {
     this.navLinks = [
       {
-        label: 'announcements',
+        label: 'Announcements',
         link: './announcements',
         index: 0
       },
       {
-        label: 'newsfeed',
+        label: 'Newsfeed',
         link: './newsfeed',
         index: 1
       },
       {
-        label: 'resources',
+        label: 'Resources',
         link: './resources',
         index: 2
       }
     ];
   }
   ngOnInit(): void {
-    console.log(this.navLinks.indexOf('./announcements'));
-    console.log(this.router.url);
     this.router.events.subscribe(res => {
       this.activeLinkIndex = this.navLinks.indexOf(
         this.navLinks.find(tab => tab.link === '.' + this.router.url)
-        // this.navLinks.find(tab => console.log(tab))
       );
     });
   }

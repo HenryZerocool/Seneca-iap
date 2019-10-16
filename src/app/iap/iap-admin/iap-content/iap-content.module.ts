@@ -26,35 +26,26 @@ import {
 import { IapContentComponent } from './iap-content.component';
 import { IapContentRoutingModule } from './iap-content-routing.module';
 
-// import { IapComponent } from './iap/iap.component';
-// import { IapAdminComponent } from './iap/iap-admin/iap-admin.component';
 import { HeaderComponent } from '../header/header.component';
 
 import { AdminNewsfeedComponent } from '../admin-newsfeed/admin-newsfeed.component';
 import { AdminResourcesComponent } from '../admin-resources/admin-resources.component';
 import { AdminAnnouncementsComponent } from '../admin-announcements/admin-announcements.component';
 import { CommonModule } from '@angular/common';
-// import { ContentAnComponent } from './content-an/content-an.component';
 
 @NgModule({
   declarations: [
-    // CommonModule,
-    // IapContentComponent,
-    // IapComponent,
-    // IapAdminComponent,
     HeaderComponent,
-    // IapContentComponent,
     AdminNewsfeedComponent,
     AdminResourcesComponent,
     AdminAnnouncementsComponent
-    // ContentAnComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     IapContentRoutingModule,
-    // // Material
+    // Material
     BrowserAnimationsModule,
     MatSidenavModule,
     MatButtonModule,
@@ -78,8 +69,8 @@ import { CommonModule } from '@angular/common';
     AdminResourcesComponent,
     AdminAnnouncementsComponent,
     HeaderComponent
-  ]
+  ],
   //   providers: []
-  //   bootstrap: [IapContentComponent]
+  bootstrap: [IapContentComponent]
 })
 export class IapContentModule {}

@@ -39,7 +39,7 @@
 
 .mat-card-actions {
   display: flex;
-  margin: 5vh 0 3vh;
+  margin: 5vh 0 2vh;
   padding: unset;
   justify-content: space-between;
 }
