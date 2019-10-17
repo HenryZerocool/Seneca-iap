@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AdminNewsfeedsService } from '../admin-newsfeeds.service';
 
 @Component({
   selector: 'app-admin-newsfeed',
@@ -8,10 +9,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AdminNewsfeedComponent implements OnInit {
   id: number;
-  constructor(private activeRoute: ActivatedRoute) {}
+  data;
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private service: AdminNewsfeedsService
+  ) {}
 
   ngOnInit() {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'));
     this.id = isNaN(activeId) ? 0 : activeId;
+    this.data = this.service.getNewsFeed(this.id)[0];
+    console.log(this.data);
   }
 }

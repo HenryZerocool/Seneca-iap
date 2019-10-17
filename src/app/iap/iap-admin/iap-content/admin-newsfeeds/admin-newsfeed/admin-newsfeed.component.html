@@ -1,2 +1,3 @@
 <p>admin-newsfeed works!</p>
-<p>id selected {{ id }}</p>
+<p>detail of {{ id }}</p>
+<p *ngIf="id != 0">{{ data.title }} and {{ data.status }}</p>
