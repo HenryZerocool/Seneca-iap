@@ -12,6 +12,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA
 } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 export interface PeriodicElement {
   id: number;
@@ -138,7 +139,7 @@ export class AdminNewsfeedsComponent implements OnInit {
     'Delete'
   ];
   dataSource: MatTableDataSource<any>;
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private route: Router) {}
   ngOnInit() {
     this.refreshData();
     this.paginator.pageSize = 10;
@@ -158,4 +159,9 @@ export class AdminNewsfeedsComponent implements OnInit {
     ELEMENT_DATA = ELEMENT_DATA.filter(data => data.id !== id);
     this.refreshData();
   }
+
+  // using HTML is better @_@
+  // editRow(id: number) {
+  //   this.route.navigateByUrl(`/newsfeed/${id}`);
+  // }
 }

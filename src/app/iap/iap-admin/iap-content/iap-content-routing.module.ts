@@ -35,6 +35,10 @@ export const contentRoutes: Routes = [
           {
             path: 'new',
             component: AdminNewsfeedComponent
+          },
+          {
+            path: ':id',
+            component: AdminNewsfeedComponent
           }
         ]
       },
