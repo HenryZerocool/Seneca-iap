@@ -2,9 +2,10 @@ import { AdminAnnouncementComponent } from './admin-announcements/admin-announce
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminAnnouncementsComponent } from './admin-announcements/admin-announcements.component';
-import { AdminNewsfeedComponent } from './admin-newsfeed/admin-newsfeed.component';
+import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.component';
 import { AdminResourcesComponent } from './admin-resources/admin-resources.component';
 import { IapContentComponent } from './iap-content.component';
+import { AdminNewsfeedComponent } from './admin-newsfeeds/admin-newsfeed/admin-newsfeed.component';
 
 export const contentRoutes: Routes = [
   {
@@ -25,13 +26,21 @@ export const contentRoutes: Routes = [
         ]
       },
       {
-        path: 'new',
-        component: AdminAnnouncementComponent
-      },
-
-      {
         path: 'newsfeed',
-        component: AdminNewsfeedComponent
+        children: [
+          {
+            path: '',
+            component: AdminNewsfeedsComponent
+          },
+          {
+            path: 'new',
+            component: AdminNewsfeedComponent
+          },
+          {
+            path: ':id',
+            component: AdminNewsfeedComponent
+          }
+        ]
       },
       {
         path: 'resources',

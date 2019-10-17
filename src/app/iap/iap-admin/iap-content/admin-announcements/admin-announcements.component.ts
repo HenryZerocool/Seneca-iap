@@ -138,13 +138,6 @@ export class AdminAnnouncementsComponent implements OnInit {
   ];
   dataSource: MatTableDataSource<any>;
   constructor(private dialog: MatDialog) {}
-
-  // selectedRowIndex: number = -1;
-
-  // highlight(row) {
-  //   this.selectedRowIndex = row.id;
-  // }
-
   ngOnInit() {
     this.refreshData();
     this.paginator.pageSize = 10;
@@ -163,17 +156,5 @@ export class AdminAnnouncementsComponent implements OnInit {
   deletePost(id: number) {
     ELEMENT_DATA = ELEMENT_DATA.filter(data => data.id !== id);
     this.refreshData();
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(this.PostEditBox, {
-      width: '90vw'
-      // data: {name: this.name, animal: this.animal}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // this.animal = result;
-    });
   }
 }

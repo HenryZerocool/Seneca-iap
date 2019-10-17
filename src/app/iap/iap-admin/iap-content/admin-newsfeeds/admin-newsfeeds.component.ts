@@ -12,6 +12,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA
 } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 export interface PeriodicElement {
   id: number;
@@ -117,11 +118,12 @@ let ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-admin-announcements',
-  templateUrl: './admin-announcements.component.html',
-  styleUrls: ['./admin-announcements.component.css']
+  selector: 'app-admin-newsfeeds',
+  templateUrl: './admin-newsfeeds.component.html',
+  styleUrls: ['../admin-announcements/admin-announcements.component.css']
+  // styleUrls: ['./admin-newsfeeds.component.css']
 })
-export class AdminAnnouncementsComponent implements OnInit {
+export class AdminNewsfeedsComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
@@ -137,14 +139,7 @@ export class AdminAnnouncementsComponent implements OnInit {
     'Delete'
   ];
   dataSource: MatTableDataSource<any>;
-  constructor(private dialog: MatDialog) {}
-
-  // selectedRowIndex: number = -1;
-
-  // highlight(row) {
-  //   this.selectedRowIndex = row.id;
-  // }
-
+  constructor(private dialog: MatDialog, private route: Router) {}
   ngOnInit() {
     this.refreshData();
     this.paginator.pageSize = 10;
@@ -165,15 +160,8 @@ export class AdminAnnouncementsComponent implements OnInit {
     this.refreshData();
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(this.PostEditBox, {
-      width: '90vw'
-      // data: {name: this.name, animal: this.animal}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // this.animal = result;
-    });
-  }
+  // using HTML is better @_@
+  // editRow(id: number) {
+  //   this.route.navigateByUrl(`/newsfeed/${id}`);
+  // }
 }

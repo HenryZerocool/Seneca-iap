@@ -29,21 +29,20 @@ import {
 import { IapContentComponent } from './iap-content.component';
 import { IapContentRoutingModule } from './iap-content-routing.module';
 
-import { HeaderComponent } from '../header/header.component';
-
-import { AdminNewsfeedComponent } from './admin-newsfeed/admin-newsfeed.component';
+import { AdminNewsfeedComponent } from './admin-newsfeeds/admin-newsfeed/admin-newsfeed.component';
 import { AdminResourcesComponent } from './admin-resources/admin-resources.component';
 import { AdminAnnouncementsComponent } from './admin-announcements/admin-announcements.component';
 import { AdminAnnouncementComponent } from './admin-announcements/admin-announcement/admin-announcement.component';
 import { CommonModule } from '@angular/common';
+import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
     AdminNewsfeedComponent,
     AdminResourcesComponent,
     AdminAnnouncementsComponent,
-    AdminAnnouncementComponent
+    AdminAnnouncementComponent,
+    AdminNewsfeedsComponent
   ],
   imports: [
     CommonModule,
@@ -78,7 +77,7 @@ import { CommonModule } from '@angular/common';
     AdminResourcesComponent,
     AdminAnnouncementsComponent,
     AdminAnnouncementComponent,
-    HeaderComponent
+    AdminNewsfeedsComponent
   ],
   //   providers: []
   bootstrap: [IapContentComponent]
