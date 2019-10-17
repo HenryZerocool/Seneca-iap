@@ -10,6 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CurrentConditionsEffects } from './effects/current-conditions.effects';
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {
   MatToolbarModule,
   MatTableModule,
@@ -24,7 +25,9 @@ import {
   MatDialogModule,
   MatSortModule,
   MatPaginatorModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 // import {  } from '@angular/material/tabs';
 
@@ -77,6 +80,8 @@ import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
     MatInputModule,
     MatAutocompleteModule,
     MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     // Ngrx
     StoreModule.forRoot(reducers, {
       metaReducers,

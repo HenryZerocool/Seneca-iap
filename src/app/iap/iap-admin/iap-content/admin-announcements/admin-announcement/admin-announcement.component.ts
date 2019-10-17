@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-admin-announcement',
   templateUrl: './admin-announcement.component.html',
   styleUrls: ['./admin-announcement.component.css']
 })
 export class AdminAnnouncementComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

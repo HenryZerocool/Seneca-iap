@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 // ngrx
 
@@ -19,7 +19,10 @@ import {
   MatDialogModule,
   MatSortModule,
   MatPaginatorModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 // import {  } from '@angular/material/tabs';
 
@@ -46,6 +49,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     IapContentRoutingModule,
     // Material
     BrowserAnimationsModule,
@@ -63,7 +67,10 @@ import { CommonModule } from '@angular/common';
     MatSortModule,
     MatInputModule,
     MatAutocompleteModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
     // Ngrx
   ],
   exports: [

@@ -4,14 +4,61 @@
       <p class="card-title">ANNOUNCEMENT</p>
     </mat-card-title>
 
-    <div class="small-fields-container">
-      <mat-form-field>
-        <input matInput placeholder="Priority" />
-      </mat-form-field>
+    <div class="container">
+      <form class="course-container">
+        <div class="course-sub-container">
+          <div class="small-fields-container">
+            <mat-form-field>
+              <input matInput placeholder="Priority" />
+            </mat-form-field>
+          </div>
+          <div class="small-fields-container">
+            <mat-form-field>
+              <input matInput placeholder="Title *" />
+            </mat-form-field>
+          </div>
 
-      <mat-form-field>
-        <input matInput placeholder="Title" />
-      </mat-form-field>
+          <div class="small-fields-container">
+            <mat-form-field>
+              <mat-select matInput placeholder="Status *">
+                <ng-container>
+                  <mat-option value="active">Active</mat-option>
+                  <mat-option value="closed">Closed</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="small-fields-container">
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="fromPicker"
+                placeholder="Publish FROM *"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="fromPicker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #fromPicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="small-fields-container">
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="toPicker"
+                placeholder="Publish TO *"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="toPicker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #toPicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
     </div>
 
     <div class="actions-box">
