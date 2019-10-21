@@ -26,93 +26,30 @@ export interface PeriodicElement {
 let ELEMENT_DATA: PeriodicElement[] = [
   {
     priority: 1,
-    title: 'Hydrogen',
-    status: 'active',
+    title: 'Career Connect Is Here',
+    status: 'Active',
+    publishFrom: 'Sep 30, 2019',
+    publishTo: 'Oct 31, 2019',
     lastModifier: 'Shirley Mangallon',
-    publishFrom: '09/12/2018',
-    publishTo: '10/30/2019',
     id: 1
   },
   {
     priority: 2,
-    title: 'Helium This is a very long title loseimgs covpoiewnf qivjciv d',
-    status: 'closed',
-    lastModifier: 'He',
+    title: 'May 2020 Intake Opens Aug. 26th',
+    status: 'Active',
     publishFrom: '10/12/2018',
     publishTo: '10/30/2019',
+    lastModifier: 'Shirley Mangallon',
     id: 2
   },
   {
-    priority: 3,
-    title: 'Lithium',
-    status: 'active',
-    lastModifier: 'Li',
-    publishFrom: '10/12/2018',
-    publishTo: '10/30/2019',
-    id: 3
-  },
-  {
-    priority: 4,
-    title: 'Beryllium',
-    status: 'closed',
-    lastModifier: 'Be',
-    publishFrom: '10/12/2018',
-    publishTo: '10/30/2019',
-    id: 4
-  },
-  {
-    priority: 5,
-    title: 'Boron',
-    status: 'active',
-    lastModifier: 'B',
-    publishFrom: '10/12/2018',
-    publishTo: '10/30/2019',
-    id: 5
-  },
-  {
-    priority: 6,
-    title: 'Carbon',
-    status: 'closed',
-    lastModifier: 'C',
-    publishFrom: '10/12/2018',
-    publishTo: '10/30/2019',
-    id: 6
-  },
-  {
-    priority: 7,
-    title: 'Nitrogen',
-    status: 'active',
-    lastModifier: 'N',
-    publishFrom: '10/12/2018',
-    publishTo: '10/30/2019',
-    id: 7
-  },
-  {
-    priority: 8,
-    title: 'Oxygen',
-    status: 'closed',
-    lastModifier: 'O',
-    publishFrom: '10/12/2018',
-    publishTo: '10/30/2019',
-    id: 8
-  },
-  {
-    priority: 9,
-    title: 'Fluorine',
-    status: 'active',
-    lastModifier: 'F',
-    publishFrom: '10/12/2018',
-    publishTo: '10/30/2019',
-    id: 9
-  },
-  {
     priority: 10,
-    title: 'Neon',
-    status: 'closed',
-    lastModifier: 'Ne',
+    title: 'All Programs Are Now Closed For January 2019',
+    status: 'Closed',
     publishFrom: '10/12/2018',
     publishTo: '10/30/2019',
-    id: 10
+    lastModifier: 'Shirley Mangallon',
+    id: 3
   }
 ];
 

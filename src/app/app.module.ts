@@ -50,7 +50,7 @@ import { IapHomeComponent } from "./iap/iap-admin/iap-home/iap-home.component";
     AppRoutingModule,
     IapContentModule,
     FormsModule,
-    QuillModule,
+    QuillModule.forRoot(),
     HttpClientModule,
     HttpModule,
     // Material

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AdminNewsfeedsService } from '../admin-newsfeeds.service';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl
+} from '@angular/forms';
 
 @Component({
   selector: 'app-admin-newsfeed',
@@ -13,6 +19,8 @@ import { AdminNewsfeedsService } from '../admin-newsfeeds.service';
 export class AdminNewsfeedComponent implements OnInit {
   id: number;
   data;
+
+  editorForm: FormGroup;
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -32,5 +40,9 @@ export class AdminNewsfeedComponent implements OnInit {
     } else {
       this.id = 0;
     }
+
+    this.editorForm = new FormGroup({
+      editor: new FormControl(null)
+    });
   }
 }
