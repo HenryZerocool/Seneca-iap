@@ -1,13 +1,2 @@
-<mat-drawer-container class="container" autosize>
-  <mat-drawer #drawer class="sidenav"><p>Menu</p> </mat-drawer>
-
-  <div class="sidenav-content">
-    <button mat-icon-button (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </div>
-  <h1>This is new feature</h1>
-  <h2>new feature updated</h2>
-  <app-zipcode-entry></app-zipcode-entry>
-  <app-current-conditions></app-current-conditions>
-</mat-drawer-container>
+<!-- <app-weather></app-weather> -->
+<router-outlet></router-outlet>

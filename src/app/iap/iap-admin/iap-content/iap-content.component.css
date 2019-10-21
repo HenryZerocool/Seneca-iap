@@ -1,0 +1,33 @@
+.admin-page-container {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mat-tab-group {
+  width: 100%;
+  margin: auto;
+}
+
+::ng-deep .mat-horizontal-content-container {
+  width: 90vw;
+}
+
+::ng-deep .mat-tab-group {
+  width: 75%;
+  margin: auto;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: #da291c;
+}
+
+::ng-deep .mat-tab-list {
+  justify-content: center;
+  display: flex;
+}
+
+::ng-deep .mat-tab-label-active {
+  font-weight: 700;
+}

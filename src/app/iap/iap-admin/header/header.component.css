@@ -1,0 +1,68 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: lightgray;
+}
+
+.navigation-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mat-toolbar {
+  border-radius: 3px;
+  background: #888b8d;
+  text-align: center;
+  font-size: 16px;
+}
+
+.mat-toolbar a {
+  flex: 1 1 100%;
+  border: 0.5px solid #d4d2d2;
+  padding: 10px;
+}
+
+.mat-toolbar a:hover {
+  background: white;
+}
+
+.active-link {
+  background: #da291c;
+}
+
+.active-link:hover {
+  background: #da291c !important;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: unset;
+  padding: unset;
+}
+
+.mat-icon {
+  display: block;
+  width: unset;
+}
+
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: #da291c;
+  color: #fff;
+}
+
+.seneca-header {
+  justify-content: space-between;
+  height: 50px;
+  background-color: #707070;
+}
+
+.seneca-header p {
+  color: #d4d2d2;
+}
