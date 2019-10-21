@@ -113,6 +113,6 @@ export class AdminNewsfeedsService {
   }
 
   getNewsFeed(id: number) {
-    return ELEMENT_DATA.filter(data => data.id == id);
+    return ELEMENT_DATA.filter(data => data.id === id);
   }
 }
