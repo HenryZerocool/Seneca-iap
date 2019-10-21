@@ -1,108 +1,23 @@
 <!-- <p>admin-newsfeed works!</p>
 <p>detail of {{ id }}</p>
 <p *ngIf="id != 0">{{ data.title }} and {{ data.status }}</p> -->
-<div *ngIf="data" class="admin-announcement-container">
+<div class="admin-announcement-container">
   <mat-card class="main-container">
     <mat-card-title>
       <p class="card-title">NEWSFEED ARTICLE</p>
     </mat-card-title>
 
     <div class="container">
-      <form class="course-container">
-        <div class="course-sub-container">
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input matInput placeholder="Priority" />
-            </mat-form-field>
-          </div>
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input matInput placeholder="Title *" [value]="data.title" />
-            </mat-form-field>
-          </div>
-
-          <div class="small-fields-container">
-            <mat-form-field>
-              <mat-select matInput placeholder="Status *" [value]="data.status">
-                <ng-container>
-                  <mat-option value="active">Active</mat-option>
-                  <mat-option value="closed">Closed</mat-option>
-                </ng-container>
-              </mat-select>
-            </mat-form-field>
-          </div>
-
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input
-                matInput
-                [matDatepicker]="fromPicker"
-                placeholder="Publish FROM *"
-                [value]="data.publishFrom"
-              />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="fromPicker"
-              ></mat-datepicker-toggle>
-              <mat-datepicker #fromPicker></mat-datepicker>
-            </mat-form-field>
-          </div>
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input
-                matInput
-                [matDatepicker]="toPicker"
-                placeholder="Publish TO *"
-                [value]="data.publishTo"
-              />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="toPicker"
-              ></mat-datepicker-toggle>
-              <mat-datepicker #toPicker></mat-datepicker>
-            </mat-form-field>
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <div class="actions-box">
-      <mat-card-actions>
-        <button class="is-rounded" color="accent" mat-stroked-button>
-          <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
-        </button>
-
-        <button mat-stroked-button class="is-rounded" color="accent">
-          <span>Save</span>
-        </button>
-
-        <button mat-stroked-button class="is-rounded" color="accent">
-          <span>Save</span>
-        </button>
-      </mat-card-actions>
-    </div>
-
-    <mat-card-content class="mat-elevation-z8"> </mat-card-content>
-  </mat-card>
-</div>
-
-<div *ngIf="!data" class="admin-announcement-container">
-  <mat-card class="main-container">
-    <mat-card-title>
-      <p class="card-title">NEWSFEED ARTICLE</p>
-    </mat-card-title>
-
-    <div class="container">
-      <form class="course-container">
-        <div class="course-sub-container">
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input matInput placeholder="Priority" />
-            </mat-form-field>
-          </div>
+      <form>
+        <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
               <input matInput placeholder="Title *" />
+            </mat-form-field>
+          </div>
+          <div class="small-fields-container">
+            <mat-form-field>
+              <input matInput placeholder="Headline *" />
             </mat-form-field>
           </div>
 
@@ -121,47 +36,44 @@
             <mat-form-field>
               <input
                 matInput
-                [matDatepicker]="fromPicker"
-                placeholder="Publish FROM *"
+                [matDatepicker]="picker"
+                placeholder="Publish Date *"
               />
               <mat-datepicker-toggle
                 matSuffix
-                [for]="fromPicker"
+                [for]="picker"
               ></mat-datepicker-toggle>
-              <mat-datepicker #fromPicker></mat-datepicker>
-            </mat-form-field>
-          </div>
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input
-                matInput
-                [matDatepicker]="toPicker"
-                placeholder="Publish TO *"
-              />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="toPicker"
-              ></mat-datepicker-toggle>
-              <mat-datepicker #toPicker></mat-datepicker>
+              <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
         </div>
       </form>
-    </div>
 
+      <form [formGroup]="editorForm">
+        <div class="form-group">
+          <quill-editor formControlName="editor"></quill-editor>
+        </div>
+      </form>
+    </div>
     <div class="actions-box">
       <mat-card-actions>
         <button class="is-rounded" color="accent" mat-stroked-button>
           <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
         </button>
 
-        <button mat-stroked-button class="is-rounded" color="accent">
-          <span>Save</span>
-        </button>
+        <div class="right-buttons">
+          <button mat-flat-button class="is-rounded" color="primary">
+            <span>Save</span>
+          </button>
 
-        <button mat-stroked-button class="is-rounded" color="accent">
-          <span>Save</span>
-        </button>
+          <button mat-stroked-button class="is-rounded red" color="primary">
+            <span>Cancel</span>
+          </button>
+
+          <button mat-button color="primary">
+            <mat-icon>delete</mat-icon> <span>Delete</span>
+          </button>
+        </div>
       </mat-card-actions>
     </div>
 

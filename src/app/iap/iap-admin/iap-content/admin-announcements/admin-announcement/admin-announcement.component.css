@@ -23,11 +23,6 @@
   padding: 8px;
 }
 
-.search-bar {
-  width: 382px;
-  font-size: 20px;
-}
-
 ::ng-deep .mat-form-field-infix {
   border-top: 0.1em solid transparent;
 }
@@ -43,9 +38,10 @@
 
 .mat-card-actions {
   display: flex;
-  margin: 5vh 0 2vh;
-  padding: unset;
+
   justify-content: space-between;
+  margin: 2vw 2.5vw;
+  padding-top: 25px;
 }
 
 .mat-card-content {
@@ -54,19 +50,14 @@
   opacity: 1;
 }
 
-table {
-  width: 100%;
-}
-
-.mat-header-cell,
-.mat-cell {
-  flex: auto;
-}
-
 .is-rounded {
   border-radius: 25px;
   width: 165px;
   height: 45px;
+}
+
+.red {
+  border-color: #da291c;
 }
 
 button.mat-stroked-button.mat-button-base:hover {
@@ -78,32 +69,6 @@ button.mat-stroked-button.mat-button-base:hover {
   margin-right: 10px;
 }
 
-tr.mat-row.ng-star-inserted:hover {
-  background: #da291c;
-  color: white;
-  opacity: 1;
-  cursor: pointer;
-}
-
-.active {
-  font-weight: bold;
-  color: #0099ff !important;
-}
-
-.closed {
-  font-weight: bold;
-  letter-spacing: 0;
-  opacity: 1;
-}
-
-.mat-row:active {
-  text-decoration: underline;
-}
-
-td.mat-cell {
-  color: inherit;
-}
-
 .small-fields-container {
   display: flex;
   flex: 1;
@@ -113,11 +78,7 @@ td.mat-cell {
   flex: 2;
 }
 
-.course-container {
-  display: flex;
-}
-
-.course-sub-container {
+.sub-container {
   display: flex;
   flex: 1;
   margin: 0 2vw;
@@ -129,8 +90,24 @@ td.mat-cell {
 
 .container {
   padding-top: 50px;
+  height: 300px;
 }
 
 .editor {
   width: 10px;
+}
+
+.form-group {
+  margin: 0 2vw;
+  height: 200px;
+  padding: 10px;
+  padding-top: 25px;
+}
+
+.actions-box {
+  display: flex;
+}
+
+.right-buttons {
+  justify-content: flex-end;
 }

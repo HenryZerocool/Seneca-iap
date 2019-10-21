@@ -5,8 +5,8 @@
     </mat-card-title>
 
     <div class="container">
-      <form class="course-container">
-        <div class="course-sub-container">
+      <form>
+        <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
               <input matInput placeholder="Priority" />
@@ -60,14 +60,10 @@
         </div>
       </form>
 
-      <!-- <form [formGroup]="editorForm">
+      <form [formGroup]="editorForm">
         <div class="form-group">
-          <label for="editor"> <h3>Editor</h3></label>
           <quill-editor formControlName="editor"></quill-editor>
         </div>
-      </form> -->
-      <form>
-        <label> <h3>Editor</h3></label>
       </form>
     </div>
     <div class="actions-box">
@@ -76,13 +72,19 @@
           <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
         </button>
 
-        <button mat-stroked-button class="is-rounded" color="accent">
-          <span>Save</span>
-        </button>
+        <div class="right-buttons">
+          <button mat-flat-button class="is-rounded" color="primary">
+            <span>Save</span>
+          </button>
 
-        <button mat-stroked-button class="is-rounded" color="accent">
-          <span>Save</span>
-        </button>
+          <button mat-stroked-button class="is-rounded red" color="primary">
+            <span>Cancel</span>
+          </button>
+
+          <button mat-button color="primary">
+            <mat-icon>delete</mat-icon> <span>Delete</span>
+          </button>
+        </div>
       </mat-card-actions>
     </div>
 

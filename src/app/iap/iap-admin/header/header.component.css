@@ -66,3 +66,14 @@ a:active {
 .seneca-header p {
   color: #d4d2d2;
 }
+
+.logo-left {
+  justify-content: space-evenly;
+  margin-left: 30px;
+}
+
+.text-right p {
+  color: #ffffff;
+  /* justify-content: space-evenly; */
+  margin-right: 22px;
+}
