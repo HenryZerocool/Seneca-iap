@@ -18,11 +18,10 @@ import { AdminNewsfeedsService } from './admin-newsfeeds.service';
 export interface PeriodicElement {
   id: number;
   title: string;
-  priority: number;
+  headline: string;
   status: string;
   lastModifier: string;
-  publishFrom?: string;
-  publishTo?: string;
+  publishDate?: string;
 }
 
 // let ELEMENT_DATA: PeriodicElement[] = [
@@ -131,12 +130,11 @@ export class AdminNewsfeedsComponent implements OnInit {
 
   @ViewChild('PostEditBox', { static: true }) PostEditBox: TemplateRef<any>;
   displayedColumns: string[] = [
-    'priority',
     'title',
+    'headline',
     'status',
-    'publish FROM',
-    'publish TO',
     'lastModifier',
+    'publish Date',
     'id',
     'Delete'
   ];

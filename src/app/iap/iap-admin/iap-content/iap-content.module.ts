@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { QuillModule } from 'ngx-quill';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 // ngrx
 
 // material
@@ -52,6 +53,7 @@ import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.compo
     ReactiveFormsModule,
     IapContentRoutingModule,
     QuillModule,
+    HttpClientModule,
     // Material
     BrowserAnimationsModule,
     MatSidenavModule,
