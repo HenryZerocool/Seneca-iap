@@ -130,3 +130,7 @@ td.mat-cell {
 .container {
   padding-top: 50px;
 }
+
+.editor {
+  width: 10px;
+}

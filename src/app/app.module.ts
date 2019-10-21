@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { QuillModule } from 'ngx-quill';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 // ngrx
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
@@ -63,6 +66,9 @@ import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
     AppRoutingModule,
     IapContentModule,
     FormsModule,
+    QuillModule,
+    HttpClientModule,
+    HttpModule,
     // Material
     BrowserAnimationsModule,
     MatSidenavModule,
