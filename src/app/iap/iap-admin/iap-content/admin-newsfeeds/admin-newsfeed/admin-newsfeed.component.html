@@ -1,7 +1,4 @@
-<!-- <p>admin-newsfeed works!</p>
-<p>detail of {{ id }}</p>
-<p *ngIf="id != 0">{{ data.title }} and {{ data.status }}</p> -->
-<div class="admin-announcement-container">
+<div *ngIf="data" class="admin-announcement-container">
   <mat-card class="main-container">
     <mat-card-title>
       <p class="card-title">NEWSFEED ARTICLE</p>
@@ -12,18 +9,34 @@
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput placeholder="Title *" />
+              <input
+                matInput
+                placeholder="Title"
+                (value)="(data.title)"
+                required
+                color="primary"
+              />
             </mat-form-field>
           </div>
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput placeholder="Headline *" />
+              <input
+                matInput
+                placeholder="Headline *"
+                (value)="(data.headline)"
+                required
+              />
             </mat-form-field>
           </div>
 
           <div class="small-fields-container">
             <mat-form-field>
-              <mat-select matInput placeholder="Status *">
+              <mat-select
+                matInput
+                placeholder="Status *"
+                (value)="(data.status)"
+                required
+              >
                 <ng-container>
                   <mat-option value="active">Active</mat-option>
                   <mat-option value="closed">Closed</mat-option>
@@ -38,7 +51,105 @@
                 matInput
                 [matDatepicker]="picker"
                 placeholder="Publish Date *"
-                [value]="data.publishDate"
+                (value)="(data.publishDate)"
+                required
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+
+      <form [formGroup]="editorForm">
+        <div class="form-group">
+          <quill-editor formControlName="editor"></quill-editor>
+        </div>
+      </form>
+    </div>
+    <div class="actions-box">
+      <mat-card-actions>
+        <button class="is-rounded" color="accent" mat-stroked-button>
+          <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
+        </button>
+
+        <div class="right-buttons">
+          <button mat-flat-button class="is-rounded" color="primary">
+            <span>Save</span>
+          </button>
+
+          <button mat-stroked-button class="is-rounded red" color="primary">
+            <span>Cancel</span>
+          </button>
+
+          <button mat-button color="primary">
+            <mat-icon>delete</mat-icon> <span>Delete</span>
+          </button>
+        </div>
+      </mat-card-actions>
+    </div>
+
+    <mat-card-content class="mat-elevation-z8"> </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="!data" class="admin-announcement-container">
+  <mat-card class="main-container">
+    <mat-card-title>
+      <p class="card-title">NEWSFEED ARTICLE</p>
+    </mat-card-title>
+
+    <div class="container">
+      <form>
+        <div class="sub-container">
+          <div class="small-fields-container">
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Title"
+                (value)="(data.title)"
+                required
+                color="primary"
+              />
+            </mat-form-field>
+          </div>
+          <div class="small-fields-container">
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Headline *"
+                (value)="(data.headline)"
+                required
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="small-fields-container">
+            <mat-form-field>
+              <mat-select
+                matInput
+                placeholder="Status *"
+                (value)="(data.status)"
+                required
+              >
+                <ng-container>
+                  <mat-option value="active">Active</mat-option>
+                  <mat-option value="closed">Closed</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="small-fields-container">
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="Publish Date *"
+                (value)="(data.publishDate)"
+                required
               />
               <mat-datepicker-toggle
                 matSuffix

@@ -1,17 +1,6 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  Inject,
-  TemplateRef
-} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA
-} from '@angular/material/dialog';
 
 export interface PeriodicElement {
   id: number;
@@ -61,8 +50,6 @@ let ELEMENT_DATA: PeriodicElement[] = [
 export class AdminAnnouncementsComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-
-  @ViewChild('PostEditBox', { static: true }) PostEditBox: TemplateRef<any>;
   displayedColumns: string[] = [
     'priority',
     'title',
@@ -74,7 +61,7 @@ export class AdminAnnouncementsComponent implements OnInit {
     'Delete'
   ];
   dataSource: MatTableDataSource<any>;
-  constructor(private dialog: MatDialog) {}
+  constructor() {}
   ngOnInit() {
     this.refreshData();
     this.paginator.pageSize = 10;
