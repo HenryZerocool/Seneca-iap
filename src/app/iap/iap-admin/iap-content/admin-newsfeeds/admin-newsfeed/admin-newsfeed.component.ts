@@ -34,8 +34,8 @@ export class AdminNewsfeedComponent implements OnInit {
       this.id = activeId;
       this.data = this.service.getNewsFeed(this.id)[0];
       if (this.data) {
-        this.data.publishFrom = new Date(this.data.publishFrom);
-        this.data.publishTo = new Date(this.data.publishTo);
+        this.data.publishDate = new Date(this.data.publishDate);
+        // this.data.publishTo = new Date(this.data.publishTo);
       }
     } else {
       this.id = 0;

@@ -26,7 +26,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     status: 'active',
     lastModifier: 'Shirley Mangallon',
     publishDate: 'Oct 25, 2019',
-    id: 1
+    id: 2
   },
   {
     title: 'Health Insurance',
@@ -34,7 +34,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     status: 'active',
     lastModifier: 'Shirley Mangallon',
     publishDate: 'Sep 12, 2019',
-    id: 1
+    id: 3
   }
 ];
 @Injectable({
