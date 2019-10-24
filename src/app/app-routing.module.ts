@@ -33,11 +33,11 @@ const routes: Routes = [
     component: IapAgentComponent,
     children: [
       {
-        path: 'agents/resources',
+        path: 'resources',
         component: AgentResourcesComponent
       },
       {
-        path: 'agents/newsfeed',
+        path: 'newsfeed',
         component: AgentNewsfeedComponent
       }
     ]
