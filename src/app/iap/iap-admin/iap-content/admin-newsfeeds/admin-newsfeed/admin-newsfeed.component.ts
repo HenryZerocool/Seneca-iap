@@ -21,6 +21,8 @@ export class AdminNewsfeedComponent implements OnInit {
   id: number;
   data;
 
+  newsfeedForm: FormGroup;
+
   editorForm: FormGroup;
 
   constructor(
@@ -28,6 +30,10 @@ export class AdminNewsfeedComponent implements OnInit {
     private service: AdminNewsfeedsService,
     private location: Location
   ) {}
+
+  get userName() {
+    return this.newsfeedForm.get('title *');
+  }
 
   ngOnInit() {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);

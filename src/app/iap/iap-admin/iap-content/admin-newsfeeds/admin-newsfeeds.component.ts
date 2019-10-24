@@ -33,6 +33,15 @@ export class AdminNewsfeedsComponent implements OnInit {
   refreshData() {
     this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
     this.dataSource.sort = this.sort;
+    this.dataSource.sortingDataAccessor = (item, property) => {
+      switch (property) {
+        case 'publish Date':
+          return item.publishDate;
+
+        default:
+          return item[property];
+      }
+    };
     this.dataSource.paginator = this.paginator;
   }
 
