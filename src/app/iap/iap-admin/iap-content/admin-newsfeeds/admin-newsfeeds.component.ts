@@ -41,7 +41,8 @@ export class AdminNewsfeedsComponent implements OnInit {
   }
 
   deletePost(id: number) {
-    this.ELEMENT_DATA = this.ELEMENT_DATA.filter(data => data.id !== id);
+    // this.ELEMENT_DATA = this.ELEMENT_DATA.filter(data => data.id !== id);
+    this.ELEMENT_DATA = this.service.deleteOneNewsFeed(id);
     this.refreshData();
   }
 

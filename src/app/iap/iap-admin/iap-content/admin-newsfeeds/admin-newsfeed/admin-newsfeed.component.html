@@ -1,3 +1,4 @@
+<!-- update existing data -->
 <div *ngIf="data" class="admin-announcement-container">
   <mat-card class="main-container">
     <mat-card-title>
@@ -5,38 +6,22 @@
     </mat-card-title>
 
     <div class="container">
-      <form>
+      <form #newsfeedForm="ngForm" (ngSubmit)="updateOneFeed()">
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
-              <input
-                matInput
-                placeholder="Title"
-                [value]="(data.title)"
-                required
-                color="primary"
-              />
+              <input matInput placeholder="Title" [value]="data.title" required />
             </mat-form-field>
           </div>
           <div class="small-fields-container">
             <mat-form-field>
-              <input
-                matInput
-                placeholder="Headline"
-                [value]="(data.headline)"
-                required
-              />
+              <input matInput placeholder="Headline" [value]="data.headline" required />
             </mat-form-field>
           </div>
 
           <div class="small-fields-container">
             <mat-form-field>
-              <mat-select
-                matInput
-                placeholder="Status"
-                [value]="(data.status)"
-                required
-              >
+              <mat-select matInput placeholder="Status" [value]="data.status" required>
                 <ng-container>
                   <mat-option value="active">Active</mat-option>
                   <mat-option value="closed">Closed</mat-option>
@@ -47,17 +32,8 @@
 
           <div class="small-fields-container">
             <mat-form-field>
-              <input
-                matInput
-                [matDatepicker]="picker"
-                placeholder="Publish Date"
-                [value]="(data.publishDate)"
-                required
-              />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker"
-              ></mat-datepicker-toggle>
+              <input matInput [matDatepicker]="picker" placeholder="Publish Date" [value]="data.publishDate" required />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
@@ -77,15 +53,15 @@
         </button>
 
         <div class="right-buttons">
-          <button mat-flat-button class="is-rounded" color="primary">
+          <button mat-flat-button class="is-rounded" color="primary" (click)="updateOneFeed()">
             <span>Save</span>
           </button>
 
-          <button mat-stroked-button class="is-rounded red" color="primary">
+          <button mat-stroked-button class="is-rounded red" color="primary" (click)="goBack()">
             <span>Cancel</span>
           </button>
 
-          <button mat-button color="primary">
+          <button mat-button color="primary" (click)="deleteOneFeed()">
             <mat-icon>delete</mat-icon> <span>Delete</span>
           </button>
         </div>
@@ -95,6 +71,7 @@
     <mat-card-content class="mat-elevation-z8"> </mat-card-content>
   </mat-card>
 </div>
+<!-- create new data -->
 <div *ngIf="!data" class="admin-announcement-container">
   <mat-card class="main-container">
     <mat-card-title>
@@ -106,34 +83,18 @@
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
-              <input
-                matInput
-                placeholder="Title"
-                (value)="(data.title)"
-                required
-                color="primary"
-              />
+              <input matInput placeholder="Title" (value)="(data.title)" required color="primary" />
             </mat-form-field>
           </div>
           <div class="small-fields-container">
             <mat-form-field>
-              <input
-                matInput
-                placeholder="Headline *"
-                (value)="(data.headline)"
-                required
-              />
+              <input matInput placeholder="Headline *" (value)="(data.headline)" required />
             </mat-form-field>
           </div>
 
           <div class="small-fields-container">
             <mat-form-field>
-              <mat-select
-                matInput
-                placeholder="Status *"
-                (value)="(data.status)"
-                required
-              >
+              <mat-select matInput placeholder="Status *" (value)="(data.status)" required>
                 <ng-container>
                   <mat-option value="active">Active</mat-option>
                   <mat-option value="closed">Closed</mat-option>
@@ -144,17 +105,9 @@
 
           <div class="small-fields-container">
             <mat-form-field>
-              <input
-                matInput
-                [matDatepicker]="picker"
-                placeholder="Publish Date *"
-                (value)="(data.publishDate)"
-                required
-              />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker"
-              ></mat-datepicker-toggle>
+              <input matInput [matDatepicker]="picker" placeholder="Publish Date *" (value)="(data.publishDate)"
+                required />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
@@ -178,7 +131,7 @@
             <span>Save</span>
           </button>
 
-          <button mat-stroked-button class="is-rounded red" color="primary">
+          <button mat-stroked-button class="is-rounded red" color="primary" (click)="goBack()">
             <span>Cancel</span>
           </button>
 

@@ -7,6 +7,7 @@ import {
   Validators,
   FormControl
 } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-admin-newsfeed',
@@ -24,7 +25,8 @@ export class AdminNewsfeedComponent implements OnInit {
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private service: AdminNewsfeedsService
+    private service: AdminNewsfeedsService,
+    private location: Location
   ) {}
 
   ngOnInit() {
@@ -45,5 +47,23 @@ export class AdminNewsfeedComponent implements OnInit {
     this.editorForm = new FormGroup({
       editor: new FormControl(null)
     });
+  }
+  function() {
+    return 0;
+  }
+
+  updateOneFeed() {
+    // TODO: Complete this Save Button
+    // this.service.updateOneNewsFeed(this.id, this.data);
+    // this.goBack();
+  }
+
+  deleteOneFeed() {
+    this.service.deleteOneNewsFeed(this.id);
+    this.goBack();
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

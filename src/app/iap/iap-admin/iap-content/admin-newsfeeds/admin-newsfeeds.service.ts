@@ -7,9 +7,10 @@ export interface PeriodicElement {
   status: string;
   lastModifier: string;
   publishDate?: string;
+  content?: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+let ELEMENT_DATA: PeriodicElement[] = [
   {
     title: 'Title Lorem Ipsum',
     headline: 'One sentence about the article',
@@ -49,5 +50,17 @@ export class AdminNewsfeedsService {
 
   getNewsFeed(id: number) {
     return ELEMENT_DATA.filter(data => data.id === id);
+  }
+
+  addOneNewsFeed(newsfeed) {
+    return ELEMENT_DATA.push(newsfeed);
+  }
+  deleteOneNewsFeed(id: number) {
+    return (ELEMENT_DATA = ELEMENT_DATA.filter(data => data.id !== id));
+  }
+  updateOneNewsFeed(id: number, newsfeed) {
+    const foundIndex = ELEMENT_DATA.findIndex(data => data.id === id);
+    ELEMENT_DATA[foundIndex] = newsfeed;
+    return ELEMENT_DATA;
   }
 }
