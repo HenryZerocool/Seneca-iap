@@ -3,7 +3,8 @@ import {
   OnInit,
   ViewChild,
   Inject,
-  TemplateRef
+  TemplateRef,
+  AfterViewInit
 } from '@angular/core';
 
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
@@ -75,6 +76,7 @@ export class AdminAnnouncementsComponent implements OnInit {
   ];
   dataSource: MatTableDataSource<any>;
   constructor(private dialog: MatDialog) {}
+
   ngOnInit() {
     this.refreshData();
     this.paginator.pageSize = 10;
@@ -83,6 +85,22 @@ export class AdminAnnouncementsComponent implements OnInit {
   refreshData() {
     this.dataSource = new MatTableDataSource(ELEMENT_DATA);
     this.dataSource.sort = this.sort;
+    this.dataSource.sortingDataAccessor = (item, property) => {
+      switch (property) {
+        case 'priority':
+          return item.priority;
+        case 'title':
+          return item.title;
+        case 'status':
+          return item.status;
+        case 'publish FROM':
+          return item.publishFrom;
+        case 'publish TO':
+          return item.publishTo;
+        default:
+          return item[property];
+      }
+    };
     this.dataSource.paginator = this.paginator;
   }
 
