@@ -37,31 +37,37 @@ export class AdminNewsfeedComponent implements OnInit {
 
   ngOnInit() {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
-    // this.id = isNaN(activeId) ? 0 : activeId;
     if (!isNaN(activeId)) {
       this.id = activeId;
       this.data = this.service.getNewsFeed(this.id)[0];
       console.log(this.data);
       if (this.data) {
         this.data.publishDate = new Date(this.data.publishDate);
-        // this.data.publishTo = new Date(this.data.publishTo);
       }
     } else {
       this.id = 0;
+      this.data = {
+        title: '',
+        headline: '',
+        status: '',
+        lastModifier: '',
+        publishDate: ''
+      };
     }
 
     this.editorForm = new FormGroup({
       editor: new FormControl(null)
     });
   }
-  function() {
-    return 0;
+
+  addOneFeed() {
+    this.service.addOneNewsFeed(this.data);
+    this.goBack();
   }
 
   updateOneFeed() {
-    // TODO: Complete this Save Button
-    // this.service.updateOneNewsFeed(this.id, this.data);
-    // this.goBack();
+    this.service.updateOneNewsFeed(this.id, this.data);
+    this.goBack();
   }
 
   deleteOneFeed() {

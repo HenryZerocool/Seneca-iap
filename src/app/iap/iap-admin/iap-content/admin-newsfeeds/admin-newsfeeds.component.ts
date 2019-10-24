@@ -25,12 +25,12 @@ export class AdminNewsfeedsComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   constructor(private service: AdminNewsfeedsService) {}
   ngOnInit() {
-    this.ELEMENT_DATA = this.service.getAllNewsFeed();
     this.refreshData();
     this.paginator.pageSize = 10;
   }
 
   refreshData() {
+    this.ELEMENT_DATA = this.service.getAllNewsFeed();
     this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
     this.dataSource.sort = this.sort;
     this.dataSource.sortingDataAccessor = (item, property) => {
@@ -50,8 +50,7 @@ export class AdminNewsfeedsComponent implements OnInit {
   }
 
   deletePost(id: number) {
-    // this.ELEMENT_DATA = this.ELEMENT_DATA.filter(data => data.id !== id);
-    this.ELEMENT_DATA = this.service.deleteOneNewsFeed(id);
+    this.service.deleteOneNewsFeed(id);
     this.refreshData();
   }
 
