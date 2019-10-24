@@ -9,6 +9,9 @@ import {
   IapContentRoutingModule,
   contentRoutes
 } from './iap/iap-admin/iap-content/iap-content-routing.module';
+import { IapAgentComponent } from './iap/iap-agent/iap-agent.component';
+import { AgentResourcesComponent } from './iap/iap-agent/agent-resources/agent-resources.component';
+import { AgentNewsfeedComponent } from './iap/iap-agent/agent-newsfeed/agent-newsfeed.component';
 
 const routes: Routes = [
   {
@@ -24,6 +27,20 @@ const routes: Routes = [
     path: 'content',
     // component: IapContentComponent
     children: contentRoutes
+  },
+  {
+    path: 'agents',
+    component: IapAgentComponent,
+    children: [
+      {
+        path: 'agents/resources',
+        component: AgentResourcesComponent
+      },
+      {
+        path: 'agents/newsfeed',
+        component: AgentNewsfeedComponent
+      }
+    ]
   }
 ];
 
