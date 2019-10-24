@@ -1,17 +1,17 @@
-<<<<<<< HEAD
 import {
   Component,
   OnInit,
   ViewChild,
   Inject,
-  TemplateRef,
-  AfterViewInit
+  TemplateRef
 } from '@angular/core';
-=======
-import { Component, OnInit, ViewChild } from '@angular/core';
->>>>>>> c875caf49baf0b9139f3d0d3422c77abe02290ea
 
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from '@angular/material/dialog';
 
 export interface PeriodicElement {
   id: number;
@@ -61,6 +61,8 @@ let ELEMENT_DATA: PeriodicElement[] = [
 export class AdminAnnouncementsComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+
+  @ViewChild('PostEditBox', { static: true }) PostEditBox: TemplateRef<any>;
   displayedColumns: string[] = [
     'priority',
     'title',
@@ -72,12 +74,8 @@ export class AdminAnnouncementsComponent implements OnInit {
     'Delete'
   ];
   dataSource: MatTableDataSource<any>;
-<<<<<<< HEAD
   constructor(private dialog: MatDialog) {}
 
-=======
-  constructor() {}
->>>>>>> c875caf49baf0b9139f3d0d3422c77abe02290ea
   ngOnInit() {
     this.refreshData();
     this.paginator.pageSize = 10;
@@ -88,12 +86,6 @@ export class AdminAnnouncementsComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.sortingDataAccessor = (item, property) => {
       switch (property) {
-        case 'priority':
-          return item.priority;
-        case 'title':
-          return item.title;
-        case 'status':
-          return item.status;
         case 'publish FROM':
           return item.publishFrom;
         case 'publish TO':
