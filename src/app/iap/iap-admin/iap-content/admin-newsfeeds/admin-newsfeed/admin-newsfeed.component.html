@@ -7,7 +7,6 @@
 
     <div class="container">
       <form #newsfeedForm="ngForm" (ngSubmit)="updateOneFeed()" novalidate>
-        {{newsfeedForm.value | json}}
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
@@ -77,12 +76,11 @@
 <div *ngIf="id == 0" class="admin-announcement-container">
   <mat-card class="main-container">
     <mat-card-title>
-      <p class="card-title">NEWSFEED ARTICLE0</p>
+      <p class="card-title">NEWSFEED ARTICLE</p>
     </mat-card-title>
 
     <div class="container">
       <form #newsfeedForm="ngForm" (ngSubmit)="addOneFeed()" novalidate>
-        {{newsfeedForm.value | json}}
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
@@ -138,7 +136,7 @@
             <span>Cancel</span>
           </button>
 
-          <button mat-button color="primary">
+          <button mat-button color="primary" disabled>
             <mat-icon>delete</mat-icon> <span>Delete</span>
           </button>
         </div>
