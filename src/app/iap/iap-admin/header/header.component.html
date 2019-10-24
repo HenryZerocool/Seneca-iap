@@ -12,37 +12,38 @@
 </mat-toolbar>
 
 <mat-toolbar color="primary">
-  <a routerLink="/home" routerLinkActive="active-link">
+  <!-- [routerLink]="['/routePath']" routerLinkActive="router-link-active"  -->
+  <a [routerLink]="['./home']" routerLinkActive="active-link">
     <mat-icon>home</mat-icon>
     Home
   </a>
 
-  <a routerLink="/new" routerLinkActive="active-link">
+  <a [routerLink]="['./new']" routerLinkActive="active-link">
     <mat-icon>person</mat-icon>
     Agents
   </a>
 
-  <a routerLink="/new" routerLinkActive="active-link"
+  <a [routerLink]="['./new']" routerLinkActive="active-link"
     ><mat-icon>folder_shared</mat-icon>IWA</a
   >
 
-  <a routerLink="/new" routerLinkActive="active-link">
+  <a [routerLink]="['./new']" routerLinkActive="active-link">
     <mat-icon>monetization_on</mat-icon>Commissions
   </a>
 
-  <a routerLink="/content" routerLinkActive="active-link"
+  <a [routerLink]="['./content']" routerLinkActive="active-link"
     ><mat-icon>rss_feed</mat-icon>Content</a
   >
 
-  <a routerLink="/new" routerLinkActive="active-link"
+  <a [routerLink]="['./new']" routerLinkActive="active-link"
     ><mat-icon>pan_tool</mat-icon>Request</a
   >
 
-  <a routerLink="/new" routerLinkActive="active-link">
+  <a [routerLink]="['./new']" routerLinkActive="active-link">
     <mat-icon>settings_applications</mat-icon>System
   </a>
 
-  <a routerLink="/new" routerLinkActive="active-link"
+  <a [routerLink]="['./new']" routerLinkActive="active-link"
     ><mat-icon>input</mat-icon>Log out</a
   >
 </mat-toolbar>
