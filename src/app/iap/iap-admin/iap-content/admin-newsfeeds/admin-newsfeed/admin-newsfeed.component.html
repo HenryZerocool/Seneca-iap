@@ -5,7 +5,11 @@
     </mat-card-title>
 
     <div class="container">
+<<<<<<< HEAD
       <form>
+=======
+      <form #newsfeedForm="ngForm" (ngSubmit)="updateOneFeed()" novalidate>
+>>>>>>> 314047822bde16d0cad3936b56c56f203b0353b9
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
@@ -108,7 +112,11 @@
     </mat-card-title>
 
     <div class="container">
+<<<<<<< HEAD
       <form>
+=======
+      <form #newsfeedForm="ngForm" (ngSubmit)="addOneFeed()" novalidate>
+>>>>>>> 314047822bde16d0cad3936b56c56f203b0353b9
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
@@ -199,7 +207,7 @@
             <span>Cancel</span>
           </button>
 
-          <button mat-button color="primary">
+          <button mat-button color="primary" disabled>
             <mat-icon>delete</mat-icon> <span>Delete</span>
           </button>
         </div>
