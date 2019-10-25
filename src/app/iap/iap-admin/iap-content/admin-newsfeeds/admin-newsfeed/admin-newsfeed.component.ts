@@ -22,8 +22,8 @@ export class AdminNewsfeedComponent implements OnInit {
   data;
 
   // newsfeedForm: FormGroup;
-
   editorForm: FormGroup;
+  editorContent: string;
 
   editorStyle = {
     height: '300px'
@@ -57,10 +57,6 @@ export class AdminNewsfeedComponent implements OnInit {
     private location: Location
   ) {}
 
-  // get userName() {
-  //   return this.newsfeedForm.get('title *');
-  // }
-
   ngOnInit() {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
     if (!isNaN(activeId)) {
@@ -80,23 +76,21 @@ export class AdminNewsfeedComponent implements OnInit {
         publishDate: ''
       };
     }
-    // const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
-    // // this.id = isNaN(activeId) ? 0 : activeId;
-    // if (!isNaN(activeId)) {
-    //   this.id = activeId;
-    //   this.data = this.service.getNewsFeed(this.id)[0];
-    //   console.log(this.data);
-    //   if (this.data) {
-    //     this.data.publishDate = new Date(this.data.publishDate);
-    //     // this.data.publishTo = new Date(this.data.publishTo);
-    //   }
-    // } else {
-    //   this.id = 0;
-    // }
 
     this.editorForm = new FormGroup({
       editor: new FormControl(null)
     });
+  }
+
+  onSubmit() {
+    this.editorContent = this.editorForm.get('editor').value;
+    console.log(this.editorForm.get('editor').value);
+  }
+
+  maxLength(e) {
+    if (e.editor.getLength() > 1000) {
+      e.editor.deleteText(10, e.editor.getLength());
+    }
   }
 
   addOneFeed() {

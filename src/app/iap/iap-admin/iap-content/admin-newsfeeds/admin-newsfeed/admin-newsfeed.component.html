@@ -5,11 +5,7 @@
     </mat-card-title>
 
     <div class="container">
-<<<<<<< HEAD
       <form>
-=======
-      <form #newsfeedForm="ngForm" (ngSubmit)="updateOneFeed()" novalidate>
->>>>>>> 314047822bde16d0cad3936b56c56f203b0353b9
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
@@ -68,7 +64,7 @@
         </div>
       </form>
 
-      <form [formGroup]="editorForm">
+      <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <quill-editor
             [style]="editorStyle"
@@ -77,8 +73,16 @@
             formControlName="editor"
           ></quill-editor>
         </div>
+        <button class="is-rounded" color="accent" mat-button>
+          Submit
+        </button>
       </form>
     </div>
+    <div>
+      <h3>Output</h3>
+      <p class="my-5" [innerHTML]="editorContent"></p>
+    </div>
+
     <div class="actions-box">
       <mat-card-actions>
         <button class="is-rounded" color="accent" mat-stroked-button>
@@ -86,7 +90,12 @@
         </button>
 
         <div class="right-buttons">
-          <button mat-flat-button class="is-rounded" color="primary">
+          <button
+            mat-flat-button
+            class="is-rounded"
+            color="primary"
+            (click)="updateOneFeed()"
+          >
             <span>Save</span>
           </button>
 
@@ -112,11 +121,7 @@
     </mat-card-title>
 
     <div class="container">
-<<<<<<< HEAD
       <form>
-=======
-      <form #newsfeedForm="ngForm" (ngSubmit)="addOneFeed()" novalidate>
->>>>>>> 314047822bde16d0cad3936b56c56f203b0353b9
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
@@ -192,6 +197,7 @@
     <div>
       <h3>Output</h3>
     </div>
+
     <div class="actions-box">
       <mat-card-actions>
         <button class="is-rounded" color="accent" mat-stroked-button>
@@ -199,7 +205,12 @@
         </button>
 
         <div class="right-buttons">
-          <button mat-flat-button class="is-rounded" color="primary">
+          <button
+            mat-flat-button
+            class="is-rounded"
+            color="primary"
+            (click)="addOneFeed()"
+          >
             <span>Save</span>
           </button>
 
