@@ -111,3 +111,7 @@ button.mat-stroked-button.mat-button-base:hover {
 .right-buttons {
   justify-content: flex-end;
 }
+
+::ng-deep .mat-focused .mat-form-field-required-marker {
+  color: #da291c;
+}

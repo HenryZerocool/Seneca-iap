@@ -7,6 +7,7 @@ import {
   Validators,
   FormControl
 } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-admin-newsfeed',
@@ -20,29 +21,61 @@ export class AdminNewsfeedComponent implements OnInit {
   id: number;
   data;
 
+  newsfeedForm: FormGroup;
+
   editorForm: FormGroup;
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private service: AdminNewsfeedsService
+    private service: AdminNewsfeedsService,
+    private location: Location
   ) {}
+
+  get userName() {
+    return this.newsfeedForm.get('title *');
+  }
 
   ngOnInit() {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
-    // this.id = isNaN(activeId) ? 0 : activeId;
     if (!isNaN(activeId)) {
       this.id = activeId;
       this.data = this.service.getNewsFeed(this.id)[0];
+      console.log(this.data);
       if (this.data) {
-        this.data.publishFrom = new Date(this.data.publishFrom);
-        this.data.publishTo = new Date(this.data.publishTo);
+        this.data.publishDate = new Date(this.data.publishDate);
       }
     } else {
       this.id = 0;
+      this.data = {
+        title: '',
+        headline: '',
+        status: '',
+        lastModifier: '',
+        publishDate: ''
+      };
     }
 
     this.editorForm = new FormGroup({
       editor: new FormControl(null)
     });
+  }
+
+  addOneFeed() {
+    this.service.addOneNewsFeed(this.data);
+    this.goBack();
+  }
+
+  updateOneFeed() {
+    this.service.updateOneNewsFeed(this.id, this.data);
+    this.goBack();
+  }
+
+  deleteOneFeed() {
+    this.service.deleteOneNewsFeed(this.id);
+    this.goBack();
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

@@ -18,6 +18,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatInputModule,
+  MatRadioModule,
   MatDialogModule,
   MatSortModule,
   MatPaginatorModule,
@@ -37,6 +38,7 @@ import { AdminAnnouncementsComponent } from './admin-announcements/admin-announc
 import { AdminAnnouncementComponent } from './admin-announcements/admin-announcement/admin-announcement.component';
 import { CommonModule } from '@angular/common';
 import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.component';
+import { AdminResourceComponent } from './admin-resources/admin-resource/admin-resource.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.compo
     AdminResourcesComponent,
     AdminAnnouncementsComponent,
     AdminAnnouncementComponent,
-    AdminNewsfeedsComponent
+    AdminNewsfeedsComponent,
+    AdminResourceComponent
   ],
   imports: [
     CommonModule,
@@ -60,6 +63,7 @@ import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.compo
     MatButtonModule,
     MatCardModule,
     MatIconModule,
+    MatRadioModule,
     MatMenuModule,
     MatDialogModule,
     MatToolbarModule,
