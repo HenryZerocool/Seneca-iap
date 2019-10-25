@@ -1,31 +1,45 @@
-<!-- update existing data -->
-<div *ngIf="id != 0" class="admin-announcement-container">
+<div *ngIf="data" class="admin-announcement-container">
   <mat-card class="main-container">
     <mat-card-title>
       <p class="card-title">NEWSFEED ARTICLE</p>
     </mat-card-title>
 
     <div class="container">
-      <form #newsfeedForm="ngForm" (ngSubmit)="updateOneFeed()" novalidate>
-        {{newsfeedForm.value | json}}
+      <form>
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput placeholder="Title" [(ngModel)]="data.title" required name="title" />
+              <input
+                matInput
+                placeholder="Title"
+                [value]="data.title"
+                required
+                color="primary"
+              />
             </mat-form-field>
           </div>
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput placeholder="Headline" [(ngModel)]="data.headline" required name="headline" />
+              <input
+                matInput
+                placeholder="Headline"
+                [value]="data.headline"
+                required
+              />
             </mat-form-field>
           </div>
 
           <div class="small-fields-container">
             <mat-form-field>
-              <mat-select matInput placeholder="Status" [(ngModel)]="data.status" required name="status">
+              <mat-select
+                matInput
+                placeholder="Status"
+                [value]="data.status"
+                required
+              >
                 <ng-container>
-                  <mat-option value="Active">Active</mat-option>
-                  <mat-option value="Closed">Closed</mat-option>
+                  <mat-option value="active">Active</mat-option>
+                  <mat-option value="closed">Closed</mat-option>
                 </ng-container>
               </mat-select>
             </mat-form-field>
@@ -33,9 +47,17 @@
 
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Publish Date" [(ngModel)]="data.publishDate"
-                required name="publishDate" />
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="Publish Date"
+                [value]="data.publishDate"
+                required
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
@@ -44,7 +66,12 @@
 
       <form [formGroup]="editorForm">
         <div class="form-group">
-          <quill-editor formControlName="editor"></quill-editor>
+          <quill-editor
+            [style]="editorStyle"
+            [modules]="config"
+            (onContentChanged)="maxLength($event)"
+            formControlName="editor"
+          ></quill-editor>
         </div>
       </form>
     </div>
@@ -55,15 +82,15 @@
         </button>
 
         <div class="right-buttons">
-          <button mat-flat-button type="submit" class="is-rounded" color="primary" (click)="updateOneFeed()">
+          <button mat-flat-button class="is-rounded" color="primary">
             <span>Save</span>
           </button>
 
-          <button mat-stroked-button class="is-rounded red" color="primary" (click)="goBack()">
+          <button mat-stroked-button class="is-rounded red" color="primary">
             <span>Cancel</span>
           </button>
 
-          <button mat-button color="primary" (click)="deleteOneFeed()">
+          <button mat-button color="primary">
             <mat-icon>delete</mat-icon> <span>Delete</span>
           </button>
         </div>
@@ -73,34 +100,49 @@
     <mat-card-content class="mat-elevation-z8"> </mat-card-content>
   </mat-card>
 </div>
-<!-- create new data -->
-<div *ngIf="id == 0" class="admin-announcement-container">
+
+<div *ngIf="!data" class="admin-announcement-container">
   <mat-card class="main-container">
     <mat-card-title>
-      <p class="card-title">NEWSFEED ARTICLE0</p>
+      <p class="card-title">NEWSFEED ARTICLE</p>
     </mat-card-title>
 
     <div class="container">
-      <form #newsfeedForm="ngForm" (ngSubmit)="addOneFeed()" novalidate>
-        {{newsfeedForm.value | json}}
+      <form>
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput placeholder="Title" [(ngModel)]="data.title" required name="title" />
+              <input
+                matInput
+                placeholder="Title"
+                (value)="(data.title)"
+                required
+                color="primary"
+              />
             </mat-form-field>
           </div>
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput placeholder="Headline" [(ngModel)]="data.headline" required name="headline" />
+              <input
+                matInput
+                placeholder="Headline *"
+                (value)="(data.headline)"
+                required
+              />
             </mat-form-field>
           </div>
 
           <div class="small-fields-container">
             <mat-form-field>
-              <mat-select matInput placeholder="Status" [(ngModel)]="data.status" required name="status">
+              <mat-select
+                matInput
+                placeholder="Status *"
+                (value)="(data.status)"
+                required
+              >
                 <ng-container>
-                  <mat-option value="Active">Active</mat-option>
-                  <mat-option value="Closed">Closed</mat-option>
+                  <mat-option value="active">Active</mat-option>
+                  <mat-option value="closed">Closed</mat-option>
                 </ng-container>
               </mat-select>
             </mat-form-field>
@@ -108,20 +150,39 @@
 
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Publish Date" [(ngModel)]="data.publishDate"
-                required name="publishDate" />
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="Publish Date *"
+                (value)="(data.publishDate)"
+                required
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
         </div>
       </form>
 
-      <form [formGroup]="editorForm">
+      <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <quill-editor formControlName="editor"></quill-editor>
+          <quill-editor
+            [style]="editorStyle"
+            [modules]="config"
+            (onContentChanged)="maxLength($event)"
+            formControlName="editor"
+          ></quill-editor>
         </div>
+        <button class="is-rounded" color="accent" mat-button>
+          Submit
+        </button>
       </form>
+    </div>
+    <div>
+      <h3>Output</h3>
     </div>
     <div class="actions-box">
       <mat-card-actions>
@@ -130,11 +191,11 @@
         </button>
 
         <div class="right-buttons">
-          <button mat-flat-button type="submit" class="is-rounded" color="primary" (click)="addOneFeed()">
+          <button mat-flat-button class="is-rounded" color="primary">
             <span>Save</span>
           </button>
 
-          <button mat-stroked-button class="is-rounded red" color="primary" (click)="goBack()">
+          <button mat-stroked-button class="is-rounded red" color="primary">
             <span>Cancel</span>
           </button>
 

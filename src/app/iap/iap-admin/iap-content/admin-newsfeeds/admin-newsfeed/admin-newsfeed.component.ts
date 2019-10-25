@@ -21,9 +21,35 @@ export class AdminNewsfeedComponent implements OnInit {
   id: number;
   data;
 
-  newsfeedForm: FormGroup;
+  // newsfeedForm: FormGroup;
 
   editorForm: FormGroup;
+
+  editorStyle = {
+    height: '300px'
+  };
+
+  config = {
+    toolbar: [
+      ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+      ['blockquote', 'code-block'],
+
+      [{ header: 1 }, { header: 2 }], // custom button values
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
+      [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
+      [{ direction: 'rtl' }], // text direction
+
+      [{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+      [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+      [{ font: [] }],
+      [{ align: [] }],
+
+      ['clean']
+    ]
+  };
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -31,9 +57,9 @@ export class AdminNewsfeedComponent implements OnInit {
     private location: Location
   ) {}
 
-  get userName() {
-    return this.newsfeedForm.get('title *');
-  }
+  // get userName() {
+  //   return this.newsfeedForm.get('title *');
+  // }
 
   ngOnInit() {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
@@ -54,6 +80,19 @@ export class AdminNewsfeedComponent implements OnInit {
         publishDate: ''
       };
     }
+    // const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
+    // // this.id = isNaN(activeId) ? 0 : activeId;
+    // if (!isNaN(activeId)) {
+    //   this.id = activeId;
+    //   this.data = this.service.getNewsFeed(this.id)[0];
+    //   console.log(this.data);
+    //   if (this.data) {
+    //     this.data.publishDate = new Date(this.data.publishDate);
+    //     // this.data.publishTo = new Date(this.data.publishTo);
+    //   }
+    // } else {
+    //   this.id = 0;
+    // }
 
     this.editorForm = new FormGroup({
       editor: new FormControl(null)
