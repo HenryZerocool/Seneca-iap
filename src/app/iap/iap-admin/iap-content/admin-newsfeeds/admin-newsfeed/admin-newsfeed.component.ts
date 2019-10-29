@@ -22,8 +22,8 @@ export class AdminNewsfeedComponent implements OnInit {
   data;
 
   // newsfeedForm: FormGroup;
-  editorForm: FormGroup;
-  editorContent: string;
+  // editorForm: FormGroup;
+  // editorContent: string;
 
   editorStyle = {
     height: '300px'
@@ -78,15 +78,15 @@ export class AdminNewsfeedComponent implements OnInit {
       };
     }
 
-    this.editorForm = new FormGroup({
-      editor: new FormControl(null)
-    });
+    // this.editorForm = new FormGroup({
+    //   editor: new FormControl(null)
+    // });
   }
 
-  onSubmit() {
-    this.editorContent = this.editorForm.get('editor').value;
-    console.log(this.editorForm.get('editor').value);
-  }
+  // onSubmit() {
+  //   this.editorContent = this.editorForm.get('editor').value;
+  //   console.log(this.editorForm.get('editor').value);
+  // }
 
   maxLength(e) {
     if (e.editor.getLength() > 1000) {

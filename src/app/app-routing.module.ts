@@ -32,7 +32,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'agent',
+    path: 'agents',
     component: IapAgentComponent
   },
   {

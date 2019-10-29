@@ -38,10 +38,9 @@
 
 .mat-card-actions {
   display: flex;
-
   justify-content: space-between;
-  margin: 2vw 2.5vw;
-  padding-top: 25px;
+  margin: 45px 0;
+  padding-top: unset;
 }
 
 .mat-card-content {
@@ -81,7 +80,7 @@ button.mat-stroked-button.mat-button-base:hover {
 .sub-container {
   display: flex;
   flex: 1;
-  margin: 0 2vw;
+  margin-bottom: 20px;
 }
 
 .mat-form-field {
@@ -90,19 +89,18 @@ button.mat-stroked-button.mat-button-base:hover {
 
 .container {
   padding-top: 50px;
-  height: 300px;
+  margin: 0 5vw;
 }
 
 .editor {
   width: 10px;
 }
 
-.form-group {
+/* .form-group {
   margin: 0 2vw;
-  height: 200px;
   padding: 10px;
   padding-top: 25px;
-}
+} */
 
 .actions-box {
   display: flex;

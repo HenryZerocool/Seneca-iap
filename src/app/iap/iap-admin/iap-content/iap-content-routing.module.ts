@@ -7,6 +7,7 @@ import { AdminResourcesComponent } from './admin-resources/admin-resources.compo
 import { IapContentComponent } from './iap-content.component';
 import { AdminNewsfeedComponent } from './admin-newsfeeds/admin-newsfeed/admin-newsfeed.component';
 import { AdminResourceComponent } from './admin-resources/admin-resource/admin-resource.component';
+import { AgentResourcesComponent } from '../../iap-agent/agent-resources/agent-resources.component';
 
 export const contentRoutes: Routes = [
   {
@@ -32,7 +33,19 @@ export const contentRoutes: Routes = [
         children: [
           { path: '', component: AdminNewsfeedsComponent },
           { path: 'new', component: AdminNewsfeedComponent },
-          { path: ':id', component: AdminNewsfeedComponent }
+          {
+            path: 'preview',
+            component: AgentResourcesComponent
+            // children: [{ path: '', component: AgentResourcesComponent }]
+          },
+          {
+            path: ':id',
+            // component: AdminNewsfeedComponent,
+            children: [
+              { path: '', component: AdminNewsfeedComponent },
+              { path: 'preview/:id', component: AgentResourcesComponent }
+            ]
+          }
         ]
       },
       {

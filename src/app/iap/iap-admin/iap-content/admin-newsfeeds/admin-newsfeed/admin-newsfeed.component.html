@@ -38,48 +38,44 @@
             </mat-form-field>
           </div>
         </div>
+        <quill-editor [(ngModel)]="data.content" [styles]="editorStyle" placeholder="Enter Text" [modules]="config"
+          name="content">
+        </quill-editor>
 
-        <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <quill-editor [style]="editorStyle" [modules]="config" (onContentChanged)="maxLength($event)"
-              formControlName="editor" [(ngModel)]="data.content" name="content"></quill-editor>
-          </div>
-          <!-- <button class="is-rounded" color="accent" mat-button>
-            Submit
-          </button> -->
-        </form>
 
+        <div class="actions-box">
+          <mat-card-actions>
+            <button class="is-rounded" color="accent" mat-stroked-button [routerLink]="['./preview', id]">
+              <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
+            </button>
+
+            <div class="right-buttons">
+              <button *ngIf="id < 1" mat-flat-button class="is-rounded" color="primary" (click)="addOneFeed()">
+                <span>Save</span>
+              </button>
+              <button *ngIf="id >= 1" mat-flat-button class="is-rounded" color="primary" (click)="updateOneFeed()">
+                <span>Save</span>
+              </button>
+
+              <button mat-stroked-button class="is-rounded red" color="primary" (click)="goBack()">
+                <span>Cancel</span>
+              </button>
+
+              <button mat-button color="primary" [disabled]="id < 1">
+                <mat-icon>delete</mat-icon> <span>Delete</span>
+              </button>
+            </div>
+          </mat-card-actions>
+        </div>
       </form>
     </div>
+    <!-- Inner HTML works -->
     <!-- <div>
       <h3>Output</h3>
-      <p class="my-5" [innerHTML]="editorContent"></p>
+      <p class="my-5" [innerHTML]="data.content"></p>
     </div> -->
 
-    <div class="actions-box">
-      <mat-card-actions>
-        <button class="is-rounded" color="accent" mat-stroked-button>
-          <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
-        </button>
 
-        <div class="right-buttons">
-          <button *ngIf="id < 1" mat-flat-button class="is-rounded" color="primary" (click)="addOneFeed()">
-            <span>Save</span>
-          </button>
-          <button *ngIf="id >= 1" mat-flat-button class="is-rounded" color="primary" (click)="updateOneFeed()">
-            <span>Save</span>
-          </button>
-
-          <button mat-stroked-button class="is-rounded red" color="primary" (click)="goBack()">
-            <span>Cancel</span>
-          </button>
-
-          <button mat-button color="primary" [disabled]="id < 1">
-            <mat-icon>delete</mat-icon> <span>Delete</span>
-          </button>
-        </div>
-      </mat-card-actions>
-    </div>
 
     <mat-card-content class="mat-elevation-z8"> </mat-card-content>
   </mat-card>
