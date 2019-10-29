@@ -73,7 +73,8 @@ export class AdminNewsfeedComponent implements OnInit {
         headline: '',
         status: '',
         lastModifier: '',
-        publishDate: ''
+        publishDate: '',
+        content: ''
       };
     }
 
