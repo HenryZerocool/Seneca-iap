@@ -1,1 +1,16 @@
-<p>agent-newsfeed works!</p>
+<div class="agents-newsfeed-container">
+  <mat-card class="main-contaner">
+    <h4 class="card-title">Newsfeed for Agencies</h4>
+    <div class="newsfeed-list">
+      <mat-form-field appearance="outline" class="search-bar">
+        <input
+          matInput
+          (keyup)="applyFilter($event.target.value)"
+          maxlength="256"
+          placeholder="search"
+        />
+        <mat-icon class="serach-bar" matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+  </mat-card>
+</div>

@@ -35,4 +35,15 @@
 
 .link {
   color: #da291c;
+  text-decoration: none;
+}
+
+.mat-card button {
+  border: 1px solid #da291c;
+  border-radius: 25px;
+  padding: 10px 20px 10px 20px;
+  margin: auto;
+  display: flex;
+  color: #da291c;
+  background: #ffffff 0% 0% no-repeat padding-box;
 }
