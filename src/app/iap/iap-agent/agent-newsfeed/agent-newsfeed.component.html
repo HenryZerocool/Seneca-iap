@@ -15,5 +15,14 @@
         <mat-icon class="serach-bar" matSuffix>search</mat-icon>
       </mat-form-field>
     </div>
+
+    <mat-tab [dateSource]="dataSource" class="newsfeed-list">
+      <ng-container matColmnDef="position"> </ng-container>
+    </mat-tab>
+
+    <mat-paginator
+      [pageSizeOptions]="[10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
   </mat-card>
 </div>
