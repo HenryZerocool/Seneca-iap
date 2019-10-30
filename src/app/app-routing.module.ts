@@ -11,6 +11,7 @@ import { AgentNewsfeedComponent } from './iap/iap-agent/agent-newsfeed/agent-new
 import { contentRoutes } from './iap/iap-admin/iap-content/iap-content-routing.module';
 import { IapAdminComponent } from './iap/iap-admin/iap-admin.component';
 import { LoginComponent } from './iap/login/login.component';
+import { AgentNewsfeedDetailsComponent } from './iap/iap-agent/agent-newsfeed/agent-newsfeed-details/agent-newsfeed-details.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,13 @@ const routes: Routes = [
       },
       {
         path: 'newsfeed',
-        component: AgentNewsfeedComponent
+        children: [
+          {
+            path: '',
+            component: AgentNewsfeedComponent
+          },
+          { path: ':id', component: AgentNewsfeedDetailsComponent }
+        ]
       }
     ]
   },

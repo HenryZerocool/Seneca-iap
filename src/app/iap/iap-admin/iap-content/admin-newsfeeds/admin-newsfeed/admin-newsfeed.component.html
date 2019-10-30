@@ -9,18 +9,18 @@
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput placeholder="Title" [(ngModel)]="data.title" name="title" required />
+              <input matInput placeholder="Title" [ngModel]="data.title" name="title" required />
             </mat-form-field>
           </div>
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput placeholder="Headline" [(ngModel)]="data.headline" name="headline" required />
+              <input matInput placeholder="Headline" [ngModel]="data.headline" name="headline" required />
             </mat-form-field>
           </div>
 
           <div class="small-fields-container">
             <mat-form-field>
-              <mat-select matInput placeholder="Status" [(ngModel)]="data.status" name="status" required>
+              <mat-select matInput placeholder="Status" [ngModel]="data.status" name="status" required>
                 <ng-container>
                   <mat-option value="Active">Active</mat-option>
                   <mat-option value="Closed">Closed</mat-option>
@@ -31,14 +31,14 @@
 
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Publish Date" [(ngModel)]="data.publishDate"
+              <input matInput [matDatepicker]="picker" placeholder="Publish Date" [ngModel]="data.publishDate"
                 name="publishDate" required />
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
         </div>
-        <quill-editor [(ngModel)]="data.content" [styles]="editorStyle" placeholder="Enter Text" [modules]="config"
+        <quill-editor [ngModel]="data.content" [styles]="editorStyle" placeholder="Enter Text" [modules]="config"
           name="content">
         </quill-editor>
 
@@ -53,7 +53,9 @@
               <button *ngIf="id < 1" mat-flat-button class="is-rounded" color="primary" (click)="addOneFeed()">
                 <span>Save</span>
               </button>
-              <button *ngIf="id >= 1" mat-flat-button class="is-rounded" color="primary" (click)="updateOneFeed()">
+              <!-- <span>{{newsfeedForm.value | json}}</span> -->
+              <button *ngIf="id >= 1" mat-flat-button class="is-rounded" color="primary"
+                (click)="updateOneFeed(newsfeedForm.value)">
                 <span>Save</span>
               </button>
 

@@ -99,7 +99,13 @@ export class AdminNewsfeedComponent implements OnInit {
     this.goBack();
   }
 
-  updateOneFeed() {
+  updateOneFeed(value) {
+    this.data.title = value.title;
+    this.data.headline = value.headline;
+    this.data.status = value.status;
+    this.data.publishDate = value.publishDate;
+    this.data.content = value.content;
+    console.log(this.data);
     this.service.updateOneNewsFeed(this.id, this.data);
     this.goBack();
   }
