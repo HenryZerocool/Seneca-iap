@@ -37,8 +37,10 @@ import { HeaderComponent } from './iap/iap-admin/header/header.component';
 import { IapContentComponent } from './iap/iap-admin/iap-content/iap-content.component';
 import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
 import { IapAgentComponent } from './iap/iap-agent/iap-agent.component';
-import { LoginComponent } from './iap/login/login.component';
+import { AgentNewsfeedComponent } from './iap/iap-agent/agent-newsfeed/agent-newsfeed.component';
 import { AgentResourcesComponent } from './iap/iap-agent/agent-resources/agent-resources.component';
+import { AgentHeaderComponent } from './iap/iap-agent/agent-header/agent-header.component';
+import { LoginComponent } from './iap/login/login.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,10 @@ import { AgentResourcesComponent } from './iap/iap-agent/agent-resources/agent-r
     HeaderComponent,
     IapContentComponent,
     IapHomeComponent,
+    IapAgentComponent,
+    AgentNewsfeedComponent,
     AgentResourcesComponent,
+    AgentHeaderComponent,
     IapAgentComponent,
     LoginComponent
   ],
@@ -59,7 +64,7 @@ import { AgentResourcesComponent } from './iap/iap-agent/agent-resources/agent-r
     FormsModule,
     QuillModule.forRoot(),
     HttpClientModule,
-    HttpModule,
+    // HttpModule,
     // Material
     BrowserAnimationsModule,
     MatSidenavModule,

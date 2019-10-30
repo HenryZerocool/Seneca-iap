@@ -1,0 +1,38 @@
+.agents-resources-container {
+  padding-top: 2.5vw;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  background: #fafafa 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border-right: 50px;
+}
+
+.main-container {
+  padding-top: 3vw;
+  padding-left: 5vw;
+}
+
+.mat-card {
+  padding-left: 5vw;
+  padding-top: 3vw;
+}
+
+.mat-card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title {
+  border-top: 4px solid #da291c;
+  padding-top: 6px;
+  margin: unset;
+}
+
+.mat-card p {
+  padding-left: inherit;
+  padding-right: 65px;
+}
+
+.link {
+  color: #da291c;
+}
