@@ -38,6 +38,8 @@ let ELEMENT_DATA: PeriodicElement[] = [
     id: 3
   }
 ];
+
+let tempData: PeriodicElement[] = [];
 @Injectable({
   providedIn: 'root'
 })
@@ -53,8 +55,7 @@ export class AdminNewsfeedsService {
   }
 
   addOneNewsFeed(newsfeed) {
-    let temp;
-    temp = newsfeed;
+    const temp = newsfeed;
     temp.id = ELEMENT_DATA.length + 1;
     ELEMENT_DATA.push(temp);
   }
@@ -64,5 +65,26 @@ export class AdminNewsfeedsService {
   updateOneNewsFeed(id: number, newsfeed) {
     const foundIndex = ELEMENT_DATA.findIndex(data => data.id === id);
     ELEMENT_DATA[foundIndex] = newsfeed;
+  }
+
+  getTempFeed(id) {
+    let temp = tempData.filter(data => data.id === id);
+    if (temp.length === 0) {
+      this.addTempFeed(id, ELEMENT_DATA.filter(data => data.id === id)[0]);
+      temp = tempData.filter(data => data.id === id);
+    }
+    return temp;
+  }
+  addTempFeed(id, tempFeed) {
+    const temp = tempFeed;
+    temp.id = id;
+    tempData.push(temp);
+  }
+  updateTempFeed(id, tempFeed) {
+    const foundIndex = tempData.findIndex(data => data.id === id);
+    tempData[foundIndex] = tempFeed;
+  }
+  removeTemp(id) {
+    tempData = tempData.filter(data => data.id !== id);
   }
 }

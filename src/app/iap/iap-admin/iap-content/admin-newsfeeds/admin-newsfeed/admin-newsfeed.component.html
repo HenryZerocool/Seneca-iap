@@ -45,7 +45,8 @@
 
         <div class="actions-box">
           <mat-card-actions>
-            <button class="is-rounded" color="accent" mat-stroked-button [routerLink]="['./preview', id]">
+            <button class="is-rounded" color="accent" mat-stroked-button [routerLink]="['./preview', id]"
+              (click)="updateTempFeed(newsfeedForm.value)">
               <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
             </button>
 
@@ -63,7 +64,7 @@
                 <span>Cancel</span>
               </button>
 
-              <button mat-button color="primary" [disabled]="id < 1">
+              <button mat-button color="primary" [disabled]="id < 1" (click)="deleteOneFeed()">
                 <mat-icon>delete</mat-icon> <span>Delete</span>
               </button>
             </div>

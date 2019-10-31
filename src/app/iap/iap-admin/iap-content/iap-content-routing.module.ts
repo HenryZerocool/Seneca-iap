@@ -10,6 +10,7 @@ import { AdminResourceComponent } from './admin-resources/admin-resource/admin-r
 import { AgentResourcesComponent } from '../../iap-agent/agent-resources/agent-resources.component';
 import { AgentNewsfeedComponent } from '../../iap-agent/agent-newsfeed/agent-newsfeed.component';
 import { AgentNewsfeedDetailsComponent } from '../../iap-agent/agent-newsfeed/agent-newsfeed-details/agent-newsfeed-details.component';
+import { NewsfeedPreviewComponent } from './admin-newsfeeds/admin-newsfeed/newsfeed-preview/newsfeed-preview.component';
 
 export const contentRoutes: Routes = [
   {
@@ -45,7 +46,7 @@ export const contentRoutes: Routes = [
             // component: AdminNewsfeedComponent,
             children: [
               { path: '', component: AdminNewsfeedComponent },
-              { path: 'preview/:id', component: AgentNewsfeedDetailsComponent }
+              { path: 'preview/:id', component: NewsfeedPreviewComponent }
             ]
           }
         ]

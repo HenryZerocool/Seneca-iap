@@ -61,7 +61,7 @@ export class AdminNewsfeedComponent implements OnInit {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
     if (!isNaN(activeId)) {
       this.id = activeId;
-      this.data = this.service.getNewsFeed(this.id)[0];
+      this.data = this.service.getTempFeed(this.id)[0];
       console.log(this.data);
       if (this.data) {
         this.data.publishDate = new Date(this.data.publishDate);
@@ -117,5 +117,14 @@ export class AdminNewsfeedComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  updateTempFeed(value) {
+    this.data.title = value.title;
+    this.data.headline = value.headline;
+    this.data.status = value.status;
+    this.data.publishDate = value.publishDate;
+    this.data.content = value.content;
+    this.service.updateTempFeed(this.id, this.data);
   }
 }
