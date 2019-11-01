@@ -24,7 +24,9 @@ import {
   MatPaginatorModule,
   MatAutocompleteModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatListModule,
+  MatExpansionModule
 } from '@angular/material';
 // import {  } from '@angular/material/tabs';
 
@@ -79,7 +81,10 @@ import { AgentResourcesComponent } from './iap/iap-agent/agent-resources/agent-r
     MatAutocompleteModule,
     MatTableModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatListModule,
+    MatSidenavModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

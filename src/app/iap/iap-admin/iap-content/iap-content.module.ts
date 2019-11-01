@@ -25,7 +25,9 @@ import {
   MatAutocompleteModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatListModule,
+  MatExpansionModule
 } from '@angular/material';
 // import {  } from '@angular/material/tabs';
 
@@ -77,7 +79,10 @@ import { AdminResourceComponent } from './admin-resources/admin-resource/admin-r
     MatTableModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatListModule,
+    MatSidenavModule,
+    MatExpansionModule
     // Ngrx
   ],
   exports: [
