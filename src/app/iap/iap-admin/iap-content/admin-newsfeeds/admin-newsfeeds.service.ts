@@ -76,13 +76,16 @@ export class AdminNewsfeedsService {
     return temp;
   }
   addTempFeed(id, tempFeed) {
-    const temp = tempFeed;
+    const temp = JSON.parse(JSON.stringify(tempFeed));
     temp.id = id;
     tempData.push(temp);
   }
   updateTempFeed(id, tempFeed) {
+    console.log('base before update', ELEMENT_DATA);
+    console.log('temp before update', tempData);
     const foundIndex = tempData.findIndex(data => data.id === id);
     tempData[foundIndex] = tempFeed;
+    console.log('temp after update', tempData);
   }
   removeTemp(id) {
     tempData = tempData.filter(data => data.id !== id);

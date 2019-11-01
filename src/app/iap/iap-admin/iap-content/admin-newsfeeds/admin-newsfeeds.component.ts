@@ -42,6 +42,7 @@ export class AdminNewsfeedsComponent implements OnInit {
 
   refreshData() {
     this.ELEMENT_DATA = this.service.getAllNewsFeed();
+    console.log('get base', this.ELEMENT_DATA);
     this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
     this.dataSource.sort = this.sort;
     this.dataSource.sortingDataAccessor = (item, property) => {

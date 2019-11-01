@@ -21,7 +21,7 @@ export class NewsfeedPreviewComponent implements OnInit {
     if (!isNaN(activeId)) {
       this.id = activeId;
       this.data = this.newsfeedService.getTempFeed(this.id)[0];
-      console.log(this.data);
+      console.log('get preview', this.data);
     }
     if (this.data) {
       this.data.publishDate = new Date(this.data.publishDate);

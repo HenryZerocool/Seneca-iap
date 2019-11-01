@@ -62,7 +62,7 @@ export class AdminNewsfeedComponent implements OnInit {
     if (!isNaN(activeId)) {
       this.id = activeId;
       this.data = this.service.getTempFeed(this.id)[0];
-      console.log(this.data);
+      console.log('get temp', this.data);
       if (this.data) {
         this.data.publishDate = new Date(this.data.publishDate);
       }
@@ -105,7 +105,7 @@ export class AdminNewsfeedComponent implements OnInit {
     this.data.status = value.status;
     this.data.publishDate = value.publishDate;
     this.data.content = value.content;
-    console.log(this.data);
+    console.log('update base', this.data);
     this.service.updateOneNewsFeed(this.id, this.data);
     this.goBack();
   }
@@ -125,6 +125,7 @@ export class AdminNewsfeedComponent implements OnInit {
     this.data.status = value.status;
     this.data.publishDate = value.publishDate;
     this.data.content = value.content;
+    console.log('udpate temp', this.data);
     this.service.updateTempFeed(this.id, this.data);
   }
 }
