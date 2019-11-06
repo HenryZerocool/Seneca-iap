@@ -38,6 +38,7 @@ import { AdminAnnouncementsComponent } from './admin-announcements/admin-announc
 import { AdminAnnouncementComponent } from './admin-announcements/admin-announcement/admin-announcement.component';
 import { CommonModule } from '@angular/common';
 import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.component';
+import { ResourceComponent } from "./admin-resources/admin-resource/resources/resources.component";
 //import { AdminResourcesComponent } from './admin-resources/admin-resource/admin-resource.component';
 
 @NgModule({
@@ -47,6 +48,7 @@ import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.compo
     AdminAnnouncementsComponent,
     AdminAnnouncementComponent,
     AdminNewsfeedsComponent,
+    ResourceComponent
   ],
   imports: [
     CommonModule,
@@ -84,7 +86,8 @@ import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.compo
     AdminResourcesComponent,
     AdminAnnouncementsComponent,
     AdminAnnouncementComponent,
-    AdminNewsfeedsComponent
+    AdminNewsfeedsComponent,
+    ResourceComponent
   ],
   //   providers: []
   bootstrap: [IapContentComponent]

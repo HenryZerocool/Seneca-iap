@@ -116,13 +116,15 @@ Messes up everything
 }
 
 #main-mat-card #source #DeleteButton {
-    /*Use mat icon*/
+    /*Use mat icon
+    ../../../assets/Images/baseline-delete-24px.svg
+    */
     text-align: center;
     font: Regular 16px/22px Open Sans;
     letter-spacing: 0;
     color: #DA261C;
     opacity: 1;
-    background: transparent url('../../../assets/Images/baseline-delete-24px.svg') 0% 0% no-repeat padding-box;
+    background: transparent url('../resources/../../../../../../../assets/imgs/baseline-delete-24px.svg') 0% 0% no-repeat padding-box;
 }
 
 #main-mat-card a {
@@ -190,7 +192,7 @@ Messes up everything
     letter-spacing: 0;
     color: #DA291C;
     opacity: 1;
-    background: transparent url('../../../assets/Images/baseline-delete-24px.svg') 0% 0% no-repeat padding-box;
+    background: transparent url('../resources/../../../../../../../assets/imgs/baseline-delete-24px.svg') 0% 0% no-repeat padding-box;
     /*How can I style this background url individually??*/
 }
 
