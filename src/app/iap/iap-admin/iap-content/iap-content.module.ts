@@ -50,7 +50,7 @@ import { NewsfeedPreviewComponent } from './admin-newsfeeds/admin-newsfeed/newsf
     AdminAnnouncementComponent,
     AdminNewsfeedsComponent,
     AdminResourceComponent,
-    NewsfeedPreviewComponent
+    NewsfeedPreviewComponent,
     FileSelectDirective
   ],
   imports: [
@@ -84,13 +84,7 @@ import { NewsfeedPreviewComponent } from './admin-newsfeeds/admin-newsfeed/newsf
     MatNativeDateModule
     // Ngrx
   ],
-  exports: [
-    AdminNewsfeedComponent,
-    AdminResourcesComponent,
-    AdminAnnouncementsComponent,
-    AdminAnnouncementComponent,
-    AdminNewsfeedsComponent
-  ],
+  exports: [AdminNewsfeedComponent, AdminResourcesComponent, AdminAnnouncementsComponent, AdminAnnouncementComponent, AdminNewsfeedsComponent],
   //   providers: []
   bootstrap: [IapContentComponent]
 })
