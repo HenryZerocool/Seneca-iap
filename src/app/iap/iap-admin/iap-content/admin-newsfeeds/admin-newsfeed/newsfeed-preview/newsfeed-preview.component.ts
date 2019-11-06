@@ -11,17 +11,14 @@ import { AdminNewsfeedsService } from '../../admin-newsfeeds.service';
 export class NewsfeedPreviewComponent implements OnInit {
   data;
   id: number;
-  constructor(
-    private newsfeedService: AdminNewsfeedsService,
-    private activeRoute: ActivatedRoute
-  ) {}
+  constructor(private newsfeedService: AdminNewsfeedsService, private activeRoute: ActivatedRoute) {}
 
   ngOnInit() {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
     if (!isNaN(activeId)) {
       this.id = activeId;
       this.data = this.newsfeedService.getTempFeed(this.id)[0];
-      console.log('get preview', this.data);
+      // console.log('get preview', this.data);
     }
     if (this.data) {
       this.data.publishDate = new Date(this.data.publishDate);

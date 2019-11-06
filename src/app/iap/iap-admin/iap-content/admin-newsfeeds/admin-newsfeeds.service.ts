@@ -62,32 +62,29 @@ export class AdminNewsfeedsService {
   deleteOneNewsFeed(id: number) {
     ELEMENT_DATA = ELEMENT_DATA.filter(data => data.id !== id);
   }
-  updateOneNewsFeed(id: number, newsfeed) {
+  updateOneNewsFeed(id: number) {
     const foundIndex = ELEMENT_DATA.findIndex(data => data.id === id);
-    ELEMENT_DATA[foundIndex] = newsfeed;
+    const foundIndexTemp = tempData.findIndex(data => data.id === id);
+    ELEMENT_DATA[foundIndex] = tempData[foundIndexTemp];
   }
 
   getTempFeed(id) {
     let temp = tempData.filter(data => data.id === id);
     if (temp.length === 0) {
-      this.addTempFeed(id, ELEMENT_DATA.filter(data => data.id === id)[0]);
+      this.addTempFeed(ELEMENT_DATA.filter(data => data.id === id)[0]);
       temp = tempData.filter(data => data.id === id);
     }
     return temp;
   }
-  addTempFeed(id, tempFeed) {
+  addTempFeed(tempFeed) {
     const temp = JSON.parse(JSON.stringify(tempFeed));
-    temp.id = id;
     tempData.push(temp);
   }
-  updateTempFeed(id, tempFeed) {
-    console.log('base before update', ELEMENT_DATA);
-    console.log('temp before update', tempData);
-    const foundIndex = tempData.findIndex(data => data.id === id);
-    tempData[foundIndex] = tempFeed;
-    console.log('temp after update', tempData);
-  }
-  removeTemp(id) {
+  // updateTempFeed(id, tempFeed) {
+  //   const foundIndex = tempData.findIndex(data => data.id === id);
+  //   tempData[foundIndex] = tempFeed;
+  // }
+  deleteTemp(id) {
     tempData = tempData.filter(data => data.id !== id);
   }
 }

@@ -53,7 +53,7 @@ export class AdminNewsfeedComponent implements OnInit {
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private service: AdminNewsfeedsService,
+    private newsfeedService: AdminNewsfeedsService,
     private location: Location
   ) {}
 
@@ -61,7 +61,7 @@ export class AdminNewsfeedComponent implements OnInit {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
     if (!isNaN(activeId)) {
       this.id = activeId;
-      this.data = this.service.getTempFeed(this.id)[0];
+      this.data = this.newsfeedService.getTempFeed(this.id)[0];
       console.log('get temp', this.data);
       if (this.data) {
         this.data.publishDate = new Date(this.data.publishDate);
@@ -95,23 +95,23 @@ export class AdminNewsfeedComponent implements OnInit {
   }
 
   addOneFeed() {
-    this.service.addOneNewsFeed(this.data);
+    this.newsfeedService.addOneNewsFeed(this.data);
     this.goBack();
   }
 
-  updateOneFeed(value) {
-    this.data.title = value.title;
-    this.data.headline = value.headline;
-    this.data.status = value.status;
-    this.data.publishDate = value.publishDate;
-    this.data.content = value.content;
-    console.log('update base', this.data);
-    this.service.updateOneNewsFeed(this.id, this.data);
+  updateOneFeed() {
+    // this.data.title = value.title;
+    // this.data.headline = value.headline;
+    // this.data.status = value.status;
+    // this.data.publishDate = value.publishDate;
+    // this.data.content = value.content;
+    // console.log('update base', this.data);
+    this.newsfeedService.updateOneNewsFeed(this.id);
     this.goBack();
   }
 
   deleteOneFeed() {
-    this.service.deleteOneNewsFeed(this.id);
+    this.newsfeedService.deleteOneNewsFeed(this.id);
     this.goBack();
   }
 
@@ -119,13 +119,18 @@ export class AdminNewsfeedComponent implements OnInit {
     this.location.back();
   }
 
-  updateTempFeed(value) {
-    this.data.title = value.title;
-    this.data.headline = value.headline;
-    this.data.status = value.status;
-    this.data.publishDate = value.publishDate;
-    this.data.content = value.content;
-    console.log('udpate temp', this.data);
-    this.service.updateTempFeed(this.id, this.data);
+  // updateTempFeed(value) {
+  //   this.data.title = value.title;
+  //   this.data.headline = value.headline;
+  //   this.data.status = value.status;
+  //   this.data.publishDate = value.publishDate;
+  //   this.data.content = value.content;
+  //   // console.log('udpate temp', this.data);
+  //   this.newsfeedService.updateTempFeed(this.id, this.data);
+  // }
+
+  deleteTempFeed() {
+    this.newsfeedService.deleteTemp(this.id);
+    this.goBack();
   }
 }
