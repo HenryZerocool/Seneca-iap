@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminAnnouncementsComponent } from './admin-announcements/admin-announcements.component';
 import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.component';
-import { AdminResourcesComponent } from './admin-resources/admin-resources.component';
+//import { AdminResourcesComponent } from './admin-resources/admin-resources.component';
 import { IapContentComponent } from './iap-content.component';
 import { AdminNewsfeedComponent } from './admin-newsfeeds/admin-newsfeed/admin-newsfeed.component';
-import { AdminResourceComponent } from './admin-resources/admin-resource/admin-resource.component';
+import { AdminResourcesComponent } from './admin-resources/admin-resources.component';
 
 export const contentRoutes: Routes = [
   {
@@ -39,8 +39,8 @@ export const contentRoutes: Routes = [
         path: 'resources',
         children: [
           { path: '', component: AdminResourcesComponent },
-          { path: 'new', component: AdminResourceComponent },
-          { path: ':id', component: AdminResourceComponent }
+          { path: 'new', component: AdminResourcesComponent },
+          { path: ':id', component: AdminResourcesComponent }
         ]
       }
     ]
