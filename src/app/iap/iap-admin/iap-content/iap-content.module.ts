@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { QuillModule } from 'ngx-quill';
+import { FileSelectDirective } from 'ng2-file-upload';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 // ngrx
 
@@ -48,7 +49,8 @@ import { ResourceComponent } from "./admin-resources/admin-resource/resources/re
     AdminAnnouncementsComponent,
     AdminAnnouncementComponent,
     AdminNewsfeedsComponent,
-    ResourceComponent
+    ResourceComponent,
+    FileSelectDirective
   ],
   imports: [
     CommonModule,

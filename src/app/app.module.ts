@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { QuillModule } from 'ngx-quill';
+import { FileSelectDirective } from 'ng2-file-upload';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 // material
@@ -44,7 +45,8 @@ import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
     IapAdminComponent,
     HeaderComponent,
     IapContentComponent,
-    IapHomeComponent
+    IapHomeComponent,
+    // FileSelectDirective
   ],
   imports: [
     BrowserModule,
