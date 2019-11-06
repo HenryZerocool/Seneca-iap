@@ -17,6 +17,7 @@ import {
   MatIconModule,
   MatRadioModule,
   MatButtonModule,
+  MatDividerModule,
   MatCardModule,
   MatInputModule,
   MatDialogModule,
@@ -41,6 +42,7 @@ import { AgentNewsfeedComponent } from './iap/iap-agent/agent-newsfeed/agent-new
 import { AgentResourcesComponent } from './iap/iap-agent/agent-resources/agent-resources.component';
 import { AgentHeaderComponent } from './iap/iap-agent/agent-header/agent-header.component';
 import { LoginComponent } from './iap/login/login.component';
+import { AgentNewsfeedDetailsComponent } from './iap/iap-agent/agent-newsfeed/agent-newsfeed-details/agent-newsfeed-details.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { LoginComponent } from './iap/login/login.component';
     AgentResourcesComponent,
     AgentHeaderComponent,
     IapAgentComponent,
-    LoginComponent
+    LoginComponent,
+    AgentNewsfeedDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -81,6 +84,7 @@ import { LoginComponent } from './iap/login/login.component';
     MatCardModule,
     MatSortModule,
     MatInputModule,
+    MatDividerModule,
     MatAutocompleteModule,
     MatTableModule,
     MatDatepickerModule,

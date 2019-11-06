@@ -8,6 +8,9 @@ import { IapContentComponent } from './iap-content.component';
 import { AdminNewsfeedComponent } from './admin-newsfeeds/admin-newsfeed/admin-newsfeed.component';
 import { AdminResourceComponent } from './admin-resources/admin-resource/admin-resource.component';
 import { AgentResourcesComponent } from '../../iap-agent/agent-resources/agent-resources.component';
+import { AgentNewsfeedComponent } from '../../iap-agent/agent-newsfeed/agent-newsfeed.component';
+import { AgentNewsfeedDetailsComponent } from '../../iap-agent/agent-newsfeed/agent-newsfeed-details/agent-newsfeed-details.component';
+import { NewsfeedPreviewComponent } from './admin-newsfeeds/admin-newsfeed/newsfeed-preview/newsfeed-preview.component';
 
 export const contentRoutes: Routes = [
   {
@@ -35,7 +38,7 @@ export const contentRoutes: Routes = [
           { path: 'new', component: AdminNewsfeedComponent },
           {
             path: 'preview',
-            component: AgentResourcesComponent
+            component: AgentNewsfeedComponent
             // children: [{ path: '', component: AgentResourcesComponent }]
           },
           {
@@ -43,7 +46,7 @@ export const contentRoutes: Routes = [
             // component: AdminNewsfeedComponent,
             children: [
               { path: '', component: AdminNewsfeedComponent },
-              { path: 'preview/:id', component: AgentResourcesComponent }
+              { path: 'preview/:id', component: NewsfeedPreviewComponent }
             ]
           }
         ]

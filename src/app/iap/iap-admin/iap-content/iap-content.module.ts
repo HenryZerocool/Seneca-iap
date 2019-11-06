@@ -39,6 +39,7 @@ import { AdminAnnouncementComponent } from './admin-announcements/admin-announce
 import { CommonModule } from '@angular/common';
 import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.component';
 import { AdminResourceComponent } from './admin-resources/admin-resource/admin-resource.component';
+import { NewsfeedPreviewComponent } from './admin-newsfeeds/admin-newsfeed/newsfeed-preview/newsfeed-preview.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AdminResourceComponent } from './admin-resources/admin-resource/admin-r
     AdminAnnouncementsComponent,
     AdminAnnouncementComponent,
     AdminNewsfeedsComponent,
-    AdminResourceComponent
+    AdminResourceComponent,
+    NewsfeedPreviewComponent
   ],
   imports: [
     CommonModule,
