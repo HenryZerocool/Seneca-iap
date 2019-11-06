@@ -52,8 +52,8 @@ export const contentRoutes: Routes = [
         path: 'resources',
         children: [
           { path: '', component: AdminResourcesComponent }, // ResourceComponent // AdminResourcesComponent
-          { path: 'new', component: AdminResourcesComponent },
-          { path: ':id', component: AdminResourcesComponent }
+          { path: 'new', component: AdminResourceComponent },
+          { path: ':id', component: AdminResourceComponent }
         ]
       }
     ]
