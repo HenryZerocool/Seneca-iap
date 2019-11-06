@@ -44,19 +44,16 @@ export const contentRoutes: Routes = [
           {
             path: ':id',
             // component: AdminNewsfeedComponent,
-            children: [
-              { path: '', component: AdminNewsfeedComponent },
-              { path: 'preview/:id', component: NewsfeedPreviewComponent }
-            ]
+            children: [{ path: '', component: AdminNewsfeedComponent }, { path: 'preview/:id', component: NewsfeedPreviewComponent }]
           }
         ]
       },
       {
         path: 'resources',
         children: [
-          { path: '', component: AdminResourcesComponent },
-          { path: 'new', component: AdminResourceComponent },
-          { path: ':id', component: AdminResourceComponent }
+          { path: '', component: AdminResourcesComponent }, // ResourceComponent // AdminResourcesComponent
+          { path: 'new', component: AdminResourcesComponent },
+          { path: ':id', component: AdminResourcesComponent }
         ]
       }
     ]

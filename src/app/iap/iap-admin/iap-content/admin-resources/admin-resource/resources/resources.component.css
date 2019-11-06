@@ -1,0 +1,208 @@
+#main-mat-card {
+    /*flex container*/
+    display: flex;
+    flex-wrap: wrap;
+    /*h alighnment*/
+    margin: 0px auto;
+    margin-top: 10%;
+    width: 90%;
+    height: 60%;
+    padding: 0%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+}
+
+#main-mat-card #headder {
+    flex-direction: row;
+    align-self: flex-start;
+    flex: 100%;
+    background: #DA291C 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 0px 0px;
+    opacity: 1;
+}
+
+#main-mat-card #headder p {
+    padding-left: 2%;
+    text-align: left;
+    font: Regular 20px/27px Open Sans;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+
+/*margin effects space around the item, padding effects space INSIDE the item*/
+
+#main-mat-card #topInputs {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    /*At first I was using padding then I changed it to margin*/
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+#main-mat-card #topInputs #priorityForm {
+    padding-left: 4%;
+    padding-right: 5%;
+}
+
+#main-mat-card #topInputs #displayNameForm {
+    padding-right: 12%;
+    width: 30%;
+}
+
+#main-mat-card #topInputs #displayDescForm {
+    padding-left: 0%;
+    padding-right: 0%;
+    width: 35%;
+}
+
+#main-mat-card #source {
+    margin-bottom: 10%;
+    padding-left: 3%;
+}
+
+#main-mat-card #source p {
+    font: Bold 16px/22px Open Sans;
+    /*Font is not right*/
+    letter-spacing: 0;
+    opacity: 1;
+}
+
+#main-mat-card #source span {
+    /*For the * */
+    color: #DA261C;
+}
+
+#main-mat-card #uploadButton {
+    width: 118px;
+    height: 45px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    border-radius: 25px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+
+/*
+Messes up everything 
+#main-mat-card #uploadButtonIn {
+    width: 118px;
+    height: 45px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    border-radius: 25px;
+    margin-right: 30px;
+    margin-left: 30px;
+} */
+
+#main-mat-card #source #webAddressForm {
+    /*This shows up on a new line when the width is bigger.*/
+    margin-left: 20%;
+    width: 200%;
+}
+
+#main-mat-card #source a {
+    width: 1920px;
+    height: 1080px;
+    /* background: #FAFAFA 0% 0% no-repeat padding-box; */
+    opacity: 1;
+    margin-right: 30px;
+}
+
+#main-mat-card #source #DeleteButton {
+    /*Use mat icon
+    ../../../assets/Images/baseline-delete-24px.svg
+    */
+    text-align: center;
+    font: Regular 16px/22px Open Sans;
+    letter-spacing: 0;
+    color: #DA261C;
+    opacity: 1;
+    background: transparent url('../resources/../../../../../../../assets/imgs/baseline-delete-24px.svg') 0% 0% no-repeat padding-box;
+}
+
+#main-mat-card a {
+    text-align: center;
+    text-decoration: underline;
+    font: Regular 16px/22px Open Sans;
+    letter-spacing: 0;
+    color: #DA261C;
+    opacity: 1;
+}
+
+#main-mat-card #footer {
+    width: 90%;
+    /*Same width as card*/
+    align-self: flex-end;
+    padding-bottom: 3%;
+}
+
+#main-mat-card #footer #PreviewButton {
+    /*Not sure if font is correct*/
+    color: #0099FF;
+    text-align: center;
+    width: 156px;
+    height: 45px;
+    border: 0.5px solid #888B8D;
+    border-radius: 25px;
+    opacity: 1;
+    margin-right: 50%;
+    margin-left: 3%;
+    width: 10%;
+}
+
+#main-mat-card #footer #saveButton {
+    letter-spacing: 0;
+    color: #FFFFFF;
+    opacity: 1;
+    width: 140px;
+    height: 45px;
+    background: #DA291C 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    opacity: 1;
+    margin-left: 8%;
+    margin-right: 3%;
+}
+
+#main-mat-card #footer #cancelButton {
+    font: Regular 16px/21px Roboto;
+    letter-spacing: 0;
+    color: #DA291C;
+    opacity: 1;
+    width: 140px;
+    height: 45px;
+    border: 1px solid #DA291C;
+    border-radius: 25px;
+    opacity: 1;
+    margin-right: 2%;
+}
+
+#main-mat-card #footer #deleteButton {
+    width: 49px;
+    height: 21px;
+    text-align: left;
+    padding-left: 2%;
+    font: Regular 16px/21px Roboto;
+    letter-spacing: 0;
+    color: #DA291C;
+    opacity: 1;
+    background: transparent url('../resources/../../../../../../../assets/imgs/baseline-delete-24px.svg') 0% 0% no-repeat padding-box;
+    /*How can I style this background url individually??*/
+}
+
+.bottom_p {
+    margin-left: 5%;
+    width: 416px;
+    height: 22px;
+    text-align: left;
+    font: Regular 16px/22px Open Sans;
+    letter-spacing: 0;
+    color: #333333;
+    opacity: 1;
+}
