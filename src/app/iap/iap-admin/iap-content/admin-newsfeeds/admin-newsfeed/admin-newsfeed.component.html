@@ -9,12 +9,16 @@
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput placeholder="Title" [(ngModel)]="data.title" name="title" required />
+              <input matInput [(ngModel)]="data.title" placeholder="Title" name="title" required />
+              <mat-hint><em class="error" *ngIf="newsfeedForm.controls.title?.touched && newsfeedForm.controls.title?.invalid">
+                Required</em></mat-hint>
             </mat-form-field>
           </div>
           <div class="small-fields-container">
             <mat-form-field>
-              <input matInput placeholder="Headline" [(ngModel)]="data.headline" name="headline" required />
+              <input matInput [(ngModel)]="data.headline" placeholder="Headline" name="headline" required />
+              <mat-hint><em class="error" *ngIf="newsfeedForm.controls.headline?.touched && newsfeedForm.controls.headline?.invalid">
+                Required</em></mat-hint>
             </mat-form-field>
           </div>
 
@@ -26,6 +30,8 @@
                   <mat-option value="Closed">Closed</mat-option>
                 </ng-container>
               </mat-select>
+              <mat-hint><em class="error" *ngIf="newsfeedForm.controls.status?.touched && newsfeedForm.controls.status?.invalid">
+                  Required</em></mat-hint>
             </mat-form-field>
           </div>
 
@@ -34,18 +40,23 @@
               <input matInput [matDatepicker]="picker" placeholder="Publish Date" [(ngModel)]="data.publishDate" name="publishDate" required />
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
+              <mat-hint><em class="error" *ngIf="newsfeedForm.controls.publishDate?.touched && newsfeedForm.controls.publishDate?.invalid">
+                Required</em></mat-hint>
             </mat-form-field>
           </div>
         </div>
-        <quill-editor [(ngModel)]="data.content" [styles]="editorStyle" placeholder="Enter Text" [modules]="config" name="content"> </quill-editor>
+        <quill-editor [(ngModel)]="data.content" [styles]="editorStyle" placeholder="Enter Text" [modules]="config"
+          name="content" aria-required>
+        </quill-editor>
+
         <div class="actions-box">
           <mat-card-actions>
             <button class="is-rounded" color="accent" mat-stroked-button [routerLink]="['./preview', id]"><mat-icon>remove_red_eye</mat-icon> <span>Preview</span></button>
             <div class="right-buttons">
-              <button *ngIf="id < 1" mat-flat-button class="is-rounded" color="primary" (click)="addOneFeed()">
+              <button *ngIf="id < 1" mat-flat-button class="is-rounded" [disabled]="newsfeedForm.invalid" color="primary" (click)="addOneFeed()">
                 <span>Save</span>
               </button>
-              <!-- <span>{{newsfeedForm.value | json}}</span> -->
+              <button *ngIf="id >= 1" mat-flat-button class="is-rounded" [disabled]="newsfeedForm.invalid" color="primary" (click)="updateOneFeed()">
               <button *ngIf="id >= 1" mat-flat-button class="is-rounded" color="primary" (click)="updateOneFeed()">
                 <span>Save</span>
               </button>
