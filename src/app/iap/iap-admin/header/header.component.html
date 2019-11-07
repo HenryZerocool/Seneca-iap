@@ -53,70 +53,92 @@
   </a>
 </mat-toolbar> -->
 
-  <mat-drawer-container class="example-container mat-typography" autosize>
-    <mat-drawer #drawer mode="side" disableClose="true" opened="true">
-      <mat-nav-list>
-        <mat-list-item *ngIf="isExpanded">
-          <a [routerLink]="['./home']" routerLinkActive="active-link">
-            <mat-icon>home</mat-icon>
-            Home
-          </a>
-        </mat-list-item>
+<mat-drawer-container class="example-container mat-typography" autosize>
+  <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+    <mat-nav-list>
 
-        <mat-list-item>
-          <mat-icon mat-list-icon>person</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">
-            Agents
-          </h4>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon mat-list-icon>folder_shared</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">IWA</h4>
-        </mat-list-item>
+      <a [routerLink]="['./home']" routerLinkActive="active-link">
+      <mat-list-item (click)="isExpanded = !isExpanded">
 
-        <mat-list-item>
-          <mat-icon mat-list-icon>monetization_on</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Commissions</h4>
-        </mat-list-item>
-        <mat-list-item>
-          <a [routerLink]="['./content']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">
+          Home
+        </h4>
+
+      </mat-list-item>
+      </a>
+
+      <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">
+          Agents
+        </h4>
+      </mat-list-item>
+     <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon>folder_shared</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">IWA</h4>
+      </mat-list-item>
+
+       <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon>monetization_on</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Commissions</h4>
+      </mat-list-item>
+
+
+      <mat-expansion-panel class="mat-elevation-z0 " *ngIf="isExpanded" >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
             <mat-icon mat-list-icon>rss_feed</mat-icon>
+
             <h4 mat-line *ngIf="isExpanded">Content</h4>
-          </a>
-        </mat-list-item>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <a [routerLink]="['./content/announcements']" routerLinkActive="active-link">
         <mat-list-item>
-          <mat-icon mat-list-icon>pan_tool</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Request</h4>
-        </mat-list-item>
 
+            Announcement
+
+        </mat-list-item>
+      </a>
+
+      <a [routerLink]="['./content/newsfeed']" routerLinkActive="active-link">
         <mat-list-item>
-          <mat-icon mat-list-icon>settings_applications</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">System</h4>
+
+            Newsfeed
+
         </mat-list-item>
+      </a>
 
-        <mat-expansion-panel class="mat-elevation-z0 panel" *ngIf="isExpanded">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <mat-icon mat-list-icon>rss_feed</mat-icon>
+        <a [routerLink]="['./content/resources']" routerLinkActive="active-link">
+        <mat-list-item>
 
-              <h4 mat-line *ngIf="isExpanded">Log out</h4>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
+            Resources
 
-          <mat-list-item>
-            <a href="#">AirtelTigo Airtime</a>
-          </mat-list-item>
-          <mat-list-item>
-            <a href="#">Vodafone Airtime</a>
-          </mat-list-item>
-          <mat-list-item>
-            <a href="#">MTN Airtime</a>
-          </mat-list-item>
-          <mat-list-item>
-            <a href="#">GLO Airtime</a>
-          </mat-list-item>
-        </mat-expansion-panel>
-      </mat-nav-list>
-    </mat-drawer>
-  </mat-drawer-container>
+        </mat-list-item>
+      </a>
+
+      </mat-expansion-panel>
+
+     <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon>pan_tool</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Request</h4>
+      </mat-list-item>
+
+       <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon>settings_applications</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">System Admin</h4>
+      </mat-list-item>
+
+      <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon>exit_to_app</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Log Off</h4>
+      </mat-list-item>
+
+    </mat-nav-list>
+
+
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
 </div>

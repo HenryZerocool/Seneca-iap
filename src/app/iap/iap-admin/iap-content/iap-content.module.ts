@@ -7,6 +7,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// prettier-ignore
 import {
   MatToolbarModule,
   MatTableModule,
@@ -29,6 +30,7 @@ import {
   MatListModule,
   MatExpansionModule
 } from '@angular/material';
+
 // import {  } from '@angular/material/tabs';
 
 import { IapContentComponent } from './iap-content.component';
