@@ -8,6 +8,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// prettier-ignore
 import {
   MatToolbarModule,
   MatTableModule,
@@ -26,8 +27,11 @@ import {
   MatAutocompleteModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatListModule,
+  MatExpansionModule
 } from '@angular/material';
+
 // import {  } from '@angular/material/tabs';
 
 import { IapContentComponent } from './iap-content.component';
@@ -81,7 +85,10 @@ import { NewsfeedPreviewComponent } from './admin-newsfeeds/admin-newsfeed/newsf
     MatTableModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatListModule,
+    MatSidenavModule,
+    MatExpansionModule
     // Ngrx
   ],
   exports: [
