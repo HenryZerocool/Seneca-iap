@@ -28,9 +28,24 @@
     margin: 2vh 2.5vw;
 }
 
-#main-mat-card #topInputs {
+.admin-announcement-container #main-mat-card .mat-content #firstRow {
+    width: 20%;
+}
+
+.admin-announcement-container #main-mat-card .mat-content #secondRow {
+    width: 20%;
+}
+
+.admin-announcement-container #main-mat-card .mat-content #secondRow #SecondRowRight {
     display: flex;
-    flex: 1 1 100%;
+    align-items: flex-end;
+}
+
+.admin-announcement-container #main-mat-card .mat-content input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
 }
 
 .small-field-container {

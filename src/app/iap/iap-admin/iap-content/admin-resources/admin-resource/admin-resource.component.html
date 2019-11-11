@@ -4,23 +4,29 @@
             <p>RESOURCE</p>
         </div>
         <div class="mat-content">
-            <div id="topInputs">
-                <div class="small-field-container">
-                    <mat-form-field id="priorityForm">
-                        <input matInput id="priority" placeholder="Priority" />
-                    </mat-form-field>
+
+            <mat-form-field id="firstRow">
+                <mat-label>Status</mat-label>
+                <mat-select>
+                    <mat-option>Test</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <br>
+            <mat-form-field id="secondRow">
+                <input matInput placeholder="Priority">
+
+                <div id="SecondRowRight">
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
                 </div>
-                <div class="small-field-container">
-                    <mat-form-field id="displayNameForm">
-                        <input matInput id="displayName" placeholder="Display Name *" />
-                    </mat-form-field>
-                </div>
-                <div class="small-field-container">
-                    <mat-form-field id="displayDescForm">
-                        <input matInput id="displayDesc" placeholder="Display Description (optional)" />
-                    </mat-form-field>
-                </div>
-            </div>
+            </mat-form-field>
+
+            <mat-form-field id="ThirdFourthRow">
+                <input matInput placeholder="Display Name *">
+                <input matInput placeholder="Display Description (optional)">
+            </mat-form-field>
 
             <div id="source">
                 <p>Please provide one source: <span id="star">*</span></p>
