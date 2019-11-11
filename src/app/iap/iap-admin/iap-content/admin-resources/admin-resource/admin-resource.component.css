@@ -1,139 +1,152 @@
 .admin-announcement-container {
-  padding: 2.5vw;
-  background: #fafafa 0% 0% no-repeat padding-box;
+    padding: 2.5vw;
+    background: #fafafa 0% 0% no-repeat padding-box;
 }
+
 #main-mat-card {
-  display: flex;
-  flex-direction: column;
-  padding: unset;
-  box-shadow: 0px 3px 6px #00000029;
+    display: flex;
+    flex-direction: column;
+    padding: unset;
+    box-shadow: 0px 3px 6px #00000029;
 }
 
 #main-mat-card #headder {
-  flex: 100%;
-  background: #da291c 0% 0% no-repeat padding-box;
-  border-radius: 10px 10px 0px 0px;
+    flex: 100%;
+    background: #da291c 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 0px 0px;
 }
 
 #main-mat-card #headder p {
-  padding-left: 2%;
-  color: #ffffff;
+    padding-left: 2%;
+    color: #ffffff;
 }
 
+
 /*margin effects space around the item, padding effects space INSIDE the item*/
+
 .mat-content {
-  margin: 2vh 2.5vw;
+    margin: 2vh 2.5vw;
 }
+
 #main-mat-card #topInputs {
-  display: flex;
-  flex: 1 1 100%;
+    display: flex;
+    flex: 1 1 100%;
 }
+
 .small-field-container {
-  display: flex;
-  flex: 3;
+    display: flex;
+    flex: 3;
 }
+
 .small-field-container:nth-child(1) {
-  flex: 1;
+    flex: 1;
 }
+
 mat-form-field {
-  width: 90%;
+    width: 90%;
 }
+
 #main-mat-card #source span {
-  /*For the * */
-  color: #da261c;
+    /*For the * */
+    color: #da261c;
 }
 
 #main-mat-card #uploadButton {
-  width: 118px;
-  height: 45px;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
-  opacity: 1;
-  border-radius: 25px;
-  margin-right: 30px;
-  margin-left: 30px;
+    width: 118px;
+    height: 45px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    border-radius: 25px;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 #main-mat-card #source a {
-  width: 1920px;
-  height: 1080px;
-  /* background: #FAFAFA 0% 0% no-repeat padding-box; */
-  opacity: 1;
-  margin-right: 30px;
+    width: 1920px;
+    height: 1080px;
+    /* background: #FAFAFA 0% 0% no-repeat padding-box; */
+    opacity: 1;
+    margin-right: 30px;
 }
 
 #main-mat-card #source #DeleteButton {
-  /*Use mat icon*/
-  text-align: center;
-  letter-spacing: 0;
-  color: #da261c;
-  opacity: 1;
-  /* background: transparent url('../../../assets/Images/baseline-delete-24px.svg')
+    /*Use mat icon*/
+    text-align: center;
+    letter-spacing: 0;
+    color: #da261c;
+    opacity: 1;
+    /* background: transparent url('../../../assets/Images/baseline-delete-24px.svg')
     0% 0% no-repeat padding-box; */
 }
 
 #main-mat-card a {
-  text-align: center;
-  text-decoration: underline;
-  color: #da261c;
-  opacity: 1;
+    text-align: center;
+    text-decoration: underline;
+    color: #da261c;
+    opacity: 1;
 }
 
 #main-mat-card #footer {
-  padding: 3% 0;
+    padding: 3% 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 #main-mat-card #footer #PreviewButton {
-  /*Not sure if font is correct*/
-  color: #0099ff;
-  width: 156px;
-  height: 45px;
-  border: 0.5px solid #888b8d;
-  border-radius: 25px;
-  opacity: 1;
-  margin-right: 50%;
-  margin-left: 3%;
-  width: 10%;
+    /*Not sure if font is correct*/
+    color: #0099ff;
+    width: 156px;
+    height: 45px;
+    border: 0.5px solid #888b8d;
+    border-radius: 25px;
+    opacity: 1;
+    margin-right: 50%;
+    margin-left: 3%;
+    width: 10%;
 }
 
 #main-mat-card #footer #saveButton {
-  color: #ffffff;
-
-  width: 140px;
-  height: 45px;
-  background: #da291c 0% 0% no-repeat padding-box;
-  border-radius: 25px;
-
-  margin-left: 8%;
-  margin-right: 3%;
+    color: #ffffff;
+    width: 140px;
+    height: 45px;
+    background: #da291c 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    margin-left: 8%;
+    margin-right: 3%;
 }
 
 #main-mat-card #footer #cancelButton {
-  color: #da291c;
-
-  width: 140px;
-  height: 45px;
-  border: 1px solid #da291c;
-  border-radius: 25px;
-
-  margin-right: 2%;
+    color: #da291c;
+    width: 140px;
+    height: 45px;
+    border: 1px solid #da291c;
+    border-radius: 25px;
+    margin-right: 2%;
 }
 
 #main-mat-card #footer #deleteButton {
-  padding-left: 2%;
-
-  color: #da291c;
-
-  /* background: transparent url('../../../assets/Images/baseline-delete-24px.svg')
+    padding-left: 2%;
+    color: #da291c;
+    /* background: transparent url('../../../assets/Images/baseline-delete-24px.svg')
     0% 0% no-repeat padding-box; */
-  /*How can I style this background url individually??*/
+    /*How can I style this background url individually??*/
 }
 
 .bottom_p {
-  margin-left: 5%;
-  width: 416px;
-  height: 22px;
-  text-align: left;
-  color: #333333;
-  opacity: 1;
+    margin-left: 5%;
+    width: 416px;
+    height: 22px;
+    text-align: left;
+    color: #333333;
+    opacity: 1;
+}
+
+.mat-content {
+    flex-direction: column;
+}
+
+.right-buttons {
+    display: flex;
+    align-items: flex-end;
 }
