@@ -99,3 +99,11 @@ tr.mat-row.ng-star-inserted:hover {
 td.mat-cell {
   color: inherit;
 }
+
+/* .mat-button-base {
+  min-width: 140px;
+} */
+
+.delete-box {
+  min-width: 64px;
+}

@@ -1,7 +1,7 @@
 <div class="admin-announcement-container">
   <mat-card class="main-container">
     <mat-card-title>
-      <h4 class="card-title">Newsfeed</h4>
+      <h1 class="card-title">Newsfeed</h1>
       <div class="actions-box">
         <mat-form-field appearance="outline" class="search-bar">
           <input matInput #search (keyup)="applyFilter($event.target.value)" maxlength="256" placeholder="Search" />
@@ -78,7 +78,7 @@
         <ng-container matColumnDef="Delete">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
           <td mat-cell *matCellDef="let element">
-            <button mat-button (click)="deletePost(element.id); $event.stopPropagation()">
+            <button mat-button class="delete-box" (click)="deletePost(element.id); $event.stopPropagation()">
               <mat-icon>delete_forever</mat-icon>
             </button>
           </td>

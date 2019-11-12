@@ -1,16 +1,7 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { AdminNewsfeedsService } from './admin-newsfeeds.service';
-
-export interface PeriodicElement {
-  id: number;
-  title: string;
-  headline: string;
-  status: string;
-  lastModifier: string;
-  publishDate?: string;
-}
 
 @Component({
   selector: 'app-admin-newsfeeds',
@@ -23,17 +14,9 @@ export class AdminNewsfeedsComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  @ViewChild('PostEditBox', { static: true }) PostEditBox: TemplateRef<any>;
-  displayedColumns: string[] = [
-    'title',
-    'headline',
-    'status',
-    'lastModifier',
-    'publish Date',
-    'id',
-    'Delete'
-  ];
+  displayedColumns: string[] = ['status', 'title', 'headline', 'publish Date', 'lastModifier', 'id', 'Delete'];
   dataSource: MatTableDataSource<any>;
+
   constructor(private service: AdminNewsfeedsService) {}
   ngOnInit() {
     this.refreshData();
@@ -50,7 +33,7 @@ export class AdminNewsfeedsComponent implements OnInit {
         case 'publish Date':
           return item.publishDate;
         default:
-          return item[property];
+          return item[property].toLowerCase();
       }
     };
     this.dataSource.paginator = this.paginator;
