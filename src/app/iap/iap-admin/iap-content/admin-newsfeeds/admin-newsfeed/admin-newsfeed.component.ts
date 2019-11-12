@@ -1,20 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AdminNewsfeedsService } from '../admin-newsfeeds.service';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  FormControl
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-admin-newsfeed',
   templateUrl: './admin-newsfeed.component.html',
-  styleUrls: [
-    '../../admin-announcements/admin-announcement/admin-announcement.component.css'
-  ]
+  styleUrls: ['../../admin-announcements/admin-announcement/admin-announcement.component.css']
   // styleUrls: ['./admin-newsfeed.component.css']
 })
 export class AdminNewsfeedComponent implements OnInit {
@@ -51,31 +44,14 @@ export class AdminNewsfeedComponent implements OnInit {
     ]
   };
 
-  constructor(
-    private activeRoute: ActivatedRoute,
-    private newsfeedService: AdminNewsfeedsService,
-    private location: Location
-  ) {}
+  constructor(private activeRoute: ActivatedRoute, private newsfeedService: AdminNewsfeedsService, private location: Location) {}
 
   ngOnInit() {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
-    if (!isNaN(activeId)) {
-      this.id = activeId;
-      this.data = this.newsfeedService.getTempFeed(this.id)[0];
-      console.log('get temp', this.data);
-      if (this.data) {
-        this.data.publishDate = new Date(this.data.publishDate);
-      }
-    } else {
-      this.id = 0;
-      this.data = {
-        title: '',
-        headline: '',
-        status: '',
-        lastModifier: '',
-        publishDate: '',
-        content: ''
-      };
+    this.id = isNaN(activeId) ? 0 : activeId;
+    this.data = this.newsfeedService.getTempFeed(this.id)[0];
+    if (this.data) {
+      this.data.publishDate = new Date(this.data.publishDate);
     }
 
     // this.editorForm = new FormGroup({
@@ -100,12 +76,6 @@ export class AdminNewsfeedComponent implements OnInit {
   }
 
   updateOneFeed() {
-    // this.data.title = value.title;
-    // this.data.headline = value.headline;
-    // this.data.status = value.status;
-    // this.data.publishDate = value.publishDate;
-    // this.data.content = value.content;
-    // console.log('update base', this.data);
     this.newsfeedService.updateOneNewsFeed(this.id);
     this.goBack();
   }
@@ -118,16 +88,6 @@ export class AdminNewsfeedComponent implements OnInit {
   goBack() {
     this.location.back();
   }
-
-  // updateTempFeed(value) {
-  //   this.data.title = value.title;
-  //   this.data.headline = value.headline;
-  //   this.data.status = value.status;
-  //   this.data.publishDate = value.publishDate;
-  //   this.data.content = value.content;
-  //   // console.log('udpate temp', this.data);
-  //   this.newsfeedService.updateTempFeed(this.id, this.data);
-  // }
 
   deleteTempFeed() {
     this.newsfeedService.deleteTemp(this.id);

@@ -22,8 +22,7 @@ let ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     title: 'Free Airport Pickup',
-    headline:
-      'Seneca provides free airport pick-up for all international students',
+    headline: 'Seneca provides free airport pick-up for all international students',
     status: 'Active',
     lastModifier: 'Shirley Mangallon',
     publishDate: 'Oct 25, 2019',
@@ -69,6 +68,9 @@ export class AdminNewsfeedsService {
   }
 
   getTempFeed(id) {
+    if (id === 0) {
+      this.addTempFeed({ id: 0, title: '', headline: '', status: '', lastModifier: '', publishDate: '', content: '' });
+    }
     let temp = tempData.filter(data => data.id === id);
     if (temp.length === 0) {
       this.addTempFeed(ELEMENT_DATA.filter(data => data.id === id)[0]);
@@ -77,8 +79,10 @@ export class AdminNewsfeedsService {
     return temp;
   }
   addTempFeed(tempFeed) {
-    const temp = JSON.parse(JSON.stringify(tempFeed));
-    tempData.push(temp);
+    if (tempFeed) {
+      const temp = JSON.parse(JSON.stringify(tempFeed));
+      tempData.push(temp);
+    }
   }
   // updateTempFeed(id, tempFeed) {
   //   const foundIndex = tempData.findIndex(data => data.id === id);
