@@ -4,60 +4,66 @@
             <p>RESOURCE</p>
         </div>
         <div class="mat-content">
+            <div id="mainForm">
+                <!--a-->
 
-            <mat-form-field id="firstRow">
-                <mat-label>Status</mat-label>
-                <mat-select>
-                    <mat-option>Test</mat-option>
-                </mat-select>
-            </mat-form-field>
 
-            <br>
-            <mat-form-field id="secondRow">
-                <input matInput placeholder="Priority">
+                <div id="rowOne">
+                    <mat-select placeholder="Status">
+                        <mat-option>Test1</mat-option>
+                        <mat-option>Test2</mat-option>
+                        <mat-option>Test3</mat-option>
+                    </mat-select>
+                </div>
 
-                <div id="SecondRowRight">
-                    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+
+                <div id="rowTwo">
+                    <input matInput id="Priority" placeholder="Priority">
+                    <input matInput [matDatepicker]="picker" placeholder="Publish Date *">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </div>
-            </mat-form-field>
 
-            <mat-form-field id="ThirdFourthRow">
-                <input matInput placeholder="Display Name *">
-                <input matInput placeholder="Display Description (optional)">
-            </mat-form-field>
+                <div id="midleTextFields">
+                    <input matInput id="DisplayName" placeholder="Display Name *">
+                    <input matInput id="DisplayDesc" placeholder="Display Description (optional)">
+                </div>
 
-            <div id="source">
-                <p>Please provide one source: <span id="star">*</span></p>
-                <mat-radio-button #webAddress value="1">Web Address</mat-radio-button>
-                <mat-form-field *ngIf="webAddress.checked" id="webAddressForm">
-                    <input matInput />
-                </mat-form-field>
-                <br /><br /><br />
 
-                <mat-radio-button #showAttachment ng-value="true" value="2">Attachment</mat-radio-button>
-                <!--Attachment- Side buttons-->
-                <button mat-button id="uploadButton" *ngIf="showAttachment.checked">
-          Upload
-        </button>
-                <input type="file" value="Click me" id="uploadButtonIn" name="photo" ng2FileSelect [uploader]="uploader" />
+                <div id="source">
+                    <p>Please provide one source: <span id="star">*</span></p>
+                    <mat-radio-button #webAddress value="1">Web Address</mat-radio-button>
+                    <mat-form-field *ngIf="webAddress.checked" id="webAddressForm">
+                        <input matInput />
+                    </mat-form-field>
+                    <br /><br /><br />
 
-                <a href="#" *ngIf="showAttachment.checked">
-                    <mat-icon>attach_file</mat-icon>View file</a>
-                <button mat-button id="DeleteButton" *ngIf="showAttachment.checked">
-          Delete
-        </button>
-            </div>
+                    <mat-radio-button #showAttachment ng-value="true" value="2">Attachment</mat-radio-button>
+                    <button mat-button id="uploadButton" *ngIf="showAttachment.checked">
+                    Upload
+                </button>
+                    <input type="file" value="Click me" id="uploadButtonIn" name="photo" ng2FileSelect [uploader]="uploader" />
 
-            <div id="footer">
-                <button mat-button id="PreviewButton"><mat-icon>remove_red_eye</mat-icon> Preview</button>
-                <div class="right-buttons">
-                    <button mat-button id="saveButton" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">Save</button>
-                    <button mat-button id="cancelButton">Cancel</button>
-                    <button mat-button id="deleteButton">Delete</button>
+                    <a href="#" *ngIf="showAttachment.checked">
+                        <mat-icon>attach_file</mat-icon>View file
+                    </a>
+                    <button mat-button id="DeleteButton" *ngIf="showAttachment.checked">
+                    Delete
+                </button>
+                </div>
+
+                <div id="footer">
+                    <button mat-button id="PreviewButton">
+                    <mat-icon>remove_red_eye</mat-icon> Preview
+                </button>
+                    <div class="right-buttons">
+                        <button mat-button id="saveButton" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">Save</button>
+                        <button mat-button id="cancelButton">Cancel</button>
+                        <button mat-button id="deleteButton">Delete</button>
+                    </div>
                 </div>
             </div>
+            <!---b--->
         </div>
     </mat-card>
 
