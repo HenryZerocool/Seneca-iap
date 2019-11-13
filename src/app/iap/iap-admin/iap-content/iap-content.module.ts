@@ -1,3 +1,4 @@
+import { NavService } from './../nav.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -95,7 +96,7 @@ import { AdminResourceComponent } from './admin-resources/admin-resource/admin-r
     AdminAnnouncementComponent,
     AdminNewsfeedsComponent
   ],
-  //   providers: []
+    providers: [NavService],
   bootstrap: [IapContentComponent]
 })
 export class IapContentModule {}

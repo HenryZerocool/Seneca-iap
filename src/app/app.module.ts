@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { QuillModule } from 'ngx-quill';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { NavService } from './iap/iap-admin/nav.service';
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -41,6 +42,7 @@ import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
 import { IapAgentComponent } from './iap/iap-agent/iap-agent.component';
 import { LoginComponent } from './iap/login/login.component';
 import { AgentResourcesComponent } from './iap/iap-agent/agent-resources/agent-resources.component';
+import { MenuListItemComponent } from './iap/iap-admin/menu-list-item/menu-list-item.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { AgentResourcesComponent } from './iap/iap-agent/agent-resources/agent-r
     IapHomeComponent,
     AgentResourcesComponent,
     IapAgentComponent,
-    LoginComponent
+    LoginComponent,
+    MenuListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +89,7 @@ import { AgentResourcesComponent } from './iap/iap-agent/agent-resources/agent-r
     MatSidenavModule,
     MatExpansionModule
   ],
-  providers: [],
+  providers: [NavService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

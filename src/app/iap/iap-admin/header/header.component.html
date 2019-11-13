@@ -1,5 +1,5 @@
 <div class="container">
-  
+
   <mat-toolbar class="seneca-header" color="primary">
     <span class="logo-left">
       <button mat-icon-button (click)="isExpanded = !isExpanded">
@@ -13,137 +13,19 @@
       <p>ADMIN PORTAL | Welcome Angela Dunn!</p>
     </span>
   </mat-toolbar>
-  <!--
-<mat-toolbar color="primary">
 
-  <a [routerLink]="['./home']" routerLinkActive="active-link">
-    <mat-icon>home</mat-icon>
-    Home
-  </a>
 
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>person</mat-icon>
-    Agents
-  </a>
 
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>folder_shared</mat-icon>IWA
-  </a>
-
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>monetization_on</mat-icon>Commissions
-  </a>
-
-  <a [routerLink]="['./content']" routerLinkActive="active-link">
-    <mat-icon>rss_feed</mat-icon>Content
-  </a>
-
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>pan_tool</mat-icon>Request
-  </a>
-
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>settings_applications</mat-icon>System
-  </a>
-
-  <a [routerLink]="['/login']" routerLinkActive="active-link">
-    <mat-icon>input</mat-icon>Log out
-  </a>
-</mat-toolbar> -->
-
-  <mat-drawer-container class="example-container mat-typography" autosize >
+  <mat-drawer-container class="example-container mat-typography" autosize>
     <mat-drawer #drawer mode="side" disableClose="true" opened="true">
-      <mat-nav-list >
 
-        <a [routerLink]="['./home']" routerLinkActive="active-link">
-          <mat-list-item  >
-
-            <mat-icon mat-list-icon>home</mat-icon>
-            <h4 mat-line *ngIf="isExpanded">
-              Home
-            </h4>
-
-          </mat-list-item>
-        </a>
-
-        <mat-list-item>
-          <mat-icon mat-list-icon>person</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">
-            Agents
-          </h4>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon mat-list-icon>folder_shared</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">IWA</h4>
-        </mat-list-item>
-
-        <mat-list-item>
-          <mat-icon mat-list-icon>monetization_on</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Commissions</h4>
-        </mat-list-item>
-
-
-        <mat-expansion-panel class="mat-elevation-z0"  *ngIf="isExpanded">
-          <mat-expansion-panel-header class="expansion">
-
-            <mat-panel-title  >
-              <mat-icon  mat-panel-title-icon>rss_feed</mat-icon>
-
-              <h4 mat-line *ngIf="isExpanded">Content</h4>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-
-          <mat-list>
-            <div class="tabs">
-
-              <a [routerLink]="['./content/announcements']" routerLinkActive="active-link">
-
-                <mat-list-item>
-                  Announcement
-
-                </mat-list-item>
-              </a>
-
-              <a [routerLink]="['./content/newsfeed']" routerLinkActive="active-link">
-
-                <mat-list-item>
-                  Newsfeed
-
-                </mat-list-item>
-              </a>
-
-              <a [routerLink]="['./content/resources']" routerLinkActive="active-link">
-                <mat-list-item>
-
-                  Resources
-
-                </mat-list-item>
-              </a>
-
-            </div>
-          </mat-list>
-        </mat-expansion-panel>
-
-
-        <mat-list-item>
-          <mat-icon mat-list-icon>pan_tool</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Request</h4>
-        </mat-list-item>
-
-        <mat-list-item>
-          <mat-icon mat-list-icon>settings_applications</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">System Admin</h4>
-        </mat-list-item>
-
-        <mat-list-item>
-          <mat-icon mat-list-icon>exit_to_app</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Log Off</h4>
-        </mat-list-item>
-
-      </mat-nav-list>
-
+        <mat-nav-list >
+            <app-menu-list-item *ngFor="let item of navItems" [item]="item"></app-menu-list-item>
+          </mat-nav-list>
 
     </mat-drawer>
     <router-outlet></router-outlet>
   </mat-drawer-container>
 </div>
+
+
