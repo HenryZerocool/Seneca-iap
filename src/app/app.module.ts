@@ -32,7 +32,7 @@ import {
 // import {  } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
-import { IapContentModule } from './iap/iap-admin/iap-content/iap-content.module';
+import { IapAdminModule } from './iap/iap-admin/iap-admin.module';
 import { AppComponent } from './app.component';
 import { IapComponent } from './iap/iap.component';
 import { IapAdminComponent } from './iap/iap-admin/iap-admin.component';
@@ -65,7 +65,7 @@ import { AgentNewsfeedDetailsComponent } from './iap/iap-agent/agent-newsfeed/ag
   imports: [
     BrowserModule,
     AppRoutingModule,
-    IapContentModule,
+    IapAdminModule,
     FormsModule,
     QuillModule.forRoot(),
     HttpClientModule,
