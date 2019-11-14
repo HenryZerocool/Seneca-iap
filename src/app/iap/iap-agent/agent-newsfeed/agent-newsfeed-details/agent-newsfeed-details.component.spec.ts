@@ -1,3 +1,4 @@
+// tslint:disable-next-line: no-submodule-imports
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AgentNewsfeedDetailsComponent } from './agent-newsfeed-details.component';
@@ -8,9 +9,8 @@ describe('AgentNewsfeedDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AgentNewsfeedDetailsComponent ]
-    })
-    .compileComponents();
+      declarations: [AgentNewsfeedDetailsComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

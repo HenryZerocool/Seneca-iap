@@ -1,34 +1,19 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Newsfeed for Agency</mat-card-title>
-    <mat-card-subtitle>subtitle</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <div *ngFor="let feed of data" class="newsfeed">
-      <a [routerLink]="['./', feed.id]"> {{ feed.title }}</a>
-      <mat-divider></mat-divider>
-      <p>{{ feed.headline }}</p>
-      <pre>{{ feed.publishDate | date }}</pre>
-    </div>
-  </mat-card-content>
-</mat-card>
-<!-- // TODO: merge this 2 conflict -->
 <div class="agents-newsfeed-container">
-  <mat-card class="newsfeed-contaner">
-    <mat-card-title>
-      <h4 class="card-title">Newsfeed for Agencies</h4>
-    </mat-card-title>
+  <mat-card class="newsfeed-container">
+    <mat-card-title><h4 class="card-title">Newsfeed for Agencies</h4></mat-card-title>
 
-    <div class="newsfeed-list">
-      <mat-form-field appearance="outline" class="search-bar">
-        <input matInput (keyup)="applyFilter($event.target.value)" maxlength="256" placeholder="search" />
-        <mat-icon class="serach-bar" matSuffix>search</mat-icon>
-      </mat-form-field>
-    </div>
+    <mat-form-field appearance="outline" class="search-bar">
+      <input matInput (keyup)="applyFilter($event.target.value)" maxlength="256" placeholder="Search" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
 
-    <!-- <mat-tab [dateSource]="dataSource" class="newsfeed-list">
-     <ng-container matColmnDef="position"> </ng-container>
-    </mat-tab> -->
+    <mat-card-content class="newsfeed-content">
+      <div *ngFor="let feed of data" class="newsfeed">
+        <a class="links" [routerLink]="['./', feed.id]"> {{ feed.title }}</a>
+        <p>{{ feed.headline }}</p>
+        <pre>{{ feed.publishDate | date }}</pre>
+      </div>
+    </mat-card-content>
 
     <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
   </mat-card>

@@ -1,6 +1,7 @@
 .search-bar {
   display: flex;
-  align-self: auto;
+  /* align-self: auto; */
+  width: 180px;
 }
 
 .agents-newsfeed-container {
@@ -13,8 +14,10 @@
 }
 
 .newsfeed-container {
-  padding-top: 3vw;
-  padding-left: 5vw;
+  /* padding-top: 3vw;
+  padding-left: 5vw; */
+  padding-top: 100px;
+  padding-left: 633px;
 }
 
 .mat-card {
@@ -25,10 +28,40 @@
 .mat-card-title {
   display: flex;
   justify-content: space-between;
+  text-align: left;
+  font: Regular 30px/42px Minion Pro;
+  letter-spacing: 0;
+  color: #55585a;
+  opacity: 1;
 }
 
 .card-title {
   border-top: 4px solid #da291c;
   padding-top: 6px;
   margin: unset;
+}
+
+.links {
+  color: #da291c;
+  text-decoration: none;
+  text-align: left;
+  font: Regular 20px/27px Open Sans;
+  letter-spacing: 0;
+  color: #da261c;
+  opacity: 1;
+}
+
+.newsfeed {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.newsfeed-content {
+  text-align: left;
+  font: Regular 20px/27px Open Sans;
+  letter-spacing: 0;
+  color: #da261c;
+  opacity: 1;
 }

@@ -12,43 +12,6 @@
       <p>ADMIN PORTAL | Welcome Angela Dunn!</p>
     </span>
   </mat-toolbar>
-  <!--
-<mat-toolbar color="primary">
-
-  <a [routerLink]="['./home']" routerLinkActive="active-link">
-    <mat-icon>home</mat-icon>
-    Home
-  </a>
-
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>person</mat-icon>
-    Agents
-  </a>
-
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>folder_shared</mat-icon>IWA
-  </a>
-
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>monetization_on</mat-icon>Commissions
-  </a>
-
-  <a [routerLink]="['./content']" routerLinkActive="active-link">
-    <mat-icon>rss_feed</mat-icon>Content
-  </a>
-
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>pan_tool</mat-icon>Request
-  </a>
-
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>settings_applications</mat-icon>System
-  </a>
-
-  <a [routerLink]="['/login']" routerLinkActive="active-link">
-    <mat-icon>input</mat-icon>Log out
-  </a>
-</mat-toolbar> -->
 
   <mat-drawer-container class="example-container mat-typography" autosize>
     <mat-drawer #drawer mode="side" opened="true">
@@ -88,8 +51,6 @@
             </mat-panel-title>
           </mat-expansion-panel-header> -->
 
-
-
         <mat-nav-list>
           <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
             <span class="full-width" *ngIf="isExpanded || isShowing">Content</span>
@@ -126,7 +87,6 @@
           <mat-icon mat-list-icon>exit_to_app</mat-icon>
           <h4 mat-line *ngIf="isExpanded">Logout</h4>
         </mat-list-item>
-
       </mat-nav-list>
     </mat-drawer>
     <router-outlet></router-outlet>
