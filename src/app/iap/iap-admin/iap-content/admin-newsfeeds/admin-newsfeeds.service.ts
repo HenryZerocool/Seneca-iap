@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-export interface PeriodicElement {
+export interface iNewsFeed {
   id: number;
   title: string;
   headline: string;
@@ -10,7 +10,7 @@ export interface PeriodicElement {
   content?: string;
 }
 
-let ELEMENT_DATA: PeriodicElement[] = [
+let DATABASE: iNewsFeed[] = [
   {
     title: 'Title Lorem Ipsum',
     headline: 'One sentence about the article',
@@ -38,7 +38,7 @@ let ELEMENT_DATA: PeriodicElement[] = [
   }
 ];
 
-let tempData: PeriodicElement[] = [];
+let cacheData: iNewsFeed[] = [];
 @Injectable({
   providedIn: 'root'
 })
@@ -46,49 +46,49 @@ export class AdminNewsfeedsService {
   constructor() {}
 
   getAllNewsFeed() {
-    return ELEMENT_DATA;
+    return DATABASE;
   }
 
   getNewsFeed(id: number) {
-    return ELEMENT_DATA.filter(data => data.id === id);
+    return DATABASE.filter(data => data.id === id);
   }
 
   addOneNewsFeed(newsfeed) {
     const temp = newsfeed;
-    temp.id = ELEMENT_DATA.length + 1;
-    ELEMENT_DATA.push(temp);
+    temp.id = DATABASE.length + 1;
+    DATABASE.push(temp);
   }
   deleteOneNewsFeed(id: number) {
-    ELEMENT_DATA = ELEMENT_DATA.filter(data => data.id !== id);
+    DATABASE = DATABASE.filter(data => data.id !== id);
   }
   updateOneNewsFeed(id: number) {
-    const foundIndex = ELEMENT_DATA.findIndex(data => data.id === id);
-    const foundIndexTemp = tempData.findIndex(data => data.id === id);
-    ELEMENT_DATA[foundIndex] = tempData[foundIndexTemp];
+    const foundIndex = DATABASE.findIndex(data => data.id === id);
+    const foundIndexTemp = cacheData.findIndex(data => data.id === id);
+    DATABASE[foundIndex] = cacheData[foundIndexTemp];
   }
 
   getTempFeed(id) {
     if (id === 0) {
       this.addTempFeed({ id: 0, title: '', headline: '', status: '', lastModifier: '', publishDate: '', content: '' });
     }
-    let temp = tempData.filter(data => data.id === id);
+    let temp = cacheData.filter(data => data.id === id);
     if (temp.length === 0) {
-      this.addTempFeed(ELEMENT_DATA.filter(data => data.id === id)[0]);
-      temp = tempData.filter(data => data.id === id);
+      this.addTempFeed(DATABASE.filter(data => data.id === id)[0]);
+      temp = cacheData.filter(data => data.id === id);
     }
     return temp;
   }
-  addTempFeed(tempFeed) {
+  addTempFeed(tempFeed: iNewsFeed) {
     if (tempFeed) {
       const temp = JSON.parse(JSON.stringify(tempFeed));
-      tempData.push(temp);
+      cacheData.push(temp);
     }
   }
   // updateTempFeed(id, tempFeed) {
-  //   const foundIndex = tempData.findIndex(data => data.id === id);
-  //   tempData[foundIndex] = tempFeed;
+  //   const foundIndex = cacheData.findIndex(data => data.id === id);
+  //   cacheData[foundIndex] = tempFeed;
   // }
   deleteTemp(id) {
-    tempData = tempData.filter(data => data.id !== id);
+    cacheData = cacheData.filter(data => data.id !== id);
   }
 }

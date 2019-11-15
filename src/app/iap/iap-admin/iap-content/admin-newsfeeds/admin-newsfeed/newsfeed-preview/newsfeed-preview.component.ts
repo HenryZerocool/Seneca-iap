@@ -15,23 +15,10 @@ export class NewsfeedPreviewComponent implements OnInit {
 
   ngOnInit() {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
-    if (!isNaN(activeId)) {
-      this.id = activeId;
-      this.data = this.newsfeedService.getTempFeed(this.id)[0];
-      // console.log('get preview', this.data);
-    }
+    this.id = isNaN(activeId) ? 0 : activeId;
+    this.data = this.newsfeedService.getTempFeed(this.id)[0];
     if (this.data) {
       this.data.publishDate = new Date(this.data.publishDate);
-    } else {
-      // this.id = 0;
-      this.data = {
-        title: '',
-        headline: '',
-        status: '',
-        lastModifier: '',
-        publishDate: '',
-        content: ''
-      };
     }
   }
 }

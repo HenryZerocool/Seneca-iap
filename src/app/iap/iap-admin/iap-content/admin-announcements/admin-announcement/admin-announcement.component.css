@@ -38,9 +38,10 @@
 
 .mat-card-actions {
   display: flex;
+
   justify-content: space-between;
-  margin: 45px 0;
-  padding-top: unset;
+  margin: 2vw 2.5vw;
+  padding-top: 25px;
 }
 
 .mat-card-content {
@@ -51,7 +52,7 @@
 
 .is-rounded {
   border-radius: 25px;
-  width: 165px;
+  width: 140px;
   height: 45px;
 }
 
@@ -80,7 +81,7 @@ button.mat-stroked-button.mat-button-base:hover {
 .sub-container {
   display: flex;
   flex: 1;
-  margin-bottom: 20px;
+  margin: 0 2vw;
 }
 
 .mat-form-field {
@@ -89,18 +90,18 @@ button.mat-stroked-button.mat-button-base:hover {
 
 .container {
   padding-top: 50px;
-  margin: 0 5vw;
+  height: 300px;
 }
 
 .editor {
   width: 10px;
 }
 
-/* .form-group {
+.form-group {
   margin: 0 2vw;
   padding: 10px;
   padding-top: 25px;
-} */
+}
 
 .actions-box {
   display: flex;
@@ -108,8 +109,4 @@ button.mat-stroked-button.mat-button-base:hover {
 
 .right-buttons {
   justify-content: flex-end;
-}
-
-::ng-deep .mat-focused .mat-form-field-required-marker {
-  color: #da291c;
 }

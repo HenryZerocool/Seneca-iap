@@ -43,6 +43,7 @@ import { AdminNewsfeedsComponent } from './iap-content/admin-newsfeeds/admin-new
 import { AdminResourceComponent } from './iap-content/admin-resources/admin-resource/admin-resource.component';
 import { NewsfeedPreviewComponent } from './iap-content/admin-newsfeeds/admin-newsfeed/newsfeed-preview/newsfeed-preview.component';
 import { IapAdminComponent } from './iap-admin.component';
+import { AnnouncementPreviewComponent } from './iap-content/admin-announcements/admin-announcement/announcement-preview/announcement-preview.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { IapAdminComponent } from './iap-admin.component';
     AdminNewsfeedsComponent,
     AdminResourceComponent,
     NewsfeedPreviewComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    AnnouncementPreviewComponent
   ],
   imports: [
     CommonModule,

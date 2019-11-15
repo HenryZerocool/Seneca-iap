@@ -13,6 +13,7 @@ import { AgentNewsfeedDetailsComponent } from '../iap-agent/agent-newsfeed/agent
 import { NewsfeedPreviewComponent } from './iap-content/admin-newsfeeds/admin-newsfeed/newsfeed-preview/newsfeed-preview.component';
 
 import { IapHomeComponent } from './iap-home/iap-home.component';
+import { AnnouncementPreviewComponent } from './iap-content/admin-announcements/admin-announcement/announcement-preview/announcement-preview.component';
 
 export const adminRoutes: Routes = [
   { path: 'home', component: IapHomeComponent },
@@ -30,7 +31,14 @@ export const adminRoutes: Routes = [
         children: [
           { path: '', component: AdminAnnouncementsComponent },
           { path: 'new', component: AdminAnnouncementComponent },
-          { path: ':id', component: AdminAnnouncementComponent }
+          //preview agent
+          {
+            path: ':id',
+            children: [
+              { path: '', component: AdminAnnouncementComponent },
+              { path: 'preview/:id', component: AnnouncementPreviewComponent }
+            ]
+          }
         ]
       },
       {
