@@ -18,6 +18,7 @@ import {
   MatIconModule,
   MatRadioModule,
   MatButtonModule,
+  MatDividerModule,
   MatCardModule,
   MatInputModule,
   MatDialogModule,
@@ -32,7 +33,7 @@ import {
 // import {  } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
-import { IapContentModule } from './iap/iap-admin/iap-content/iap-content.module';
+import { IapAdminModule } from './iap/iap-admin/iap-admin.module';
 import { AppComponent } from './app.component';
 import { IapComponent } from './iap/iap.component';
 import { IapAdminComponent } from './iap/iap-admin/iap-admin.component';
@@ -40,9 +41,12 @@ import { HeaderComponent } from './iap/iap-admin/header/header.component';
 import { IapContentComponent } from './iap/iap-admin/iap-content/iap-content.component';
 import { IapHomeComponent } from './iap/iap-admin/iap-home/iap-home.component';
 import { IapAgentComponent } from './iap/iap-agent/iap-agent.component';
-import { LoginComponent } from './iap/login/login.component';
+import { AgentNewsfeedComponent } from './iap/iap-agent/agent-newsfeed/agent-newsfeed.component';
 import { AgentResourcesComponent } from './iap/iap-agent/agent-resources/agent-resources.component';
 import { MenuListItemComponent } from './iap/iap-admin/menu-list-item/menu-list-item.component';
+import { AgentHeaderComponent } from './iap/iap-agent/agent-header/agent-header.component';
+import { LoginComponent } from './iap/login/login.component';
+import { AgentNewsfeedDetailsComponent } from './iap/iap-agent/agent-newsfeed/agent-newsfeed-details/agent-newsfeed-details.component';
 
 @NgModule({
   declarations: [
@@ -52,19 +56,23 @@ import { MenuListItemComponent } from './iap/iap-admin/menu-list-item/menu-list-
     HeaderComponent,
     IapContentComponent,
     IapHomeComponent,
+    IapAgentComponent,
+    AgentNewsfeedComponent,
     AgentResourcesComponent,
+    AgentHeaderComponent,
     IapAgentComponent,
     LoginComponent,
-    MenuListItemComponent
+    MenuListItemComponent,
+    AgentNewsfeedDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    IapContentModule,
+    IapAdminModule,
     FormsModule,
     QuillModule.forRoot(),
     HttpClientModule,
-    HttpModule,
+    // HttpModule,
     // Material
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -81,6 +89,7 @@ import { MenuListItemComponent } from './iap/iap-admin/menu-list-item/menu-list-
     MatCardModule,
     MatSortModule,
     MatInputModule,
+    MatDividerModule,
     MatAutocompleteModule,
     MatTableModule,
     MatDatepickerModule,

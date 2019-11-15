@@ -52,7 +52,7 @@
 
 .is-rounded {
   border-radius: 25px;
-  width: 165px;
+  width: 140px;
   height: 45px;
 }
 
@@ -99,7 +99,6 @@ button.mat-stroked-button.mat-button-base:hover {
 
 .form-group {
   margin: 0 2vw;
-  height: 200px;
   padding: 10px;
   padding-top: 25px;
 }
@@ -110,8 +109,4 @@ button.mat-stroked-button.mat-button-base:hover {
 
 .right-buttons {
   justify-content: flex-end;
-}
-
-::ng-deep .mat-focused .mat-form-field-required-marker {
-  color: #da291c;
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminResourceComponent } from './admin-resource.component';
+import { AgentNewsfeedComponent } from './agent-newsfeed.component';
 
-describe('AdminResourceComponent', () => {
-  let component: AdminResourceComponent;
-  let fixture: ComponentFixture<AdminResourceComponent>;
+describe('AgentNewsfeedComponent', () => {
+  let component: AgentNewsfeedComponent;
+  let fixture: ComponentFixture<AgentNewsfeedComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminResourceComponent ]
+      declarations: [ AgentNewsfeedComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminResourceComponent);
+    fixture = TestBed.createComponent(AgentNewsfeedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

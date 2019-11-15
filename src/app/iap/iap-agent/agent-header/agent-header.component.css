@@ -1,0 +1,79 @@
+a {
+  text-decoration: none;
+  color: #55585a;
+}
+
+/* a:hover,
+a:active {
+  color: white;
+} */
+
+.navigation-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mat-toolbar {
+  border-radius: 3px;
+  background: #ffffff;
+  text-align: center;
+  font-size: 16px;
+}
+
+.mat-toolbar a {
+  flex: 1 1 100%;
+  border: 0.5px solid #d4d2d2;
+  padding: 10px;
+}
+
+.mat-toolbar a:hover {
+  background: #da291c;
+}
+
+/* .active-link {
+  background: #da291c;
+} */
+
+.active-link:hover {
+  background: #da291c !important;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: unset;
+  padding: unset;
+}
+
+.mat-icon {
+  display: block;
+  width: unset;
+}
+
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: #da291c;
+  color: black;
+}
+
+.seneca-header {
+  justify-content: space-between;
+  height: 50px;
+  background-color: #da291c;
+}
+
+.seneca-header p {
+  color: white;
+}
+
+.logo-left {
+  justify-content: space-evenly;
+  margin-left: 30px;
+}
+
+.text-right p {
+  color: white;
+  /* justify-content: space-evenly; */
+  margin-right: 22px;
+}

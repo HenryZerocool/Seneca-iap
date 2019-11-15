@@ -1,20 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AdminNewsfeedsService } from '../admin-newsfeeds.service';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  FormControl
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-admin-newsfeed',
   templateUrl: './admin-newsfeed.component.html',
-  styleUrls: [
-    '../../admin-announcements/admin-announcement/admin-announcement.component.css'
-  ]
+  styleUrls: ['../../admin-announcements/admin-announcement/admin-announcement.component.css']
   // styleUrls: ['./admin-newsfeed.component.css']
 })
 export class AdminNewsfeedComponent implements OnInit {
@@ -22,99 +15,60 @@ export class AdminNewsfeedComponent implements OnInit {
   data;
 
   // newsfeedForm: FormGroup;
-
-  editorForm: FormGroup;
+  // editorForm: FormGroup;
+  // editorContent: string;
 
   editorStyle = {
     height: '300px'
   };
 
-  config = {
-    toolbar: [
-      ['bold', 'italic', 'underline', 'strike'], // toggled buttons
-      ['blockquote', 'code-block'],
-
-      [{ header: 1 }, { header: 2 }], // custom button values
-      [{ list: 'ordered' }, { list: 'bullet' }],
-      [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
-      [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
-      [{ direction: 'rtl' }], // text direction
-
-      [{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
-      [{ header: [1, 2, 3, 4, 5, 6, false] }],
-
-      [{ color: [] }, { background: [] }], // dropdown with defaults from theme
-      [{ font: [] }],
-      [{ align: [] }],
-
-      ['clean']
-    ]
-  };
-
-  constructor(
-    private activeRoute: ActivatedRoute,
-    private service: AdminNewsfeedsService,
-    private location: Location
-  ) {}
-
-  // get userName() {
-  //   return this.newsfeedForm.get('title *');
-  // }
+  constructor(private activeRoute: ActivatedRoute, private newsfeedService: AdminNewsfeedsService, private location: Location) {}
 
   ngOnInit() {
     const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
-    if (!isNaN(activeId)) {
-      this.id = activeId;
-      this.data = this.service.getNewsFeed(this.id)[0];
-      console.log(this.data);
-      if (this.data) {
-        this.data.publishDate = new Date(this.data.publishDate);
-      }
-    } else {
-      this.id = 0;
-      this.data = {
-        title: '',
-        headline: '',
-        status: '',
-        lastModifier: '',
-        publishDate: ''
-      };
+    this.id = isNaN(activeId) ? 0 : activeId;
+    this.data = this.newsfeedService.getTempFeed(this.id)[0];
+    if (this.data) {
+      this.data.publishDate = new Date(this.data.publishDate);
     }
-    // const activeId = parseInt(this.activeRoute.snapshot.paramMap.get('id'), 10);
-    // // this.id = isNaN(activeId) ? 0 : activeId;
-    // if (!isNaN(activeId)) {
-    //   this.id = activeId;
-    //   this.data = this.service.getNewsFeed(this.id)[0];
-    //   console.log(this.data);
-    //   if (this.data) {
-    //     this.data.publishDate = new Date(this.data.publishDate);
-    //     // this.data.publishTo = new Date(this.data.publishTo);
-    //   }
-    // } else {
-    //   this.id = 0;
-    // }
 
-    this.editorForm = new FormGroup({
-      editor: new FormControl(null)
-    });
+    // this.editorForm = new FormGroup({
+    //   editor: new FormControl(null)
+    // });
+  }
+
+  // onSubmit() {
+  //   this.editorContent = this.editorForm.get('editor').value;
+  //   console.log(this.editorForm.get('editor').value);
+  // }
+
+  maxLength(e) {
+    if (e.editor.getLength() > 1000) {
+      e.editor.deleteText(10, e.editor.getLength());
+    }
   }
 
   addOneFeed() {
-    this.service.addOneNewsFeed(this.data);
+    this.newsfeedService.addOneNewsFeed(this.data);
     this.goBack();
   }
 
   updateOneFeed() {
-    this.service.updateOneNewsFeed(this.id, this.data);
+    this.newsfeedService.updateOneNewsFeed(this.id);
     this.goBack();
   }
 
   deleteOneFeed() {
-    this.service.deleteOneNewsFeed(this.id);
+    this.newsfeedService.deleteOneNewsFeed(this.id);
     this.goBack();
   }
 
   goBack() {
     this.location.back();
+  }
+
+  deleteTempFeed() {
+    this.newsfeedService.deleteTemp(this.id);
+    this.goBack();
   }
 }

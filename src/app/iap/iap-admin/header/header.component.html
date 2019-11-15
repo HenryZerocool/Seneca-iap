@@ -1,12 +1,11 @@
 <div class="container">
-
   <mat-toolbar class="seneca-header" color="primary">
     <span class="logo-left">
       <button mat-icon-button (click)="isExpanded = !isExpanded">
         <mat-icon>menu</mat-icon>
       </button>
 
-      <img src="../../../../assets\imgs\Seneca-International-Horizontal-Logo-color.svg" alt="seneca-logo-white" />
+      <img src="../../../../assets/imgs/Seneca-International-Horizontal-Logo-color.svg" alt="seneca-logo-white" />
     </span>
 
     <span class="text-right">
@@ -15,8 +14,8 @@
   </mat-toolbar>
 
 
-
-  <mat-drawer-container class="example-container mat-typography" autosize>
+<!-- black nav -->
+  <!-- <mat-drawer-container class="example-container mat-typography" autosize>
     <mat-drawer #drawer mode="side" disableClose="true" opened="true">
 
         <mat-nav-list >
@@ -25,7 +24,118 @@
 
     </mat-drawer>
     <router-outlet></router-outlet>
+  </mat-drawer-container> -->
+
+  <!--
+<mat-toolbar color="primary">
+
+  <a [routerLink]="['./home']" routerLinkActive="active-link">
+    <mat-icon>home</mat-icon>
+    Home
+  </a>
+
+  <a [routerLink]="['./new']" routerLinkActive="active-link">
+    <mat-icon>person</mat-icon>
+    Agents
+  </a>
+
+  <a [routerLink]="['./new']" routerLinkActive="active-link">
+    <mat-icon>folder_shared</mat-icon>IWA
+  </a>
+
+  <a [routerLink]="['./new']" routerLinkActive="active-link">
+    <mat-icon>monetization_on</mat-icon>Commissions
+  </a>
+
+  <a [routerLink]="['./content']" routerLinkActive="active-link">
+    <mat-icon>rss_feed</mat-icon>Content
+  </a>
+
+  <a [routerLink]="['./new']" routerLinkActive="active-link">
+    <mat-icon>pan_tool</mat-icon>Request
+  </a>
+
+  <a [routerLink]="['./new']" routerLinkActive="active-link">
+    <mat-icon>settings_applications</mat-icon>System
+  </a>
+
+  <a [routerLink]="['/login']" routerLinkActive="active-link">
+    <mat-icon>input</mat-icon>Log out
+  </a>
+</mat-toolbar> -->
+
+  <mat-drawer-container class="example-container mat-typography" autosize>
+    <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+      <mat-nav-list>
+        <a [routerLink]="['./home']" routerLinkActive="active-link">
+          <mat-list-item >
+            <mat-icon mat-list-icon>home</mat-icon>
+            <span mat-line *ngIf="isExpanded">
+              Home
+            </span>
+          </mat-list-item>
+        </a>
+
+        <mat-list-item >
+          <mat-icon mat-list-icon>person</mat-icon>
+          <span mat-line *ngIf="isExpanded">
+            Agents
+          </span>
+        </mat-list-item>
+        <mat-list-item >
+          <mat-icon mat-list-icon>folder_shared</mat-icon>
+          <span mat-line *ngIf="isExpanded">IWA</span>
+        </mat-list-item>
+
+        <mat-list-item >
+          <mat-icon mat-list-icon>monetization_on</mat-icon>
+          <span mat-line *ngIf="isExpanded">Commissions</span>
+        </mat-list-item>
+
+        <mat-expansion-panel class="mat-elevation-z0 " *ngIf="isExpanded">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon mat-list-icon>rss_feed</mat-icon>
+
+              <span mat-line *ngIf="isExpanded">Content</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <a [routerLink]="['./content/announcements']" routerLinkActive="active-link">
+            <mat-list-item>
+              Announcement
+            </mat-list-item>
+          </a>
+
+          <a [routerLink]="['./content/newsfeed']" routerLinkActive="active-link">
+            <mat-list-item>
+              Newsfeed
+            </mat-list-item>
+          </a>
+
+          <a [routerLink]="['./content/resources']" routerLinkActive="active-link">
+            <mat-list-item>
+              Resources
+            </mat-list-item>
+          </a>
+        </mat-expansion-panel>
+
+        <mat-list-item >
+          <mat-icon mat-list-icon>pan_tool</mat-icon>
+          <span mat-line *ngIf="isExpanded">Request</span>
+        </mat-list-item>
+
+        <mat-list-item >
+          <mat-icon mat-list-icon>settings_applications</mat-icon>
+          <span mat-line *ngIf="isExpanded">System Admin</span>
+        </mat-list-item>
+
+        <mat-list-item >
+          <mat-icon mat-list-icon>exit_to_app</mat-icon>
+          <span mat-line *ngIf="isExpanded">Log Off</span>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+    <router-outlet></router-outlet>
   </mat-drawer-container>
 </div>
-
-

@@ -17,11 +17,7 @@
         </div>
         <div class="small-field-container">
           <mat-form-field id="displayDescForm">
-            <input
-              matInput
-              id="displayDesc"
-              placeholder="Display Description (optional)"
-            />
+            <input matInput id="displayDesc" placeholder="Display Description (optional)" />
           </mat-form-field>
         </div>
       </div>
@@ -34,26 +30,22 @@
         </mat-form-field>
         <br /><br /><br />
 
-        <mat-radio-button #showAttachment ng-value="true" value="2"
-          >Attachment</mat-radio-button
-        >
+        <mat-radio-button #showAttachment ng-value="true" value="2">Attachment</mat-radio-button>
         <!--Attachment- Side buttons-->
         <button mat-button id="uploadButton" *ngIf="showAttachment.checked">
           Upload
         </button>
-        <a href="#" *ngIf="showAttachment.checked">
-          <mat-icon>attach_file</mat-icon>View file</a
-        >
+        <input type="file" value="Click me" id="uploadButtonIn" name="photo" ng2FileSelect [uploader]="uploader" />
+
+        <a href="#" *ngIf="showAttachment.checked"> <mat-icon>attach_file</mat-icon>View file</a>
         <button mat-button id="DeleteButton" *ngIf="showAttachment.checked">
           Delete
         </button>
       </div>
 
       <div id="footer">
-        <button mat-button id="PreviewButton">
-          <mat-icon>remove_red_eye</mat-icon> Preview
-        </button>
-        <button mat-button id="saveButton">Save</button>
+        <button mat-button id="PreviewButton"><mat-icon>remove_red_eye</mat-icon> Preview</button>
+        <button mat-button id="saveButton" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">Save</button>
         <button mat-button id="cancelButton">Cancel</button>
         <button mat-button id="deleteButton">Delete</button>
       </div>

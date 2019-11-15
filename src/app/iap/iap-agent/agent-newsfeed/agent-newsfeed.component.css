@@ -1,4 +1,9 @@
-.agents-resources-container {
+.search-bar {
+  display: flex;
+  align-self: auto;
+}
+
+.agents-newsfeed-container {
   padding-top: 2.5vw;
   padding-left: 20vw;
   padding-right: 20vw;
@@ -7,7 +12,7 @@
   border-right: 50px;
 }
 
-.main-container {
+.newsfeed-container {
   padding-top: 3vw;
   padding-left: 5vw;
 }
@@ -26,24 +31,4 @@
   border-top: 4px solid #da291c;
   padding-top: 6px;
   margin: unset;
-}
-
-.mat-card p {
-  padding-left: inherit;
-  padding-right: 65px;
-}
-
-.link {
-  color: #da291c;
-  text-decoration: none;
-}
-
-.mat-card button {
-  border: 1px solid #da291c;
-  border-radius: 25px;
-  padding: 10px 20px 10px 20px;
-  margin: auto;
-  display: flex;
-  color: #da291c;
-  background: #ffffff 0% 0% no-repeat padding-box;
 }

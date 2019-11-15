@@ -1,0 +1,5 @@
+package.json
+dist
+src/app/azure-pages
+src/assets/b2c-auth
+*.html

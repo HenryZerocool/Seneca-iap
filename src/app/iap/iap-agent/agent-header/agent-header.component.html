@@ -1,0 +1,35 @@
+<mat-toolbar class="seneca-header" color="primary">
+  <span class="logo-left">
+    <img src="../../../../assets\imgs\Seneca-International-Horizontal-Logo.svg" alt="seneca-logo-white" />
+  </span>
+
+  <span class="text-right">
+    <p>
+      AGENT PORTAL | International Education Consultants Inc. | Welcome Angela Dunn!
+    </p>
+  </span>
+</mat-toolbar>
+
+<mat-toolbar color="primary">
+  <a [routerLink]="['./home']" routerLinkActive="active-link">
+    <mat-icon>home</mat-icon>
+    Home
+  </a>
+
+  <a [routerLink]="['./new']" routerLinkActive="active-link">
+    <mat-icon>person</mat-icon>
+    My Profile
+  </a>
+
+  <a [routerLink]="['./new']" routerLinkActive="active-link"><mat-icon>folder_shared</mat-icon>Application</a>
+
+  <a [routerLink]="['./new']" routerLinkActive="active-link"> <mat-icon>monetization_on</mat-icon>Commissions </a>
+
+  <a [routerLink]="['./resources']" routerLinkActive="active-link"><mat-icon>local_library</mat-icon>Resources</a>
+
+  <a [routerLink]="['./newsfeed']" routerLinkActive="active-link"><mat-icon>rss_feed</mat-icon>Newsfeed</a>
+
+  <a [routerLink]="['./new']" routerLinkActive="active-link"> <mat-icon>contact_support</mat-icon>Seneca Contacts </a>
+
+  <a [routerLink]="['/login']" routerLinkActive="active-link"> <mat-icon>input</mat-icon>Log out </a>
+</mat-toolbar>

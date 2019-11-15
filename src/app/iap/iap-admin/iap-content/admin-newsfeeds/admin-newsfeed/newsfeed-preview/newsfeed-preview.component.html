@@ -1,0 +1,11 @@
+<p>newsfeed-preview works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{data.title}}</mat-card-title>
+        <mat-card-subtitle>{{data.headline}}</mat-card-subtitle>
+        <pre>{{data.publishDate | date}}</pre>
+    </mat-card-header>
+    <mat-card-content>
+        <div [innerHTML]="data.content"></div>
+    </mat-card-content>
+</mat-card>

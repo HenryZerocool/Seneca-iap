@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-export interface PeriodicElement {
+export interface iNewsFeed {
   id: number;
   title: string;
   headline: string;
@@ -10,7 +10,7 @@ export interface PeriodicElement {
   content?: string;
 }
 
-let ELEMENT_DATA: PeriodicElement[] = [
+let DATABASE: iNewsFeed[] = [
   {
     title: 'Title Lorem Ipsum',
     headline: 'One sentence about the article',
@@ -22,8 +22,7 @@ let ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     title: 'Free Airport Pickup',
-    headline:
-      'Seneca provides free airport pick-up for all international students',
+    headline: 'Seneca provides free airport pick-up for all international students',
     status: 'Active',
     lastModifier: 'Shirley Mangallon',
     publishDate: 'Oct 25, 2019',
@@ -38,6 +37,8 @@ let ELEMENT_DATA: PeriodicElement[] = [
     id: 3
   }
 ];
+
+let cacheData: iNewsFeed[] = [];
 @Injectable({
   providedIn: 'root'
 })
@@ -45,24 +46,49 @@ export class AdminNewsfeedsService {
   constructor() {}
 
   getAllNewsFeed() {
-    return ELEMENT_DATA;
+    return DATABASE;
   }
 
   getNewsFeed(id: number) {
-    return ELEMENT_DATA.filter(data => data.id === id);
+    return DATABASE.filter(data => data.id === id);
   }
 
   addOneNewsFeed(newsfeed) {
-    let temp;
-    temp = newsfeed;
-    temp.id = ELEMENT_DATA.length + 1;
-    ELEMENT_DATA.push(temp);
+    const temp = newsfeed;
+    temp.id = DATABASE.length + 1;
+    DATABASE.push(temp);
   }
   deleteOneNewsFeed(id: number) {
-    ELEMENT_DATA = ELEMENT_DATA.filter(data => data.id !== id);
+    DATABASE = DATABASE.filter(data => data.id !== id);
   }
-  updateOneNewsFeed(id: number, newsfeed) {
-    const foundIndex = ELEMENT_DATA.findIndex(data => data.id === id);
-    ELEMENT_DATA[foundIndex] = newsfeed;
+  updateOneNewsFeed(id: number) {
+    const foundIndex = DATABASE.findIndex(data => data.id === id);
+    const foundIndexTemp = cacheData.findIndex(data => data.id === id);
+    DATABASE[foundIndex] = cacheData[foundIndexTemp];
+  }
+
+  getTempFeed(id) {
+    if (id === 0) {
+      this.addTempFeed({ id: 0, title: '', headline: '', status: '', lastModifier: '', publishDate: '', content: '' });
+    }
+    let temp = cacheData.filter(data => data.id === id);
+    if (temp.length === 0) {
+      this.addTempFeed(DATABASE.filter(data => data.id === id)[0]);
+      temp = cacheData.filter(data => data.id === id);
+    }
+    return temp;
+  }
+  addTempFeed(tempFeed: iNewsFeed) {
+    if (tempFeed) {
+      const temp = JSON.parse(JSON.stringify(tempFeed));
+      cacheData.push(temp);
+    }
+  }
+  // updateTempFeed(id, tempFeed) {
+  //   const foundIndex = cacheData.findIndex(data => data.id === id);
+  //   cacheData[foundIndex] = tempFeed;
+  // }
+  deleteTemp(id) {
+    cacheData = cacheData.filter(data => data.id !== id);
   }
 }

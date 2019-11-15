@@ -1,223 +1,90 @@
-<div *ngIf="id != 0" class="admin-announcement-container">
+<div *ngIf="data" class="admin-announcement-container">
   <mat-card class="main-container">
     <mat-card-title>
-      <p class="card-title">NEWSFEED ARTICLE</p>
+      <h2 class="card-title">NEWSFEED ARTICLE</h2>
     </mat-card-title>
 
     <div class="container">
-      <form #newsfeedForm="ngForm" (ngSubmit)="updateOneFeed()" novalidate>
+      <form #newsfeedForm="ngForm">
         <div class="sub-container">
           <div class="small-fields-container">
             <mat-form-field>
-              <input
-                matInput
-                placeholder="Title"
-                [(ngModel)]="data.title"
-                required
-                name="title"
-              />
+              <input matInput [(ngModel)]="data.title" placeholder="Title" name="title" required />
+              <mat-hint>
+                <em class="error" *ngIf="newsfeedForm.controls.title?.touched && newsfeedForm.controls.title?.invalid">
+                  Required</em>
+              </mat-hint>
             </mat-form-field>
           </div>
           <div class="small-fields-container">
             <mat-form-field>
-              <input
-                matInput
-                placeholder="Headline"
-                [(ngModel)]="data.headline"
-                required
-                name="headline"
-              />
+              <input matInput [(ngModel)]="data.headline" placeholder="Headline" name="headline" required />
+              <mat-hint><em class="error"
+                  *ngIf="newsfeedForm.controls.headline?.touched && newsfeedForm.controls.headline?.invalid">
+                  Required</em></mat-hint>
             </mat-form-field>
           </div>
 
           <div class="small-fields-container">
             <mat-form-field>
-              <mat-select
-                matInput
-                placeholder="Status"
-                [(ngModel)]="data.status"
-                required
-                name="status"
-              >
+              <mat-select matInput placeholder="Status" [(ngModel)]="data.status" name="status" required>
                 <ng-container>
                   <mat-option value="Active">Active</mat-option>
                   <mat-option value="Closed">Closed</mat-option>
                 </ng-container>
               </mat-select>
+              <mat-hint><em class="error"
+                  *ngIf="newsfeedForm.controls.status?.touched && newsfeedForm.controls.status?.invalid">
+                  Required</em></mat-hint>
             </mat-form-field>
           </div>
 
           <div class="small-fields-container">
             <mat-form-field>
-              <input
-                matInput
-                [matDatepicker]="picker"
-                placeholder="Publish Date"
-                [(ngModel)]="data.publishDate"
-                required
-                name="publishDate"
-              />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker"
-              ></mat-datepicker-toggle>
+              <input matInput [matDatepicker]="picker" placeholder="Publish Date" [(ngModel)]="data.publishDate"
+                name="publishDate" required />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
+              <mat-hint><em class="error"
+                  *ngIf="newsfeedForm.controls.publishDate?.touched && newsfeedForm.controls.publishDate?.invalid">
+                  Required</em></mat-hint>
             </mat-form-field>
           </div>
         </div>
-      </form>
+        <quill-editor [(ngModel)]="data.content" [styles]="editorStyle" placeholder="Enter Text" [modules]="config"
+          name="content" aria-required>
+        </quill-editor>
 
-      <form [formGroup]="editorForm">
-        <div class="form-group">
-          <quill-editor formControlName="editor"></quill-editor>
-        </div>
-      </form>
-    </div>
-    <div class="actions-box">
-      <mat-card-actions>
-        <button class="is-rounded" color="accent" mat-stroked-button>
-          <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
-        </button>
-
-        <div class="right-buttons">
-          <button
-            mat-flat-button
-            type="submit"
-            class="is-rounded"
-            color="primary"
-            (click)="updateOneFeed()"
-          >
-            <span>Save</span>
-          </button>
-
-          <button
-            mat-stroked-button
-            class="is-rounded red"
-            color="primary"
-            (click)="goBack()"
-          >
-            <span>Cancel</span>
-          </button>
-
-          <button mat-button color="primary" (click)="deleteOneFeed()">
-            <mat-icon>delete</mat-icon> <span>Delete</span>
-          </button>
-        </div>
-      </mat-card-actions>
-    </div>
-
-    <mat-card-content class="mat-elevation-z8"> </mat-card-content>
-  </mat-card>
-</div>
-<!-- create new data -->
-<div *ngIf="id == 0" class="admin-announcement-container">
-  <mat-card class="main-container">
-    <mat-card-title>
-      <p class="card-title">NEWSFEED ARTICLE</p>
-    </mat-card-title>
-
-    <div class="container">
-      <form #newsfeedForm="ngForm" (ngSubmit)="addOneFeed()" novalidate>
-        <div class="sub-container">
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input
-                matInput
-                placeholder="Title"
-                [(ngModel)]="data.title"
-                required
-                name="title"
-              />
-            </mat-form-field>
-          </div>
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input
-                matInput
-                placeholder="Headline"
-                [(ngModel)]="data.headline"
-                required
-                name="headline"
-              />
-            </mat-form-field>
-          </div>
-
-          <div class="small-fields-container">
-            <mat-form-field>
-              <mat-select
-                matInput
-                placeholder="Status"
-                [(ngModel)]="data.status"
-                required
-                name="status"
-              >
-                <ng-container>
-                  <mat-option value="Active">Active</mat-option>
-                  <mat-option value="Closed">Closed</mat-option>
-                </ng-container>
-              </mat-select>
-            </mat-form-field>
-          </div>
-
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input
-                matInput
-                [matDatepicker]="picker"
-                placeholder="Publish Date"
-                [(ngModel)]="data.publishDate"
-                required
-                name="publishDate"
-              />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker"
-              ></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-          </div>
-        </div>
-      </form>
-
-      <form [formGroup]="editorForm">
-        <div class="form-group">
-          <quill-editor formControlName="editor"></quill-editor>
+        <div class="actions-box">
+          <mat-card-actions>
+            <button class="is-rounded" color="accent" mat-stroked-button [routerLink]="['./preview', id]">
+              <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
+            </button>
+            <div class="right-buttons">
+              <button *ngIf="id < 1" mat-flat-button class="is-rounded" [disabled]="newsfeedForm.invalid"
+                color="primary" (click)="addOneFeed()">
+                <span>Save</span>
+              </button>
+              <button *ngIf="id >= 1" mat-flat-button class="is-rounded" [disabled]="newsfeedForm.invalid"
+                color="primary" (click)="updateOneFeed()">
+                <span>Save</span>
+              </button>
+              <button mat-stroked-button class="is-rounded red" color="primary" (click)="deleteTempFeed()">
+                <span>Cancel</span>
+              </button>
+              <button mat-button color="primary" [disabled]="id < 1" (click)="deleteOneFeed()">
+                <mat-icon>delete</mat-icon> <span>Delete</span>
+              </button>
+            </div>
+          </mat-card-actions>
         </div>
       </form>
     </div>
-    <div class="actions-box">
-      <mat-card-actions>
-        <button class="is-rounded" color="accent" mat-stroked-button>
-          <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
-        </button>
-
-        <div class="right-buttons">
-          <button
-            mat-flat-button
-            type="submit"
-            class="is-rounded"
-            color="primary"
-            (click)="addOneFeed()"
-          >
-            <span>Save</span>
-          </button>
-
-          <button
-            mat-stroked-button
-            class="is-rounded red"
-            color="primary"
-            (click)="goBack()"
-          >
-            <span>Cancel</span>
-          </button>
-
-          <button mat-button color="primary" disabled>
-            <mat-icon>delete</mat-icon> <span>Delete</span>
-          </button>
-        </div>
-      </mat-card-actions>
-    </div>
-
+    <!-- Inner HTML works -->
+    <!-- <div>
+      <h3>Output</h3>
+      <p class="my-5" [innerHTML]="data.content"></p>
+    </div> -->
     <mat-card-content class="mat-elevation-z8"> </mat-card-content>
   </mat-card>
 </div>

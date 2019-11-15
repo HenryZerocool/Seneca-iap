@@ -1,6 +1,6 @@
-// Fonts
+// Import Fonts
 @import url('https://use.typekit.net/qpe1xuu.css');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
 
 @import '~@angular/material/theming';
 $custom-typography: mat-typography-config(
@@ -9,24 +9,25 @@ $custom-typography: mat-typography-config(
   $display-3: mat-typography-level(56px, 56px, 400),
   $display-2: mat-typography-level(45px, 48px, 400),
   $display-1: mat-typography-level(34px, 40px, 400),
-  $headline: mat-typography-level(24px, 32px, 400),
-  $title: mat-typography-level(20px, 32px, 500),
+  $body-2: mat-typography-level(16px, 24px, 600),
+  $body-1: mat-typography-level(16px, 22px, 400),
+  $caption: mat-typography-level(14px, 19px, 600),
+  $button: mat-typography-level(16px, 22px, 500),
+  $input: mat-typography-level(16px, 1.125, 400)
+);
+// $input: mat-typography-level(inherit, 1.125, 400)
+
+$secondary-typography: mat-typography-config(
+  $font-family: '"minion-pro" , sans-serif',
+  $headline: mat-typography-level(30px, 42px, 400),
+  $title: mat-typography-level(25px, 35px, 400),
   $subheading-2: mat-typography-level(16px, 28px, 400),
-  $subheading-1: mat-typography-level(15px, 24px, 400),
-  $body-2: mat-typography-level(14px, 24px, 500),
-  $body-1: mat-typography-level(14px, 20px, 400),
-  $caption: mat-typography-level(12px, 20px, 400),
-  $button: mat-typography-level(14px, 14px, 500),
-  $input: mat-typography-level(inherit, 1.125, 400)
+  $subheading-1: mat-typography-level(15px, 25px, 400)
 );
 
-@include mat-base-typography($custom-typography);
-
-// Override typography for a specific Angular Material components.
-@include mat-checkbox-typography($custom-typography);
-
 // Override typography for all Angular Material, including mat-base-typography and all components.
-@include angular-material-typography($custom-typography);
+// @include angular-material-typography($custom-typography);
+
 @include mat-core($custom-typography);
 $seneca-red: (
   100: #ffcdd2,
@@ -96,3 +97,5 @@ $my-app-accent: mat-palette($seneca-light-blue, 500, 900, A100);
 $my-app-warn: mat-palette($mat-deep-orange);
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 @include angular-material-theme($my-app-theme);
+// Override typography for a specific Angular Material components.
+@include mat-base-typography($secondary-typography);
