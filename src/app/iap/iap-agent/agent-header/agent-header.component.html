@@ -5,7 +5,7 @@
         <mat-icon>menu</mat-icon>
       </button>
 
-      <img src="../../../../assets\imgs\Seneca-International-Horizontal-Logo.svg" alt="seneca-logo-white" />
+      <img src="../../../../assets/imgs/Seneca-International-Horizontal-Logo.svg" alt="seneca-logo-white" />
     </span>
 
     <span class="text-right">
@@ -17,7 +17,7 @@
     <mat-drawer #drawer mode="side" disableClose="true" opened="true">
       <mat-nav-list>
         <a [routerLink]="['./home']" routerLinkActive="active-link">
-          <mat-list-item (click)="isExpanded = !isExpanded">
+          <mat-list-item>
             <mat-icon mat-list-icon>home</mat-icon>
             <h4 mat-line *ngIf="isExpanded">
               Home
@@ -25,41 +25,41 @@
           </mat-list-item>
         </a>
 
-        <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-list-item>
           <mat-icon mat-list-icon>person</mat-icon>
           <h4 mat-line *ngIf="isExpanded">My Profile</h4>
         </mat-list-item>
 
-        <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-list-item>
           <mat-icon mat-list-icon>folder_shared</mat-icon>
           <h4 mat-line *ngIf="isExpanded">Application</h4>
         </mat-list-item>
 
-        <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-list-item>
           <mat-icon mat-list-icon>monetization_on</mat-icon>
           <h4 mat-line *ngIf="isExpanded">Commissions</h4>
         </mat-list-item>
 
         <a [routerLink]="['./resources']" routerLinkActive="active-link">
-          <mat-list-item (click)="isExpanded = !isExpanded">
+          <mat-list-item>
             <mat-icon mat-list-icon>local_library</mat-icon>
             <h4 mat-line *ngIf="isExpanded">Resources</h4>
           </mat-list-item>
         </a>
 
         <a [routerLink]="['./newsfeed']" routerLinkActive="active-link">
-          <mat-list-item (click)="isExpanded = !isExpanded">
+          <mat-list-item>
             <mat-icon mat-list-icon>rss_feed</mat-icon>
             <h4 mat-line *ngIf="isExpanded">Newsfeed</h4>
           </mat-list-item>
         </a>
 
-        <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-list-item>
           <mat-icon mat-list-icon>contact_support</mat-icon>
           <h4 mat-line *ngIf="isExpanded">Seneca Contacts</h4>
         </mat-list-item>
 
-        <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-list-item [routerLink]="['/login']" routerLinkActive="active-link">
           <mat-icon mat-list-icon>exit_to_app</mat-icon>
           <h4 mat-line *ngIf="isExpanded">Logout</h4>
         </mat-list-item>
