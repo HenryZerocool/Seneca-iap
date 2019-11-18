@@ -1,7 +1,6 @@
 .search-bar {
   display: flex;
   /* align-self: auto; */
-  width: 180px;
 }
 
 .agents-newsfeed-container {
