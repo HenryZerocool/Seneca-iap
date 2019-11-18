@@ -117,16 +117,27 @@ a:active {
   color: #da291c;
   }
 
-  .mat-expansion-panel:hover{
+  /* .mat-expansion-panel:hover{
     background: #888B8D;
-  }
+  } */
 
-  .mat-list-item:hover{
+  .mat-list-item:hover {
   background: #888B8D;
   }
 
-  .tabs {
-    background: white;
-    color: red;
+  .mat-list-item:active {
+    background: #888B8D;
   }
+
+  .tabs mat-list-item:hover{
+    background: white;
+    color: #da291c;
+  }
+/*
+/* <<<<<<< HEAD
+.expansion:hover {
+  background: #888B8D !important;
+} */
+
+
 

@@ -8,6 +8,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
+  // prettier-ignore
   MatToolbarModule,
   MatTableModule,
   MatTabsModule,

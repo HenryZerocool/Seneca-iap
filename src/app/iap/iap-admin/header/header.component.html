@@ -19,26 +19,26 @@
         <a [routerLink]="['./home']" routerLinkActive="active-link">
           <mat-list-item>
             <mat-icon mat-list-icon>home</mat-icon>
-            <h4 mat-line *ngIf="isExpanded">
+            <span mat-line *ngIf="isExpanded">
               Home
-            </h4>
+            </span>
           </mat-list-item>
         </a>
 
         <mat-list-item>
           <mat-icon mat-list-icon>person</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">
+          <span mat-line *ngIf="isExpanded">
             Agents
-          </h4>
+          </span>
         </mat-list-item>
         <mat-list-item>
           <mat-icon mat-list-icon>folder_shared</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">IWA</h4>
+          <span mat-line *ngIf="isExpanded">IWA</span>
         </mat-list-item>
 
         <mat-list-item>
           <mat-icon mat-list-icon>monetization_on</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Commissions</h4>
+          <span mat-line *ngIf="isExpanded">Commissions</span>
         </mat-list-item>
 
         <!-- <mat-expansion-panel class="mat-elevation-z0 " *ngIf="isExpanded">
@@ -74,12 +74,12 @@
 
         <mat-list-item>
           <mat-icon mat-list-icon>pan_tool</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Request</h4>
+          <span mat-line *ngIf="isExpanded">Request</span>
         </mat-list-item>
 
         <mat-list-item>
           <mat-icon mat-list-icon>settings_applications</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">System Admin</h4>
+          <span mat-line *ngIf="isExpanded">System Admin</span>
         </mat-list-item>
 
         <mat-list-item [routerLink]="['/login']" routerLinkActive="active-link">
