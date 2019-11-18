@@ -1,139 +1,264 @@
+/*Errors/todo
+Need to make it responsive
+**Dont worry about error with side nav.
+make choose file look like uploaad
+have the save button be clickable when they enter a web address
+https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
+ */
+
 .admin-announcement-container {
-  padding: 2.5vw;
-  background: #fafafa 0% 0% no-repeat padding-box;
+    padding: 2.5vw;
+    background: #fafafa 0% 0% no-repeat padding-box;
 }
+
 #main-mat-card {
-  display: flex;
-  flex-direction: column;
-  padding: unset;
-  box-shadow: 0px 3px 6px #00000029;
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: column;
+    margin: auto;
+    padding: unset;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 944px;
+    height: 930px;
 }
 
 #main-mat-card #headder {
-  flex: 100%;
-  background: #da291c 0% 0% no-repeat padding-box;
-  border-radius: 10px 10px 0px 0px;
+    /* 
+    When we add this is messes up the height
+    flex: 100%;
+     */
+    background: #888B8D 0% 0% no-repeat padding-box;
+    border-radius: 10px 10px 0px 0px;
+    width: 944px;
+    height: 50px;
 }
 
 #main-mat-card #headder p {
-  padding-left: 2%;
-  color: #ffffff;
+    text-align: left;
+    font: Regular 25px/35px Minion Pro;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    padding-left: 2%;
 }
 
-/*margin effects space around the item, padding effects space INSIDE the item*/
 .mat-content {
-  margin: 2vh 2.5vw;
+    margin: 2vh 2.5vw;
 }
-#main-mat-card #topInputs {
-  display: flex;
-  flex: 1 1 100%;
+
+.admin-announcement-container #main-mat-card .mat-content #rowOne {
+    /*Slightly bigger to grab the arrow*/
+    width: 250px;
+    height: 5px;
 }
+
+.admin-announcement-container #main-mat-card .mat-content #rowOne mat-select {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    margin-bottom: 20px;
+    width: 240px;
+    height: 5px;
+}
+
+.admin-announcement-container #main-mat-card .mat-content #rowTwo {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+.admin-announcement-container #main-mat-card .mat-content #rowTwo #Priority {
+    width: 240px;
+    height: 56px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #D4D2D2;
+    border-radius: 5px;
+    opacity: 1;
+    margin-right: 50px;
+}
+
+.admin-announcement-container #main-mat-card .mat-content #rowTwo mat-form-field {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    width: 240px;
+    height: 56px;
+}
+
+.admin-announcement-container #main-mat-card .mat-content #rowTwo {
+    align-self: center;
+}
+
+.admin-announcement-container #main-mat-card .mat-content #DisplayName {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #D4D2D2;
+    border-radius: 5px;
+    opacity: 1;
+    width: 784px;
+    height: 56px;
+}
+
+
+/*This should make it responsive but its not working*/
+
+.admin-announcement-container #main-mat-card .mat-content #midleTextFields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-announcement-container #main-mat-card .mat-content #midleTextFields input {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #D4D2D2;
+    border-radius: 5px;
+    opacity: 1;
+    width: 860px;
+    /* width: 100%; This did not work */
+    height: 56px;
+    margin-bottom: 20px;
+}
+
 .small-field-container {
-  display: flex;
-  flex: 3;
+    display: flex;
+    flex: 3;
 }
+
 .small-field-container:nth-child(1) {
-  flex: 1;
+    flex: 1;
 }
+
 mat-form-field {
-  width: 90%;
+    width: 90%;
 }
+
 #main-mat-card #source span {
-  /*For the * */
-  color: #da261c;
+    /*For the * */
+    color: #da261c;
 }
 
 #main-mat-card #uploadButton {
-  width: 118px;
-  height: 45px;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
-  opacity: 1;
-  border-radius: 25px;
-  margin-right: 30px;
-  margin-left: 30px;
+    width: 118px;
+    height: 45px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    border-radius: 25px;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
-#main-mat-card #source a {
-  width: 1920px;
-  height: 1080px;
-  /* background: #FAFAFA 0% 0% no-repeat padding-box; */
-  opacity: 1;
-  margin-right: 30px;
+
+/*First hide the button*/
+
+
+/* #main-mat-card #uploadButtonIn {
+    width: 0.1px;
+    height: 7px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+
+/*Style the label to look like a button, since we cant style the input tag*/
+
+#main-mat-card .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+    width: 118px;
+    height: 45px;
+    color: black;
+    display: inline-block;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    border-radius: 25px;
+}
+
+*/ #main-mat-card #source a {
+    width: 1920px;
+    height: 1080px;
+    /* background: #FAFAFA 0% 0% no-repeat padding-box; */
+    opacity: 1;
+    margin-right: 30px;
 }
 
 #main-mat-card #source #DeleteButton {
-  /*Use mat icon*/
-  text-align: center;
-  letter-spacing: 0;
-  color: #da261c;
-  opacity: 1;
-  /* background: transparent url('../../../assets/Images/baseline-delete-24px.svg')
+    /*Use mat icon*/
+    text-align: center;
+    letter-spacing: 0;
+    color: #da261c;
+    opacity: 1;
+    /* background: transparent url('../../../assets/Images/baseline-delete-24px.svg')
     0% 0% no-repeat padding-box; */
 }
 
 #main-mat-card a {
-  text-align: center;
-  text-decoration: underline;
-  color: #da261c;
-  opacity: 1;
-}
-
-#main-mat-card #footer {
-  padding: 3% 0;
+    text-align: center;
+    text-decoration: underline;
+    color: #da261c;
+    opacity: 1;
 }
 
 #main-mat-card #footer #PreviewButton {
-  /*Not sure if font is correct*/
-  color: #0099ff;
-  width: 156px;
-  height: 45px;
-  border: 0.5px solid #888b8d;
-  border-radius: 25px;
-  opacity: 1;
-  margin-right: 50%;
-  margin-left: 3%;
-  width: 10%;
+    color: #0099ff;
+    width: 156px;
+    height: 45px;
+    border: 0.5px solid #888b8d;
+    border-radius: 25px;
+    opacity: 1;
+    margin-right: 10%;
+    margin-left: 3%;
 }
 
 #main-mat-card #footer #saveButton {
-  color: #ffffff;
-
-  width: 140px;
-  height: 45px;
-  background: #da291c 0% 0% no-repeat padding-box;
-  border-radius: 25px;
-
-  margin-left: 8%;
-  margin-right: 3%;
+    color: #ffffff;
+    width: 140px;
+    height: 45px;
+    background: #da291c 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    margin-left: 8%;
+    margin-right: 3%;
 }
 
 #main-mat-card #footer #cancelButton {
-  color: #da291c;
-
-  width: 140px;
-  height: 45px;
-  border: 1px solid #da291c;
-  border-radius: 25px;
-
-  margin-right: 2%;
+    color: #da291c;
+    width: 140px;
+    height: 45px;
+    border: 1px solid #da291c;
+    border-radius: 25px;
+    margin-right: 2%;
 }
 
 #main-mat-card #footer #deleteButton {
-  padding-left: 2%;
-
-  color: #da291c;
-
-  /* background: transparent url('../../../assets/Images/baseline-delete-24px.svg')
+    padding-left: 2%;
+    color: #da291c;
+    /* background: transparent url('../../../assets/Images/baseline-delete-24px.svg')
     0% 0% no-repeat padding-box; */
-  /*How can I style this background url individually??*/
+}
+
+#main-mat-card #footer {
+    padding: 3% 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-mat-card #footer .right-buttons {
+    display: flex;
+    align-items: flex-end;
 }
 
 .bottom_p {
-  margin-left: 5%;
-  width: 416px;
-  height: 22px;
-  text-align: left;
-  color: #333333;
-  opacity: 1;
+    width: 416px;
+    height: 22px;
+    text-align: left;
+    color: #333333;
+    opacity: 1;
+    margin-right: 40%;
+    margin: auto;
 }

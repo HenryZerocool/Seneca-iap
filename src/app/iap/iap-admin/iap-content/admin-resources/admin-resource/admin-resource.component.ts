@@ -1,3 +1,4 @@
+// TODO: Look at this https://stackblitz.com/edit/check-textbox-is-empty-or-not-angular6?file=src%2Fapp%2Fapp.component.html
 import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 
