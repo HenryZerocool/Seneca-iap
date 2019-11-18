@@ -19,49 +19,49 @@
         <a [routerLink]="['./home']" routerLinkActive="active-link">
           <mat-list-item>
             <mat-icon mat-list-icon>home</mat-icon>
-            <h4 mat-line *ngIf="isExpanded">
+            <span mat-line *ngIf="isExpanded">
               Home
-            </h4>
+            </span>
           </mat-list-item>
         </a>
 
         <mat-list-item>
           <mat-icon mat-list-icon>person</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">My Profile</h4>
+          <span mat-line *ngIf="isExpanded">My Profile</span>
         </mat-list-item>
 
         <mat-list-item>
           <mat-icon mat-list-icon>folder_shared</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Application</h4>
+          <span mat-line *ngIf="isExpanded">Application</span>
         </mat-list-item>
 
         <mat-list-item>
           <mat-icon mat-list-icon>monetization_on</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Commissions</h4>
+          <span mat-line *ngIf="isExpanded">Commissions</span>
         </mat-list-item>
 
         <a [routerLink]="['./resources']" routerLinkActive="active-link">
           <mat-list-item>
             <mat-icon mat-list-icon>local_library</mat-icon>
-            <h4 mat-line *ngIf="isExpanded">Resources</h4>
+            <span mat-line *ngIf="isExpanded">Resources</span>
           </mat-list-item>
         </a>
 
         <a [routerLink]="['./newsfeed']" routerLinkActive="active-link">
           <mat-list-item>
             <mat-icon mat-list-icon>rss_feed</mat-icon>
-            <h4 mat-line *ngIf="isExpanded">Newsfeed</h4>
+            <span mat-line *ngIf="isExpanded">Newsfeed</span>
           </mat-list-item>
         </a>
 
         <mat-list-item>
           <mat-icon mat-list-icon>contact_support</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Seneca Contacts</h4>
+          <span mat-line *ngIf="isExpanded">Seneca Contacts</span>
         </mat-list-item>
 
         <mat-list-item [routerLink]="['/login']" routerLinkActive="active-link">
           <mat-icon mat-list-icon>exit_to_app</mat-icon>
-          <h4 mat-line *ngIf="isExpanded">Logout</h4>
+          <span mat-line *ngIf="isExpanded">Logout</span>
         </mat-list-item>
       </mat-nav-list>
     </mat-drawer>
