@@ -1,4 +1,10 @@
-/*Size of mat card needs to  be fixed It looks pretty much the same across all devices.*/
+/*Errors/todo
+Need to make it responsive
+**Dont worry about error with side nav.
+make choose file look like uploaad
+have the save button be clickable when they enter a web address
+https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
+ */
 
 .admin-announcement-container {
     padding: 2.5vw;
@@ -7,15 +13,24 @@
 
 #main-mat-card {
     display: flex;
+    flex-flow: row wrap;
     flex-direction: column;
+    margin: auto;
     padding: unset;
     box-shadow: 0px 3px 6px #00000029;
+    width: 944px;
+    height: 930px;
 }
 
 #main-mat-card #headder {
+    /* 
+    When we add this is messes up the height
     flex: 100%;
+     */
     background: #888B8D 0% 0% no-repeat padding-box;
     border-radius: 10px 10px 0px 0px;
+    width: 944px;
+    height: 50px;
 }
 
 #main-mat-card #headder p {
@@ -30,42 +45,48 @@
     margin: 2vh 2.5vw;
 }
 
-.admin-announcement-container #main-mat-card .mat-content #mainForm #rowOne {
-    display: flex;
-    justify-content: center;
-    padding-right: 700px;
+.admin-announcement-container #main-mat-card .mat-content #rowOne {
+    /*Slightly bigger to grab the arrow*/
+    width: 250px;
+    height: 5px;
 }
 
-.admin-announcement-container #main-mat-card .mat-content #mainForm #rowOne mat-select {
-    width: 240px;
-    height: 56px;
+.admin-announcement-container #main-mat-card .mat-content #rowOne mat-select {
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #D4D2D2;
-    border-radius: 5px;
-    opacity: 1;
+    margin-bottom: 20px;
+    width: 240px;
+    height: 5px;
 }
 
-.admin-announcement-container #main-mat-card .mat-content #mainForm #rowTwo {
+.admin-announcement-container #main-mat-card .mat-content #rowTwo {
     display: flex;
     flex-direction: row;
     justify-content: right;
+    margin-top: 45px;
+    margin-bottom: 20px;
 }
 
-.admin-announcement-container #main-mat-card .mat-content #mainForm #rowTwo #Priority {
+.admin-announcement-container #main-mat-card .mat-content #rowTwo #Priority {
     width: 240px;
     height: 56px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #D4D2D2;
     border-radius: 5px;
     opacity: 1;
-    margin-top: 3px;
+    margin-right: 50px;
 }
 
-.admin-announcement-container #main-mat-card .mat-content #mainForm #rowTwo {
+.admin-announcement-container #main-mat-card .mat-content #rowTwo mat-form-field {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    width: 240px;
+    height: 56px;
+}
+
+.admin-announcement-container #main-mat-card .mat-content #rowTwo {
     align-self: center;
 }
 
-.admin-announcement-container #main-mat-card .mat-content #mainForm #DisplayName {
+.admin-announcement-container #main-mat-card .mat-content #DisplayName {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #D4D2D2;
     border-radius: 5px;
@@ -74,34 +95,25 @@
     height: 56px;
 }
 
-.admin-announcement-container #main-mat-card .mat-content #mainForm #midleTextFields {
+
+/*This should make it responsive but its not working*/
+
+.admin-announcement-container #main-mat-card .mat-content #midleTextFields {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.admin-announcement-container #main-mat-card .mat-content #mainForm #midleTextFields input {
+.admin-announcement-container #main-mat-card .mat-content #midleTextFields input {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #D4D2D2;
     border-radius: 5px;
     opacity: 1;
-    width: 784px;
+    width: 860px;
+    /* width: 100%; This did not work */
     height: 56px;
+    margin-bottom: 20px;
 }
-
-
-/* 
-.admin-announcement-container #main-mat-card .mat-content #secondRow #SecondRowRight {
-    display: flex;
-    align-items: flex-end;
-}
-
-.admin-announcement-container #main-mat-card .mat-content input {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 80%;
-} */
 
 .small-field-container {
     display: flex;
@@ -132,7 +144,43 @@ mat-form-field {
     margin-left: 30px;
 }
 
-#main-mat-card #source a {
+
+/*First hide the button*/
+
+
+/* #main-mat-card #uploadButtonIn {
+    width: 0.1px;
+    height: 7px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+
+/*Style the label to look like a button, since we cant style the input tag*/
+
+#main-mat-card .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+    width: 118px;
+    height: 45px;
+    color: black;
+    display: inline-block;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    border-radius: 25px;
+}
+
+*/ #main-mat-card #source a {
     width: 1920px;
     height: 1080px;
     /* background: #FAFAFA 0% 0% no-repeat padding-box; */
@@ -157,23 +205,15 @@ mat-form-field {
     opacity: 1;
 }
 
-#main-mat-card #footer {
-    padding: 3% 0;
-    display: flex;
-    justify-content: space-between;
-}
-
 #main-mat-card #footer #PreviewButton {
-    /*Not sure if font is correct*/
     color: #0099ff;
     width: 156px;
     height: 45px;
     border: 0.5px solid #888b8d;
     border-radius: 25px;
     opacity: 1;
-    margin-right: 50%;
+    margin-right: 10%;
     margin-left: 3%;
-    width: 10%;
 }
 
 #main-mat-card #footer #saveButton {
@@ -200,23 +240,25 @@ mat-form-field {
     color: #da291c;
     /* background: transparent url('../../../assets/Images/baseline-delete-24px.svg')
     0% 0% no-repeat padding-box; */
-    /*How can I style this background url individually??*/
+}
+
+#main-mat-card #footer {
+    padding: 3% 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-mat-card #footer .right-buttons {
+    display: flex;
+    align-items: flex-end;
 }
 
 .bottom_p {
-    margin-left: 5%;
     width: 416px;
     height: 22px;
     text-align: left;
     color: #333333;
     opacity: 1;
-}
-
-.mat-content {
-    flex-direction: column;
-}
-
-.right-buttons {
-    display: flex;
-    align-items: flex-end;
+    margin-right: 40%;
+    margin: auto;
 }
