@@ -39,9 +39,11 @@
                 <button mat-button id="uploadButton" *ngIf="showAttachment.checked">
                     Upload
                 </button>
+                <!---This works, however css messed it up in the past, be careful--->
                 <input type="file" value="Click me" id="uploadButtonIn" name="photo" ng2FileSelect [uploader]="uploader" />
 
-                <!---File uploading not working.--->
+
+
                 <!-- Original -->
                 <!-- <input type="file" id="uploadButtonIn" name="photo" ng2FileSelect [uploader]="uploader" /> -->
                 <!-- <input type="file" name="file" id="file" class="inputfile" *ngIf="showAttachment.checked" /> -->
