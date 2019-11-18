@@ -1,12 +1,14 @@
 .admin-announcement-container {
-  padding: 2.5vw;
+  padding: 2.5vw 16.5vh;
   background: #fafafa 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 
 .main-container {
+  width: 944px;
   padding: unset;
   border-radius: 10px;
+  margin: auto;
 }
 
 .mat-card-title {
@@ -71,7 +73,6 @@ button.mat-stroked-button.mat-button-base:hover {
 .small-fields-container {
   display: flex;
   flex: 1;
-  justify-content: center;
 }
 .small-fields-container:nth-child(2) {
   flex: 2;
@@ -83,8 +84,8 @@ button.mat-stroked-button.mat-button-base:hover {
   margin-bottom: 20px;
 }
 
-.mat-form-field {
-  width: 90%;
+.bottom-field-container {
+  flex-direction: column;
 }
 
 .container {
@@ -112,4 +113,9 @@ button.mat-stroked-button.mat-button-base:hover {
 
 ::ng-deep .mat-focused .mat-form-field-required-marker {
   color: #da291c;
+}
+
+.small-fields-container mat-form-field #status {
+  width: 240px;
+  height: 56px;
 }

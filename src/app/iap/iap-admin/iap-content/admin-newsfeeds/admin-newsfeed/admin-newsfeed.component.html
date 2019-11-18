@@ -8,26 +8,8 @@
       <form #newsfeedForm="ngForm">
         <div class="sub-container">
           <div class="small-fields-container">
-            <mat-form-field>
-              <input matInput [(ngModel)]="data.title" placeholder="Title" name="title" required />
-              <mat-hint>
-                <em class="error" *ngIf="newsfeedForm.controls.title?.touched && newsfeedForm.controls.title?.invalid"> Required</em>
-              </mat-hint>
-            </mat-form-field>
-          </div>
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input matInput [(ngModel)]="data.headline" placeholder="Headline" name="headline" required />
-              <mat-hint
-                ><em class="error" *ngIf="newsfeedForm.controls.headline?.touched && newsfeedForm.controls.headline?.invalid">
-                  Required</em
-                ></mat-hint
-              >
-            </mat-form-field>
-          </div>
-
-          <div class="small-fields-container">
-            <mat-form-field>
+            
+            <mat-form-field id= "status" appearance="outline">
               <mat-select matInput placeholder="Status" [(ngModel)]="data.status" name="status" required>
                 <ng-container>
                   <mat-option value="Active">Active</mat-option>
@@ -43,7 +25,7 @@
           </div>
 
           <div class="small-fields-container">
-            <mat-form-field>
+            <mat-form-field id= "publishDate" appearance="outline">
               <input
                 matInput
                 [matDatepicker]="picker"
@@ -62,6 +44,30 @@
             </mat-form-field>
           </div>
         </div>
+
+        <div class="bottom-field-container">
+          <div class="small-fields-container">
+            <mat-form-field  id= "title" appearance="outline">
+              <input matInput [(ngModel)]="data.title" placeholder="Title" name="title" required />
+              <mat-hint>
+                <em class="error" *ngIf="newsfeedForm.controls.title?.touched && newsfeedForm.controls.title?.invalid"> Required</em>
+              </mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="small-fields-container">
+            <mat-form-field id= "headline" appearance="outline">
+              <input matInput [(ngModel)]="data.headline" placeholder="Headline" name="headline" required />
+              <mat-hint align="start">One sentence about the article </mat-hint>
+              <mat-hint
+                ><em class="error" *ngIf="newsfeedForm.controls.headline?.touched && newsfeedForm.controls.headline?.invalid">
+                  Required</em
+                ></mat-hint
+              >
+            </mat-form-field>
+          </div>
+        </div>
+
         <quill-editor
           [(ngModel)]="data.content"
           [styles]="editorStyle"
