@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agent-header.component.css']
 })
 export class AgentHeaderComponent implements OnInit {
+  isExpanded = true;
+  showSubmenu = false;
+  isShowing = false;
+  showSubSubMenu = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
