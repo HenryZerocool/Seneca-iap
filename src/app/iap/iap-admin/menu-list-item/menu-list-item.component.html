@@ -1,36 +1,33 @@
-<!-- <a mat-list-item [ngStyle]="{'padding-left': (depth * 12) + 'px'}" (click)="onItemSelected(item)"
-   [ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}"
-   class="menu-list-item">
-  <mat-icon class="routeIcon">{{item.iconName}}</mat-icon>
-  {{item.displayName}}
-  <span fxFlex *ngIf="item.children && item.children.length">
-    <span fxFlex></span>
-    <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
-      expand_more
-    </mat-icon>
-  </span>
-</a>
-<div *ngIf="expanded">
-  <app-menu-list-item *ngFor="let child of item.children" [item]="child" [depth]="depth+1">
-  </app-menu-list-item>
-</div> -->
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav #sidenav class="example-sidenav" mode="push" opened="true">
+    <mat-nav-list>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+        <span class="full-width" *ngIf="isExpanded || isShowing">Parent Menu</span>
+        <mat-icon mat-list-icon>home</mat-icon>
+        <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more
+        </mat-icon>
+      </mat-list-item>
+      <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+        <a mat-list-item href="...">Submenu Item 1</a>
+        <a mat-list-item href="...">Submenu Item 2</a>
+        <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
+          <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">
+            expand_more</mat-icon>
+        </mat-list-item>
+        <div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+          <mat-list-item>SubSubmenu Item 1</mat-list-item>
+          <mat-list-item>SubSubmenu Item 2</mat-list-item>
+        </div>
+      </div>
+    </mat-nav-list>
+    <mat-nav-list>
+    </mat-nav-list>
+  </mat-sidenav>
 
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
 
+  </div>
 
-<a mat-list-item  (click)="onItemSelected(item)"
-   [ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}"
-   class="menu-list-item">
-          <mat-icon class="routeIcon">{{item.iconName}}</mat-icon>
-          {{item.displayName}}
-          <span fxFlex *ngIf="item.children && item.children.length">
-
-              <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
-              expand_more
-            </mat-icon>
-          </span>
-        </a>
-
-        <div *ngIf="expanded">
-            <app-menu-list-item *ngFor="let child of item.children" [item]="child">
-              </app-menu-list-item>
-          </div>
+</mat-sidenav-container>

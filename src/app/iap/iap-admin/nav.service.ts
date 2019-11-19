@@ -1,19 +1,19 @@
-import {EventEmitter, Injectable} from '@angular/core';
-import {Event, NavigationEnd, Router} from '@angular/router';
-import {BehaviorSubject} from 'rxjs';
+import { EventEmitter, Injectable } from '@angular/core';
+import { Event, NavigationEnd, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class NavService {
-  public appDrawer: any;
-  public currentUrl = new BehaviorSubject<string>(undefined);
+  // public appDrawer: any;
+  // public currentUrl = new BehaviorSubject<string>(undefined);
 
-  constructor(private router: Router) {
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-        this.currentUrl.next(event.urlAfterRedirects);
-      }
-    });
-  }
+  // constructor(private router: Router) {
+  //   this.router.events.subscribe((event: Event) => {
+  //     if (event instanceof NavigationEnd) {
+  //       this.currentUrl.next(event.urlAfterRedirects);
+  //     }
+  //   });
+  // }
 
   // public closeNav() {
   //   this.appDrawer.close();
@@ -22,4 +22,12 @@ export class NavService {
   // public openNav() {
   //   this.appDrawer.open();
   // }
+
+  public isExpanded = new BehaviorSubject<boolean>(true);
+  currentExpand = this.isExpanded.asObservable();
+
+  public toggleNav(toggle) {
+    // this.isExpanded != this.isExpanded;
+    this.isExpanded.next(toggle);
+  }
 }
