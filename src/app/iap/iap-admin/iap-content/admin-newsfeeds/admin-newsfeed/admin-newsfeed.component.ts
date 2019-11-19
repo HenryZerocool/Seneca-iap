@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {AdminNewsfeedsService} from '../admin-newsfeeds.service';
-import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+
+import { AdminNewsfeedsService } from '../admin-newsfeeds.service';
 
 @Component({
   selector: 'app-admin-newsfeed',
