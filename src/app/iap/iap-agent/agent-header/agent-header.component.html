@@ -1,35 +1,70 @@
-<mat-toolbar class="seneca-header" color="primary">
-  <span class="logo-left">
-    <img src="../../../../assets\imgs\Seneca-International-Horizontal-Logo.svg" alt="seneca-logo-white" />
-  </span>
+<div class="container">
+  <mat-toolbar class="seneca-header" color="primary">
+    <span class="logo-left">
+      <button mat-icon-button (click)="isExpanded = !isExpanded">
+        <mat-icon>menu</mat-icon>
+      </button>
 
-  <span class="text-right">
-    <p>
-      AGENT PORTAL | International Education Consultants Inc. | Welcome Angela Dunn!
-    </p>
-  </span>
-</mat-toolbar>
+      <img src="../../../../assets/imgs/Seneca-International-Horizontal-Logo.svg" alt="seneca-logo-white" />
+    </span>
 
-<mat-toolbar color="primary">
-  <a [routerLink]="['./home']" routerLinkActive="active-link">
-    <mat-icon>home</mat-icon>
-    Home
-  </a>
+    <span class="text-right">
+      <p>AGENT PORTAL</p>
+    </span>
+  </mat-toolbar>
 
-  <a [routerLink]="['./new']" routerLinkActive="active-link">
-    <mat-icon>person</mat-icon>
-    My Profile
-  </a>
+  <mat-drawer-container class="example-container mat-typography" autosize>
+    <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+      <mat-nav-list>
+        <a [routerLink]="['./home']" routerLinkActive="active-link">
+          <mat-list-item>
+            <mat-icon mat-list-icon>home</mat-icon>
+            <span mat-line *ngIf="isExpanded">
+              Home
+            </span>
+          </mat-list-item>
+        </a>
 
-  <a [routerLink]="['./new']" routerLinkActive="active-link"><mat-icon>folder_shared</mat-icon>Application</a>
+        <mat-list-item>
+          <mat-icon mat-list-icon>person</mat-icon>
+          <span mat-line *ngIf="isExpanded">My Profile</span>
+        </mat-list-item>
 
-  <a [routerLink]="['./new']" routerLinkActive="active-link"> <mat-icon>monetization_on</mat-icon>Commissions </a>
+        <mat-list-item>
+          <mat-icon mat-list-icon>folder_shared</mat-icon>
+          <span mat-line *ngIf="isExpanded">Application</span>
+        </mat-list-item>
 
-  <a [routerLink]="['./resources']" routerLinkActive="active-link"><mat-icon>local_library</mat-icon>Resources</a>
+        <mat-list-item>
+          <mat-icon mat-list-icon>monetization_on</mat-icon>
+          <span mat-line *ngIf="isExpanded">Commissions</span>
+        </mat-list-item>
 
-  <a [routerLink]="['./newsfeed']" routerLinkActive="active-link"><mat-icon>rss_feed</mat-icon>Newsfeed</a>
+        <a [routerLink]="['./resources']" routerLinkActive="active-link">
+          <mat-list-item>
+            <mat-icon mat-list-icon>local_library</mat-icon>
+            <span mat-line *ngIf="isExpanded">Resources</span>
+          </mat-list-item>
+        </a>
 
-  <a [routerLink]="['./new']" routerLinkActive="active-link"> <mat-icon>contact_support</mat-icon>Seneca Contacts </a>
+        <a [routerLink]="['./newsfeed']" routerLinkActive="active-link">
+          <mat-list-item>
+            <mat-icon mat-list-icon>rss_feed</mat-icon>
+            <span mat-line *ngIf="isExpanded">Newsfeed</span>
+          </mat-list-item>
+        </a>
 
-  <a [routerLink]="['/login']" routerLinkActive="active-link"> <mat-icon>input</mat-icon>Log out </a>
-</mat-toolbar>
+        <mat-list-item>
+          <mat-icon mat-list-icon>contact_support</mat-icon>
+          <span mat-line *ngIf="isExpanded">Seneca Contacts</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="['/login']" routerLinkActive="active-link">
+          <mat-icon mat-list-icon>exit_to_app</mat-icon>
+          <span mat-line *ngIf="isExpanded">Logout</span>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+    <router-outlet></router-outlet>
+  </mat-drawer-container>
+</div>

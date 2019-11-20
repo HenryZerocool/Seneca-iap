@@ -1,60 +1,86 @@
 <div class="admin-announcement-container">
-  <mat-card id="main-mat-card">
-    <div id="headder">
-      <p>RESOURCE</p>
-    </div>
-    <div class="mat-content">
-      <div id="topInputs">
-        <div class="small-field-container">
-          <mat-form-field id="priorityForm">
-            <input matInput id="priority" placeholder="Priority" />
-          </mat-form-field>
+    <mat-card id="main-mat-card">
+        <div id="headder">
+            <p>RESOURCE</p>
         </div>
-        <div class="small-field-container">
-          <mat-form-field id="displayNameForm">
-            <input matInput id="displayName" placeholder="Display Name *" />
-          </mat-form-field>
+        <div class="mat-content">
+            <mat-form-field id="rowOne" appearance="outline">
+                <mat-select app placeholder="Status">
+                    <mat-option>Test1</mat-option>
+                    <mat-option>Test2</mat-option>
+                    <mat-option>Test3</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div id="rowTwo">
+                <input matInput id="Priority" placeholder="Priority">
+                <mat-form-field appearance="outline">
+                    <input matInput [matDatepicker]="picker" id="datePicker" placeholder="Publish Date *">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div id="midleTextFields">
+                <input matInput id="DisplayName" placeholder="Display Name *">
+                <input matInput id="DisplayDesc" placeholder="Display Description (optional)">
+            </div>
+
+
+            <div id="source">
+                <p><b>Please provide one source: </b> <span id="star">*</span></p>
+                <mat-radio-button #webAddress value="1">Web Address</mat-radio-button>
+                <mat-form-field *ngIf="webAddress.checked" id="webAddressForm">
+                    <input #webAddress matInput id="webAddress" />
+                </mat-form-field>
+                <br /><br /><br />
+
+                <mat-radio-button #showAttachment ng-value="true" value="2">Attachment</mat-radio-button>
+                <button mat-button id="uploadButton" *ngIf="showAttachment.checked">
+                    Upload
+                </button>
+                <!---This works, however css messed it up in the past, be careful--->
+                <input type="file" value="Click me" id="uploadButtonIn" name="photo" ng2FileSelect [uploader]="uploader" />
+
+
+
+                <!-- Original -->
+                <!-- <input type="file" id="uploadButtonIn" name="photo" ng2FileSelect [uploader]="uploader" /> -->
+                <!-- <input type="file" name="file" id="file" class="inputfile" *ngIf="showAttachment.checked" /> -->
+                <!-- <label for="file" *ngIf="showAttachment.checked">Choose a file</label> -->
+
+                <a href="#" *ngIf="showAttachment.checked">
+                    <mat-icon>attach_file</mat-icon>View file
+                </a>
+                <button mat-button id="DeleteButton" *ngIf="showAttachment.checked">
+                    Delete
+                </button>
+            </div>
+
+            <div id="footer">
+                <button mat-button id="PreviewButton">
+                    <mat-icon>remove_red_eye</mat-icon> Preview
+                </button>
+                <div class="right-buttons">
+                    <!---Need to enable it when they enter a webaddress.
+                        This value is always at least one, the [disabled] works
+                        however it does not update the length when someone types in it.
+                        Look at link in the ts file.--->
+                    <button mat-button id="saveButton" (click)="uploader.uploadAll()" [disabled]="!webAddress.value.length > 1">Save</button>
+                    <!--!uploader.getNotUploadedItems().length || ---->
+                    <!-- <p>{{webAddress.value.length}}</p> -->
+                    <!---Although its empty it says 1--->
+                    <button mat-button id="cancelButton">Cancel</button>
+                    <button mat-button id="deleteButton">Delete</button>
+                </div>
+            </div>
+            <!---b--->
         </div>
-        <div class="small-field-container">
-          <mat-form-field id="displayDescForm">
-            <input matInput id="displayDesc" placeholder="Display Description (optional)" />
-          </mat-form-field>
-        </div>
-      </div>
+    </mat-card>
 
-      <div id="source">
-        <p>Please provide one source: <span id="star">*</span></p>
-        <mat-radio-button #webAddress value="1">Web Address</mat-radio-button>
-        <mat-form-field *ngIf="webAddress.checked" id="webAddressForm">
-          <input matInput />
-        </mat-form-field>
-        <br /><br /><br />
+    <br />
 
-        <mat-radio-button #showAttachment ng-value="true" value="2">Attachment</mat-radio-button>
-        <!--Attachment- Side buttons-->
-        <button mat-button id="uploadButton" *ngIf="showAttachment.checked">
-          Upload
-        </button>
-        <input type="file" value="Click me" id="uploadButtonIn" name="photo" ng2FileSelect [uploader]="uploader" />
-
-        <a href="#" *ngIf="showAttachment.checked"> <mat-icon>attach_file</mat-icon>View file</a>
-        <button mat-button id="DeleteButton" *ngIf="showAttachment.checked">
-          Delete
-        </button>
-      </div>
-
-      <div id="footer">
-        <button mat-button id="PreviewButton"><mat-icon>remove_red_eye</mat-icon> Preview</button>
-        <button mat-button id="saveButton" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">Save</button>
-        <button mat-button id="cancelButton">Cancel</button>
-        <button mat-button id="deleteButton">Delete</button>
-      </div>
-    </div>
-  </mat-card>
-
-  <br />
-
-  <p class="bottom_p">Newsfeed Article ID: 4</p>
-  <p class="bottom_p">Created by Shirley Mangallon on Oct 2, 2019 3:45pm</p>
-  <p class="bottom_p">Last modified by Urmila Chunoo on Oct 7, 2019 9:30am</p>
+    <p class="bottom_p">Newsfeed Article ID: 4</p>
+    <p class="bottom_p">Created by Shirley Mangallon on Oct 2, 2019 3:45pm</p>
+    <p class="bottom_p">Last modified by Urmila Chunoo on Oct 7, 2019 9:30am</p>
 </div>

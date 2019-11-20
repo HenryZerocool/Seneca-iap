@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NavService} from './nav.service';
 
 @Component({
   selector: 'app-iap-admin',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IapAdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navService: NavService) { }
 
   ngOnInit() {
   }

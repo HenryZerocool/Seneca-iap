@@ -129,6 +129,7 @@ a:active {
   background: #888b8d;
 }
 
+<<<<<<< HEAD
 /* a:active {
     background: #888B8D;
   } */
@@ -141,6 +142,31 @@ a:active {
 .expansion:hover {
   background: #888b8d !important;
 }
+=======
+  /* .mat-expansion-panel:hover{
+    background: #888B8D;
+  } */
+
+  .mat-list-item:hover {
+  background: #888B8D;
+  }
+
+  .mat-list-item:active {
+    background: #888B8D;
+  }
+
+  .tabs mat-list-item:hover{
+    background: white;
+    color: #da291c;
+  }
+/*
+/* <<<<<<< HEAD
+.expansion:hover {
+  background: #888B8D !important;
+} */
+
+
+>>>>>>> master
 
 /* a.active-link>mat-list-item.mat-list-item {
   background: black;

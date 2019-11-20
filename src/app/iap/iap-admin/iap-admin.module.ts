@@ -4,12 +4,11 @@ import { NgModule } from '@angular/core';
 import { QuillModule } from 'ngx-quill';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-// ngrx
 
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// prettier-ignore
 import {
+  // prettier-ignore
   MatToolbarModule,
   MatTableModule,
   MatTabsModule,
@@ -34,17 +33,18 @@ import {
 
 // import {  } from '@angular/material/tabs';
 
-import { IapContentComponent } from './iap-content.component';
-import { IapContentRoutingModule } from './iap-content-routing.module';
-
-import { AdminNewsfeedComponent } from './admin-newsfeeds/admin-newsfeed/admin-newsfeed.component';
-import { AdminResourcesComponent } from './admin-resources/admin-resources.component';
-import { AdminAnnouncementsComponent } from './admin-announcements/admin-announcements.component';
-import { AdminAnnouncementComponent } from './admin-announcements/admin-announcement/admin-announcement.component';
+import { IapContentComponent } from './iap-content/iap-content.component';
+import { IapAdminRoutingModule } from './iap-admin-routing.module';
+import { AdminNewsfeedComponent } from './iap-content/admin-newsfeeds/admin-newsfeed/admin-newsfeed.component';
+import { AdminResourcesComponent } from './iap-content/admin-resources/admin-resources.component';
+import { AdminAnnouncementsComponent } from './iap-content/admin-announcements/admin-announcements.component';
+import { AdminAnnouncementComponent } from './iap-content/admin-announcements/admin-announcement/admin-announcement.component';
 import { CommonModule } from '@angular/common';
-import { AdminNewsfeedsComponent } from './admin-newsfeeds/admin-newsfeeds.component';
-import { AdminResourceComponent } from './admin-resources/admin-resource/admin-resource.component';
-import { NewsfeedPreviewComponent } from './admin-newsfeeds/admin-newsfeed/newsfeed-preview/newsfeed-preview.component';
+import { AdminNewsfeedsComponent } from './iap-content/admin-newsfeeds/admin-newsfeeds.component';
+import { AdminResourceComponent } from './iap-content/admin-resources/admin-resource/admin-resource.component';
+import { NewsfeedPreviewComponent } from './iap-content/admin-newsfeeds/admin-newsfeed/newsfeed-preview/newsfeed-preview.component';
+import { IapAdminComponent } from './iap-admin.component';
+import { AnnouncementPreviewComponent } from './iap-content/admin-announcements/admin-announcement/announcement-preview/announcement-preview.component';
 
 @NgModule({
   declarations: [
@@ -55,14 +55,15 @@ import { NewsfeedPreviewComponent } from './admin-newsfeeds/admin-newsfeed/newsf
     AdminNewsfeedsComponent,
     AdminResourceComponent,
     NewsfeedPreviewComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    AnnouncementPreviewComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    IapContentRoutingModule,
+    IapAdminRoutingModule,
     QuillModule,
     HttpClientModule,
     // Material
@@ -99,6 +100,6 @@ import { NewsfeedPreviewComponent } from './admin-newsfeeds/admin-newsfeed/newsf
     AdminNewsfeedsComponent
   ],
   //   providers: []
-  bootstrap: [IapContentComponent]
+  bootstrap: [IapAdminComponent]
 })
-export class IapContentModule {}
+export class IapAdminModule {}
