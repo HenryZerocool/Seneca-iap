@@ -37,18 +37,19 @@
 
         <!-- Weight Column -->
         <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
-          <td
-            mat-cell
-            *matCellDef="let element"
-            [ngClass]="{
-              active: element.status == 'Active',
-              closed: element.status == 'Closed'
-            }"
-          >
-            {{ element.status }}
-          </td>
-        </ng-container>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+            <td mat-cell *matCellDef="let element">
+              <span
+                class="dot"
+                [ngClass]="{
+                  'dot-active': element.status == 'Active',
+                  'dot-closed': element.status == 'Closed'
+                }"
+              >
+              </span>
+              {{ element.status }}
+            </td>
+          </ng-container>
 
         <ng-container matColumnDef="publish FROM">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>

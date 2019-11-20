@@ -8,25 +8,6 @@
       <form #newsfeedForm="ngForm">
         <div class="sub-container">
           <div class="small-fields-container">
-<<<<<<< HEAD
-=======
-            <mat-form-field>
-              <input matInput [(ngModel)]="data.title" placeholder="Title" name="title" required />
-              <mat-hint>
-                <em class="error" *ngIf="newsfeedForm.controls.title?.touched && newsfeedForm.controls.title?.invalid">
-                  Required</em>
-              </mat-hint>
-            </mat-form-field>
-          </div>
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input matInput [(ngModel)]="data.headline" placeholder="Headline" name="headline" required />
-              <mat-hint><em class="error"
-                  *ngIf="newsfeedForm.controls.headline?.touched && newsfeedForm.controls.headline?.invalid">
-                  Required</em></mat-hint>
-            </mat-form-field>
-          </div>
->>>>>>> master
 
             <mat-form-field id= "status" appearance="outline">
               <mat-select matInput placeholder="Status" [(ngModel)]="data.status" name="status" required>
@@ -42,7 +23,6 @@
           </div>
 
           <div class="small-fields-container">
-<<<<<<< HEAD
             <mat-form-field id= "publishDate" appearance="outline">
               <input
                 matInput
@@ -52,11 +32,6 @@
                 name="publishDate"
                 required
               />
-=======
-            <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Publish Date" [(ngModel)]="data.publishDate"
-                name="publishDate" required />
->>>>>>> master
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
               <mat-hint><em class="error"
@@ -65,7 +40,6 @@
             </mat-form-field>
           </div>
         </div>
-<<<<<<< HEAD
 
         <div class="bottom-field-container">
           <div class="small-fields-container">
@@ -98,10 +72,6 @@
           name="content"
           aria-required
         >
-=======
-        <quill-editor [(ngModel)]="data.content" [styles]="editorStyle" placeholder="Enter Text" [modules]="config"
-          name="content" aria-required>
->>>>>>> master
         </quill-editor>
 
         <div class="actions-box">

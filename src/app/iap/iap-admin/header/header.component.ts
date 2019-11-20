@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-import {Component, OnInit} from '@angular/core';
-=======
 import { NavService } from './../nav.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NavItem } from '../nav-item';
 import { Router } from '@angular/router';
 import { animate, state, style, transition, trigger } from '@angular/animations';
->>>>>>> master
 
 @Component({
   selector: 'app-header',
@@ -72,6 +68,5 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  isExpanded = true;
   ngOnInit() {}
 }

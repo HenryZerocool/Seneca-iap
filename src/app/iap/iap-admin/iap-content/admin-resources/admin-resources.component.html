@@ -22,7 +22,20 @@
       <table mat-table [dataSource]="dataSource" matSort>
         <!--- Note that these columns can be defined in any order.
                           The actual rendered columns are set as a property on the row definition" -->
-
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+          <td mat-cell *matCellDef="let element">
+            <span
+              class="dot"
+              [ngClass]="{
+                'dot-active': element.status == 'Active',
+                'dot-closed': element.status == 'Closed'
+              }"
+            >
+            </span>
+            {{ element.status }}
+          </td>
+        </ng-container>
         <!-- Position Column -->
         <ng-container matColumnDef="priority">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Priority</th>
@@ -30,36 +43,37 @@
         </ng-container>
 
         <!-- Name Column -->
-        <ng-container matColumnDef="title">
+        <ng-container matColumnDef="displayName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>
             Display Name
           </th>
-          <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.displayName }}</td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="source">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Source</th>
           <td mat-cell *matCellDef="let element">
-            {{ element.status }}
+            {{ element.source }}
           </td>
         </ng-container>
+        <ng-container matColumnDef="publishDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Publish Date
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.publishDate | date : 'MMM d, yyyy h:mm' }} {{ element.publishDate | date : 'a' | lowercase }}
+            </td>
+          </ng-container>
 
-        <ng-container matColumnDef="lastModifier">
+        <ng-container matColumnDef="lastModifiedBy">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>
             Last Modified By
           </th>
-          <td mat-cell *matCellDef="let element">{{ element.lastModifier }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.lastModifiedBy }}</td>
         </ng-container>
 
-        <ng-container matColumnDef="lastModifiedTime">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>
-            Publish Date
-          </th>
-          <td mat-cell *matCellDef="let element">
-            {{ element.lastModifiedTime | date }}
-          </td>
-        </ng-container>
+
 
         <!-- Symbol Column -->
 

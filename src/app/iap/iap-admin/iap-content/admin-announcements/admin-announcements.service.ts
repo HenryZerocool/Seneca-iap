@@ -20,6 +20,7 @@ let DATABASE: iAnnouncements[] = [
     publishFrom: 'Sep 30, 2019',
     publishTo: 'Oct 31, 2019',
     lastModifier: 'Shirley Mangallon',
+    lastModifiedTime: 'Sep 15, 2019 9:55am',
     id: 1
   },
   {
@@ -29,6 +30,7 @@ let DATABASE: iAnnouncements[] = [
     publishFrom: '10/12/2018',
     publishTo: '10/30/2019',
     lastModifier: 'Shirley Mangallon',
+    lastModifiedTime: 'Sep 15, 2019 9:55am',
     id: 2
   },
   {
@@ -38,6 +40,7 @@ let DATABASE: iAnnouncements[] = [
     publishFrom: '10/12/2018',
     publishTo: '10/30/2019',
     lastModifier: 'Shirley Mangallon',
+    lastModifiedTime: 'Sep 15, 2019 9:55am',
     id: 3
   }
 ];

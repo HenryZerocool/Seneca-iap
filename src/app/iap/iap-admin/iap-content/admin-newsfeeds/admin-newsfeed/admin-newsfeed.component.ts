@@ -23,7 +23,6 @@ export class AdminNewsfeedComponent implements OnInit {
     height: '200px'
   };
 
-<<<<<<< HEAD
   // config = {
   //   toolbar: [
   //     ['bold', 'italic', 'underline', 'strike'], // toggled buttons
@@ -46,8 +45,6 @@ export class AdminNewsfeedComponent implements OnInit {
   //   ]
   // };
 
-=======
->>>>>>> master
   constructor(private activeRoute: ActivatedRoute, private newsfeedService: AdminNewsfeedsService, private location: Location) {}
 
   ngOnInit() {

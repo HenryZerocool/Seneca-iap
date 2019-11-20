@@ -129,20 +129,6 @@ a:active {
   background: #888b8d;
 }
 
-<<<<<<< HEAD
-/* a:active {
-    background: #888B8D;
-  } */
-
-.tabs mat-list-item:hover {
-  background: white;
-  color: #da291c;
-}
-
-.expansion:hover {
-  background: #888b8d !important;
-}
-=======
   /* .mat-expansion-panel:hover{
     background: #888B8D;
   } */
@@ -166,7 +152,6 @@ a:active {
 } */
 
 
->>>>>>> master
 
 /* a.active-link>mat-list-item.mat-list-item {
   background: black;
