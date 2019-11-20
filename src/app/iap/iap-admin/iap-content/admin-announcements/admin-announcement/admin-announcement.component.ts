@@ -14,7 +14,7 @@ export class AdminAnnouncementComponent implements OnInit {
   data;
 
   editorStyle = {
-    height: '300px'
+    height: '200px'
   };
   constructor(private activeRoute: ActivatedRoute, private anService: AdminAnnouncementsService, private location: Location) {}
 

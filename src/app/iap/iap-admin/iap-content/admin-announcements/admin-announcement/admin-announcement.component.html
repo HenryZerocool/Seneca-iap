@@ -1,14 +1,26 @@
-<div class="admin-announcement-container">
-  <mat-card class="main-container">
-    <mat-card-title>
-      <h2 class="card-title">ANNOUNCEMENT</h2>
-    </mat-card-title>
+<div *ngIf="data" class="admin-announcement-container">
+    <mat-card id="main-mat-card">
+      <mat-card-title>
+        <h2 class="card-title">Announcement</h2>
+      </mat-card-title>
+      <div class="mat-content">
 
-    <div class="container">
-      <form #announcementForm="ngForm">
-        <div class="sub-container">
-          <div class="small-fields-container">
-            <mat-form-field>
+
+      <form #announcementForm="ngForm" class="form-container">
+          <div id="rowTwo">
+              <mat-form-field id="status" appearance="outline">
+                  <mat-select matInput placeholder="Status" [(ngModel)]="data.status" name="status" required>
+                    <ng-container>
+                      <mat-option value="Active">Active</mat-option>
+                      <mat-option value="Closed">Closed</mat-option>
+                    </ng-container>
+                  </mat-select>
+                  <mat-hint><em class="error"
+                    *ngIf="announcementForm.controls.status?.touched && announcementForm.controls.status?.invalid">
+                    Required</em></mat-hint>
+                </mat-form-field>
+
+            <mat-form-field id="priority" appearance="outline">
               <input matInput [(ngModel)]="data.priority" placeholder="Priority" name="priority" required />
               <mat-hint>
                 <em class="error"
@@ -17,34 +29,13 @@
               </mat-hint>
             </mat-form-field>
           </div>
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input matInput [(ngModel)]="data.title" placeholder="Title" name="title" required />
-              <mat-hint>
-                <em class="error"
-                  *ngIf="announcementForm.controls.title?.touched && announcementForm.controls.title?.invalid">
-                  Required</em>
-              </mat-hint>
-            </mat-form-field>
-          </div>
 
-          <div class="small-fields-container">
-            <mat-form-field>
-              <mat-select matInput placeholder="Status" [(ngModel)]="data.status" name="status" required>
-                <ng-container>
-                  <mat-option value="Active">Active</mat-option>
-                  <mat-option value="Closed">Closed</mat-option>
-                </ng-container>
-              </mat-select>
-              <mat-hint><em class="error"
-                *ngIf="announcementForm.controls.status?.touched && announcementForm.controls.status?.invalid">
-                Required</em></mat-hint>
-            </mat-form-field>
-          </div>
 
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input matInput [matDatepicker]="fromPicker" placeholder="Publish FROM" [(ngModel)]="data.publishFrom"
+
+
+          <div id="rowTwo">
+            <mat-form-field id="publishFrom" appearance="outline">
+              <input matInput [matDatepicker]="fromPicker" placeholder="Publish FROM *" [(ngModel)]="data.publishFrom"
                 name="publishFrom" required />
               <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
               <mat-datepicker #fromPicker></mat-datepicker>
@@ -52,10 +43,10 @@
                   *ngIf="announcementForm.controls.publishFrom?.touched && announcementForm.controls.publishFrom?.invalid">
                   Required</em></mat-hint>
             </mat-form-field>
-          </div>
-          <div class="small-fields-container">
-            <mat-form-field>
-              <input matInput [matDatepicker]="toPicker" placeholder="Publish TO" [(ngModel)]="data.publishTo"
+
+
+            <mat-form-field id="publishTo" appearance="outline">
+              <input matInput [matDatepicker]="toPicker" placeholder="Publish TO *" [(ngModel)]="data.publishTo"
                 name="publishTo" required />
               <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
               <mat-datepicker #toPicker></mat-datepicker>
@@ -64,36 +55,67 @@
                   Required</em></mat-hint>
             </mat-form-field>
           </div>
-        </div>
-        <quill-editor [(ngModel)]="data.content" [styles]="editorStyle" placeholder="Enter Text" [modules]="config"
-          name="content" aria-required>
-        </quill-editor>
-      </form>
-    </div>
-    <div class="actions-box">
-      <mat-card-actions>
-        <button class="is-rounded" color="accent" mat-stroked-button [routerLink]="['./preview', id]">
-          <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
-        </button>
-        <div class="right-buttons">
-          <button *ngIf="id < 1" mat-flat-button class="is-rounded" [disabled]="announcementForm.invalid"
-            color="primary" (click)="addOneAnnouncement()">
-            <span>Save</span>
-          </button>
-          <button *ngIf="id >= 1" mat-flat-button class="is-rounded" [disabled]="announcementForm.invalid"
-            color="primary" (click)="updateOneAnnouncement()">
-            <span>Save</span>
-          </button>
-          <button mat-stroked-button class="is-rounded red" color="primary" (click)="deleteTempAnnouncement()">
-            <span>Cancel</span>
-          </button>
-          <button mat-button color="primary" [disabled]="id < 1" (click)="deleteOneAnnouncement()">
-            <mat-icon>delete</mat-icon> <span>Delete</span>
-          </button>
-        </div>
-      </mat-card-actions>
-    </div>
 
-    <mat-card-content class="mat-elevation-z8"> </mat-card-content>
-  </mat-card>
-</div>
+          <div id="midleTextFields">
+          <mat-form-field id="announcementTitle" appearance="outline">
+              <input matInput [(ngModel)]="data.title" placeholder="Title *" name="title" required />
+              <mat-hint>
+                <em class="error"
+                  *ngIf="announcementForm.controls.title?.touched && announcementForm.controls.title?.invalid">
+                  Required</em>
+              </mat-hint>
+            </mat-form-field>
+          </div>
+            <div id="quill">
+                <p>Content *</p>
+                <quill-editor
+                  [(ngModel)]="data.content"
+                  [styles]="editorStyle"
+                  placeholder="Enter Text"
+                  [modules]="config"
+                  name="content"
+                  aria-required
+                >
+                </quill-editor>
+              </div>
+
+              <div class="actions-box">
+                <mat-card-actions>
+                  <button class="is-rounded" color="accent" mat-stroked-button [routerLink]="['./preview', id]">
+                    <mat-icon>remove_red_eye</mat-icon> <span>Preview</span>
+                  </button>
+                  <div class="right-buttons">
+                    <button
+                      *ngIf="id < 1"
+                      mat-flat-button
+                      class="is-rounded"
+                      [disabled]="announcementForm.invalid"
+                      color="primary"
+                      (click)="addOneAnnouncement()"
+                    >
+                      <span>Save</span>
+                    </button>
+                    <button
+                      *ngIf="id >= 1"
+                      mat-flat-button
+                      class="is-rounded"
+                      [disabled]="announcementForm.invalid"
+                      color="primary"
+                      (click)="updateOneAnnouncement()"
+                    >
+                      <span>Save</span>
+                    </button>
+                    <button mat-stroked-button class="is-rounded red" color="primary" (click)="deleteTempAnnouncement()">
+                      <span>Cancel</span>
+                    </button>
+                    <button mat-button color="primary" [disabled]="id < 1" (click)="deleteOneAnnouncement()">
+                      <mat-icon>delete</mat-icon> <span>Delete</span>
+                    </button>
+                  </div>
+                </mat-card-actions>
+              </div>
+            </form>
+            <mat-card-content class="mat-elevation-z8"> </mat-card-content>
+          </div>
+        </mat-card>
+      </div>

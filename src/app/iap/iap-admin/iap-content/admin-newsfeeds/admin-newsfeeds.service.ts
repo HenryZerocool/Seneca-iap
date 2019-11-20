@@ -16,7 +16,7 @@ let DATABASE: iNewsFeed[] = [
     headline: 'One sentence about the article',
     status: 'Active',
     lastModifier: 'Shirley Mangallon',
-    publishDate: 'Nov 30, 2019',
+    publishDate: 'Nov 30, 2019 2:55pm',
 
     id: 1
   },
@@ -25,7 +25,7 @@ let DATABASE: iNewsFeed[] = [
     headline: 'Seneca provides free airport pick-up for all international students',
     status: 'Active',
     lastModifier: 'Shirley Mangallon',
-    publishDate: 'Oct 25, 2019',
+    publishDate: 'Oct 25, 2019 12:00am',
     id: 2
   },
   {
@@ -33,7 +33,7 @@ let DATABASE: iNewsFeed[] = [
     headline: 'All international students have a health insurance plan',
     status: 'Active',
     lastModifier: 'Shirley Mangallon',
-    publishDate: 'Sep 12, 2019',
+    publishDate: 'Sep 12, 2019 12:00am',
     id: 3
   }
 ];

@@ -15,15 +15,7 @@ export class AdminResourcesComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   @ViewChild('PostEditBox', { static: true }) PostEditBox: TemplateRef<any>;
-  displayedColumns: string[] = [
-    'priority',
-    'title',
-    'source',
-    'lastModifier',
-    'lastModifiedTime',
-    'id',
-    'Delete'
-  ];
+  displayedColumns: string[] = ['status', 'priority', 'displayName', 'source', 'publishDate', 'lastModifiedBy', 'id', 'Delete'];
   dataSource: MatTableDataSource<any>;
   constructor(private service: AdminResourcesService) {}
   ngOnInit() {

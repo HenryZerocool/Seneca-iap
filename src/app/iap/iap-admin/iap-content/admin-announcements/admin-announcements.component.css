@@ -107,3 +107,17 @@ td.mat-cell {
 .delete-box {
   min-width: 64px;
 }
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+.dot-active {
+  background-color: #0099ff;
+}
+.dot-closed {
+  background-color: #888b8d;
+}

@@ -2,38 +2,41 @@ import { Injectable } from '@angular/core';
 
 export interface Resource {
   id: number;
-  title: string;
-  priority: number;
   status: string;
-  lastModifier: string;
-  lastModifiedTime?: string;
+  displayName: string;
+  priority: number;
+  source: string;
+  lastModifiedBy: string;
+  publishDate: string;
 }
 
 const ELEMENT_DATA: Resource[] = [
   {
-    title: 'Agency Forms',
+    status: 'Active',
     priority: 1,
-    status: 'Web Address',
-    lastModifier: 'Shirley Mangallon',
-    lastModifiedTime: 'Nov 30, 2019',
-
+    displayName: 'Agency Forms and Student Forms',
+    source: 'Web Address',
+    lastModifiedBy: 'Shirley Mangallon',
+    publishDate: 'Oct 29, 2019 3:30',
     id: 1
   },
   {
-    title: 'Agency Handbook',
-    priority: 2,
-    status: 'Web Address',
-    lastModifier: 'Shirley Mangallon',
-    lastModifiedTime: 'Oct 25, 2019',
-    id: 2
+    status: 'Active',
+    priority: 1,
+    displayName: 'Agency Forms and Student Forms',
+    source: 'Web Address',
+    lastModifiedBy: 'Shirley Mangallon',
+    publishDate: 'Sep 30, 2019 10:45',
+    id: 1
   },
   {
-    title: 'Marketing Materials',
-    priority: 3,
-    status: 'Attachment',
-    lastModifier: 'Shirley Mangallon',
-    lastModifiedTime: 'Sep 12, 2019',
-    id: 3
+    status: 'Active',
+    priority: 1,
+    displayName: 'Agency Forms and Student Forms',
+    source: 'Web Address',
+    lastModifiedBy: 'Shirley Mangallon',
+    publishDate: 'Oct 31, 2019 12:12',
+    id: 1
   }
 ];
 

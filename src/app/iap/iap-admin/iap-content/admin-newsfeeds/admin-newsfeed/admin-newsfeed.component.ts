@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { AdminNewsfeedsService } from '../admin-newsfeeds.service';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+
+import { AdminNewsfeedsService } from '../admin-newsfeeds.service';
 
 @Component({
   selector: 'app-admin-newsfeed',
@@ -19,8 +20,30 @@ export class AdminNewsfeedComponent implements OnInit {
   // editorContent: string;
 
   editorStyle = {
-    height: '300px'
+    height: '200px'
   };
+
+  // config = {
+  //   toolbar: [
+  //     ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+  //     ['blockquote', 'code-block'],
+
+  //     [{ header: 1 }, { header: 2 }], // custom button values
+  //     [{ list: 'ordered' }, { list: 'bullet' }],
+  //     [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
+  //     [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
+  //     [{ direction: 'rtl' }], // text direction
+
+  //     [{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
+  //     [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+  //     [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+  //     [{ font: [] }],
+  //     [{ align: [] }],
+
+  //     ['clean']
+  //   ]
+  // };
 
   constructor(private activeRoute: ActivatedRoute, private newsfeedService: AdminNewsfeedsService, private location: Location) {}
 
