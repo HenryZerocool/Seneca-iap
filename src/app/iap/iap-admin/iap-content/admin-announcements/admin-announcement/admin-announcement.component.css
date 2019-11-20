@@ -99,10 +99,6 @@ button.mat-stroked-button.mat-button-base:hover {
   margin: 0 5vw;
 } */
 
-.editor {
-  width: 10px;
-}
-
 /* .form-group {
   margin: 0 2vw;
   padding: 10px;
@@ -129,58 +125,51 @@ button.mat-stroked-button.mat-button-base:hover {
   margin-left: 80px;
 }
 
-.admin-announcement-container #main-mat-card .mat-content .form-container #rowTwo {
+#rowTwo {
   display: flex;
   flex-direction: row;
   justify-content: right;
   margin-top: 45px;
+  align-self: center;
 }
 
-.admin-announcement-container #main-mat-card .mat-content .form-container #rowTwo #status {
+#rowTwo #status {
   width: 240px;
   height: 56px;
-  background: #ffffff 0% 0% no-repeat padding-box;
+
   border-radius: 5px;
   opacity: 1;
   margin-right: 50px;
 }
 
-.admin-announcement-container #main-mat-card .mat-content .form-container #rowTwo mat-form-field {
-  background: #ffffff 0% 0% no-repeat padding-box;
+#rowTwo mat-form-field {
   width: 240px;
   height: 56px;
 }
 
-.admin-announcement-container #main-mat-card .mat-content .form-container #rowTwo {
-  align-self: center;
-}
-
-.admin-announcement-container #main-mat-card .mat-content .form-container #midleTextFields {
+#midleTextFields {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.admin-announcement-container #main-mat-card .mat-content .form-container #midleTextFields #title {
-  background: #ffffff 0% 0% no-repeat padding-box;
+#midleTextFields #title {
   border-radius: 5px;
-  opacity: 1;
   width: 100%;
   height: 56px;
   margin-bottom: 30px;
   padding-top: 25px;
 }
 
-.admin-announcement-container #main-mat-card .mat-content .form-container #midleTextFields #headline {
-  background: #ffffff 0% 0% no-repeat padding-box;
+#midleTextFields #headline {
   border-radius: 5px;
-  opacity: 1;
+
   width: 100%;
   height: 56px;
   margin-bottom: 20px;
 }
 
-.admin-announcement-container #main-mat-card .mat-content .form-container #quill {
+#quill {
   display: flex;
   flex-direction: column;
   padding-top: 20px;
