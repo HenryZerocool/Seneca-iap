@@ -1,18 +1,8 @@
-.example-container {
-  height: 500px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-}
-.example-sidenav-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.example-sidenav {
+/* .example-sidenav {
   user-select: none;
-}
+} */
 .full-width {
-  width: 100%;
+  /* width: 100%; */
 }
 .menu-button {
   transition: 300ms ease-in-out;
@@ -27,9 +17,11 @@
   transform: scaleY(0);
   transform-origin: top;
   padding-left: 30px;
+  display: none;
 }
 .submenu.expanded {
   transform: scaleY(1);
+  display: block;
 }
 
 /* prevent default hidden nav */

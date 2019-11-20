@@ -19,11 +19,12 @@ import { MatSidenav } from '@angular/material';
   ]
 })
 export class MenuListItemComponent implements OnInit {
-  @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
+  // @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
   isExpanded;
   showSubmenu: boolean = false;
   isShowing = false;
   showSubSubMenu: boolean = false;
+  @Input() navData;
 
   constructor(public navService: NavService) {}
 

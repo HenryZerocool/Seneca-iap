@@ -1,0 +1,18 @@
+<div>
+    <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+        <a mat-list-item>{{navDatas.label}}</a>
+        <!-- Keep for future use, do not delete -->
+        <!-- <div>
+            <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+                <span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
+                <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">
+                    expand_more</mat-icon>
+            </mat-list-item>
+            <div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+                <mat-list-item>SubSubmenu Item 1</mat-list-item>
+                <mat-list-item>SubSubmenu Item 2</mat-list-item>
+            </div>
+        </div> -->
+
+    </div>
+</div>

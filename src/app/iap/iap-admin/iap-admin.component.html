@@ -1,3 +1,19 @@
 <app-header></app-header>
-<app-menu-list-item></app-menu-list-item>
+<mat-sidenav-container class="example-container" autosize>
+    <mat-sidenav #sidenav class="example-sidenav" mode="push" opened="true">
+        <mat-nav-list>
+            <app-menu-list-item *ngFor="let navItem of navData" [navData]="navItem"></app-menu-list-item>
+        </mat-nav-list>
+        <mat-nav-list>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+
+    </div>
+
+</mat-sidenav-container>
 <!-- <router-outlet></router-outlet> -->
