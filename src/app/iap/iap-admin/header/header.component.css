@@ -85,7 +85,7 @@ a:active {
 }
 
 .container {
-  height:100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -115,18 +115,17 @@ a:active {
 
 .mat-nav-list mat-icon {
   color: #da291c;
-  }
+}
 
-  .mat-expansion-panel:hover{
-    background: #888B8D;
-  }
+.mat-expansion-panel:hover {
+  background: #888b8d;
+}
 
-  .mat-list-item:hover{
-  background: #888B8D;
-  }
+.mat-list-item:hover {
+  background: #888b8d;
+}
 
-  .tabs {
-    background: white;
-    color: red;
-  }
-
+.tabs {
+  background: white;
+  color: red;
+}
